@@ -1,0 +1,50 @@
+.panel {
+  width: 100%;
+  height: fit-content;
+  color: white;
+}
+
+.buttons {
+  padding-left: 15px;
+}
+
+.button {
+  padding: 10px 15px;
+  font-family: var(--font-roboto-сondensed);
+  font-size: 18px;
+  border: none;
+}
+
+.button_props {
+  background-color: pink;
+}
+
+.button_code {
+  background-color: rgb(192, 255, 245);
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+}
+
+.block {
+  position: absolute;
+  width: 0;
+  border-radius: 15px;
+  overflow: auto;
+}
+
+.block_props,
+.block_code {
+  width: 100%;
+}
+
+.block_props {
+  border: 5px solid pink;
+}
+
+.block_code {
+  border: 5px solid rgb(192, 255, 245);
+}

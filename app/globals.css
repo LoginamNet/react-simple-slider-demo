@@ -1,0 +1,38 @@
+:root {
+  --html-red: #ff4d4d;
+  --html-maroon: #a54d4d;
+  --html-blue: #6565f7;
+  --html-navy: #8787ff;
+  --html-green: #008000;
+  --html-teal: #32adad;
+  --html-fuchsia: #ff00ff;
+  --html-olive: #a7a75f;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  background-color: #171717;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

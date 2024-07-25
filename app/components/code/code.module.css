@@ -1,0 +1,42 @@
+.code {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 30px;
+  font-size: 16px;
+  font-family: var(--font-azeret_mono);
+}
+
+/* ------------------- colors -------------------*/
+
+.red {
+  color: var(--html-red);
+}
+
+.maroon {
+  color: var(--html-maroon);
+}
+
+.blue {
+  color: var(--html-blue);
+}
+
+.navy {
+  color: var(--html-navy);
+}
+
+.green {
+  color: var(--html-green);
+}
+
+.teal {
+  color: var(--html-teal);
+}
+
+.fuchsia {
+  color: var(--html-fuchsia);
+}
+
+.olive {
+  color: var(--html-olive);
+}
