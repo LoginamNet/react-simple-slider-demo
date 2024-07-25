@@ -28,11 +28,9 @@ select {
   font: inherit;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  opacity: 1;
-}
-
-input[type="number"] {
-  -moz-appearance: textfield;
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-opensans);
 }

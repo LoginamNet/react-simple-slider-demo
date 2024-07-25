@@ -23,6 +23,10 @@
   background-color: rgb(192, 255, 245);
 }
 
+.button_docs {
+  background-color: rgb(238, 165, 82);
+}
+
 .content {
   position: relative;
   width: 100%;
@@ -37,7 +41,8 @@
 }
 
 .block_props,
-.block_code {
+.block_code,
+.block_docs {
   width: 100%;
 }
 
@@ -47,4 +52,8 @@
 
 .block_code {
   border: 5px solid rgb(192, 255, 245);
+}
+
+.block_docs {
+  border: 5px solid rgb(238, 165, 82);
 }

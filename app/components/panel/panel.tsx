@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import Props from "../props/props";
 import Code from "../code/code";
+import Docs from "../docs/docs";
 
 import styles from "./panel.module.css";
 
@@ -41,6 +42,12 @@ export default function Panel(props: ComponentProps) {
         >
           CODE
         </button>
+        <button
+          className={`${styles.button} ${styles.button_docs}`}
+          onClick={() => switchCurrentPanel("docs")}
+        >
+          DOCS
+        </button>
       </div>
       <div className={styles.content}>
         <div
@@ -59,6 +66,13 @@ export default function Panel(props: ComponentProps) {
           }`}
         >
           <Code sliderProps={sliderProps} />
+        </div>
+        <div
+          className={`${styles.block} ${
+            currentPanel === "docs" && styles.block_docs
+          }`}
+        >
+          <Docs />
         </div>
       </div>
     </div>

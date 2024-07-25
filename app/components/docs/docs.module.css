@@ -1,0 +1,26 @@
+.docs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 30px;
+  font-size: 18px;
+  font-family: var(--font-roboto-сondensed);
+}
+
+.badges {
+  display: flex;
+  gap: 10px;
+}
+
+.features {
+  padding-left: 30px;
+}
+
+.docs table {
+  border-collapse: collapse;
+}
+
+.docs th,
+.docs td {
+  padding: 10px;
+}
