@@ -29,6 +29,8 @@ export default function Panel(props: ComponentProps) {
 
   return (
     <div className={styles.panel}>
+      {/* -------------------------------------- panel buttons -------------------------------------- */}
+
       <div className={styles.buttons}>
         <button
           className={`${styles.button} ${styles.button_props}`}
@@ -49,6 +51,9 @@ export default function Panel(props: ComponentProps) {
           DOCS
         </button>
       </div>
+
+      {/* -------------------------------------- content -------------------------------------- */}
+
       <div className={styles.content}>
         <div
           className={`${styles.block} ${

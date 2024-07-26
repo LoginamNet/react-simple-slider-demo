@@ -15,6 +15,9 @@ export default function Docs() {
   return (
     <div className={styles.docs}>
       <h1>Simple Slider</h1>
+
+      {/* -------------------------------------- badges -------------------------------------- */}
+
       <div className={styles.badges}>
         <a href="https://atomOneDark.com/LoginamNet/react-simple-slider/blob/main/LICENCE">
           <img
@@ -46,6 +49,8 @@ export default function Docs() {
         on React with multiple scrolling modes and the ability to add custom
         buttons.
       </p>
+
+      {/* -------------------------------------- Navigation -------------------------------------- */}
 
       <h2>Navigation</h2>
       <hr />
@@ -93,6 +98,8 @@ export default function Docs() {
         </li>
       </ul>
 
+      {/* -------------------------------------- Features -------------------------------------- */}
+
       <h2>Features</h2>
       <hr />
       <ul className={styles.features}>
@@ -107,6 +114,8 @@ export default function Docs() {
       <h2 id="usage">Usage</h2>
       <hr />
 
+      {/* -------------------------------------- Instalation -------------------------------------- */}
+
       <h3>Instalation</h3>
       <SyntaxHighlighter language="bash" style={atomOneDark}>
         npm i @loginamnet/simple-slider
@@ -116,8 +125,16 @@ export default function Docs() {
         {`import SimpleSlider from "@loginamnet/simple-slider";`}
       </SyntaxHighlighter>
 
+      {/* -------------------------------------- Basic Example -------------------------------------- */}
+
       <h3>Basic Example</h3>
-      <SyntaxHighlighter language="javascript" style={atomOneDark}>
+      <SyntaxHighlighter
+        codeTagProps={{
+          style: { fontFamily: "var(--font-azeret-mono)", fontSize: "16px" },
+        }}
+        language="javascript"
+        style={atomOneDark}
+      >
         {`import SimpleSlider from "@loginamnet/simple-slider";
 
 import MySlide2 from "./components";
@@ -157,6 +174,8 @@ export default function MySliderComponent() {
 }`}
       </SyntaxHighlighter>
 
+      {/* -------------------------------------- What can I place inside -------------------------------------- */}
+
       <h3>What can I place inside</h3>
       <p>
         {`Simple Slider accepts ReactNode as "children" — this is a type that
@@ -166,6 +185,9 @@ export default function MySliderComponent() {
         </Link>
         {` method of React components.`}
       </p>
+
+      {/* -------------------------------------- Width, Height and Background -------------------------------------- */}
+
       <h3>Width, Height and Background</h3>
       <p>
         {`A Simple Slider occupies 100% of the width and height of the parent element, and each "child" component is wrapped in a Slide that occupies 100% of the size of the slider itself. Resize the parent container to resize the slider. At the same time, your "child" component may have a different size from the Slide, which can sometimes be useful.`}
@@ -173,9 +195,14 @@ export default function MySliderComponent() {
       <p>{`In the example above, each slide will have a size of 600x400px.`}</p>
       <p>{`Both the Simple Slider and the Slide have a transparent background. Add styles to the parent element and to each created "child" component, respectively (for example, to create a preloader).`}</p>
 
+      {/* -------------------------------------- Props -------------------------------------- */}
+
       <h2 id="props">Props</h2>
       <hr />
       <TableProps />
+
+      {/* -------------------------------------- Controls Options -------------------------------------- */}
+
       <h3 id="controls-options">Controls Options</h3>
       <p>
         controlsOptions will be applied only if the
@@ -185,8 +212,16 @@ export default function MySliderComponent() {
       </p>
       <TableOptions />
 
+      {/* -------------------------------------- Controls Options Example -------------------------------------- */}
+
       <h3 id="controls-options-example">Controls Options Example</h3>
-      <SyntaxHighlighter language="javascript" style={atomOneDark}>
+      <SyntaxHighlighter
+        codeTagProps={{
+          style: { fontFamily: "var(--font-azeret-mono)", fontSize: "16px" },
+        }}
+        language="javascript"
+        style={atomOneDark}
+      >
         {`import SimpleSlider from "@loginamnet/simple-slider";
 
 import MySlide1 from "./components";
@@ -209,8 +244,8 @@ export default function MySliderComponent() {
           gap: 100,
           buttonShape: "transparent",
           buttonSize: "big",
-          arrowColor: "blue",
           buttonMargin: "0 30px",
+          arrowColor: "blue",
         }}
       >
         <MySlide1 text="First Slide" />
@@ -221,6 +256,8 @@ export default function MySliderComponent() {
 }`}
       </SyntaxHighlighter>
 
+      {/* -------------------------------------- Custom Buttons -------------------------------------- */}
+
       <h3 id="custom-buttons">Custom Buttons</h3>
       <p>
         You can replace the standard slider buttons (or just one of them) with
@@ -230,8 +267,16 @@ export default function MySliderComponent() {
         {`To do this, you need to create a custom component of the button in a special way and transfer it to the slider as a function. For the "previous" and "next" buttons, these components will be slightly different.`}
       </p>
 
+      {/* -------------------------------------- Previous Button Component -------------------------------------- */}
+
       <h3 id="custom-prev-button">Previous Button Component</h3>
-      <SyntaxHighlighter language="javascript" style={atomOneDark}>
+      <SyntaxHighlighter
+        codeTagProps={{
+          style: { fontFamily: "var(--font-azeret-mono)", fontSize: "16px" },
+        }}
+        language="javascript"
+        style={atomOneDark}
+      >
         {`export default function CustomPrevButton(
   prevSlide: () => void,
   sliding?: boolean,
@@ -250,8 +295,16 @@ export default function MySliderComponent() {
 }`}
       </SyntaxHighlighter>
 
+      {/* -------------------------------------- Next Button Component -------------------------------------- */}
+
       <h3 id="custom-next-button">Next Button Component</h3>
-      <SyntaxHighlighter language="javascript" style={atomOneDark}>
+      <SyntaxHighlighter
+        codeTagProps={{
+          style: { fontFamily: "var(--font-azeret-mono)", fontSize: "16px" },
+        }}
+        language="javascript"
+        style={atomOneDark}
+      >
         {`export default function CustomNextButton(
   nextSlide: () => void,
   sliding?: boolean,
@@ -306,8 +359,16 @@ export default function MySliderComponent() {
         to disable the buttons, but you can apply them as you want.
       </p>
 
+      {/* -------------------------------------- Slider With Custom Buttons Example -------------------------------------- */}
+
       <h3 id="custom-buttons-example">Slider With Custom Buttons Example</h3>
-      <SyntaxHighlighter language="javascript" style={atomOneDark}>
+      <SyntaxHighlighter
+        codeTagProps={{
+          style: { fontFamily: "var(--font-azeret-mono)", fontSize: "16px" },
+        }}
+        language="javascript"
+        style={atomOneDark}
+      >
         {`import SimpleSlider from "@loginamnet/simple-slider";
 
 import MySlide1 from "./components";
@@ -335,6 +396,8 @@ export default function MySliderComponent() {
   );
 }`}
       </SyntaxHighlighter>
+
+      {/* -------------------------------------- Special Case -------------------------------------- */}
 
       <h2 id="special-case">Special Case</h2>
       <hr />
@@ -366,7 +429,13 @@ export default function MySliderComponent() {
         <b> overlay </b>
         {`(this value is set by default).`}
       </p>
-      <SyntaxHighlighter language="javascript" style={atomOneDark}>
+      <SyntaxHighlighter
+        codeTagProps={{
+          style: { fontFamily: "var(--font-azeret-mono)", fontSize: "16px" },
+        }}
+        language="javascript"
+        style={atomOneDark}
+      >
         {`controls
 controlsOptions={{
     notInfinite: true,
@@ -380,7 +449,13 @@ controlsOptions={{
         <b> slidingDirection </b>
         {`option to the opposite too).`}
       </p>
-      <SyntaxHighlighter language="javascript" style={atomOneDark}>
+      <SyntaxHighlighter
+        codeTagProps={{
+          style: { fontFamily: "var(--font-azeret-mono)", fontSize: "16px" },
+        }}
+        language="javascript"
+        style={atomOneDark}
+      >
         {`controls
 controlsOptions={{
     notInfinite: true,
@@ -389,11 +464,15 @@ controlsOptions={{
 startWithSlide={5}`}
       </SyntaxHighlighter>
 
+      {/* -------------------------------------- Plans -------------------------------------- */}
+
       <h2 id="plans">Plans</h2>
       <hr />
       <ul className={styles.plans}>
         <li>{`Add a "dots" component that can be placed outside the slider`}</li>
       </ul>
+
+      {/* -------------------------------------- Licence -------------------------------------- */}
 
       <h2 id="licence">Licence</h2>
       <hr />

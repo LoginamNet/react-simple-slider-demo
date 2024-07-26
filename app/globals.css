@@ -1,4 +1,6 @@
 :root {
+  /* ------------------- colors -------------------*/
+
   --html-red: #ee9978;
   --html-maroon: #ac5f5f;
   --html-blue: #7f7ff7;
@@ -7,6 +9,18 @@
   --html-teal: #32adad;
   --html-fuchsia: #ff84ff;
   --html-olive: #a7a75f;
+
+  --panel-code: #bdeee6;
+  --panel-docs: #eea552;
+  --panel-props: #fccad2;
+
+  --background-code: #282c34;
+  --background-label: #2c2c2c;
+
+  /* ------------------- width -------------------*/
+
+  --main-max-width: 1200px;
+  --code-min-width: 720px;
 }
 
 * {
@@ -19,6 +33,10 @@ html,
 body {
   max-width: 100vw;
   background-color: #171717;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 input,

@@ -1,11 +1,11 @@
 .props {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: fit-content;
   gap: 10px;
   padding: 30px;
   font-size: 16px;
-  font-family: var(--font-azeret_mono);
+  font-family: var(--font-azeret-mono);
 }
 
 .options {
@@ -14,8 +14,14 @@
   gap: 10px;
   width: fit-content;
   padding: 20px;
+  background: rgb(54, 54, 54);
   border: 1px solid rgb(177, 177, 177);
-  border-radius: 15px;
+  border-radius: 5px;
+}
+
+.options_disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .prop {
@@ -72,8 +78,8 @@
   min-width: 125px;
   padding: 5px 10px;
   text-align: center;
-  background-color: #2c2c2c;
-  border: 1px solid #2c2c2c;
+  background-color: var(--background-label);
+  border: 1px solid var(--background-label);
   cursor: pointer;
 }
 

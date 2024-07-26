@@ -23,6 +23,8 @@ export default function Props(props: ComponentProps) {
 
   return (
     <div className={styles.props}>
+      {/* -------------------------------------- controls -------------------------------------- */}
+
       <div className={styles.prop}>
         <span className={styles.prop_name}>controls:</span>
         <div className={styles.prop_values}>
@@ -49,9 +51,20 @@ export default function Props(props: ComponentProps) {
           />
         </div>
       </div>
-      <div className={`${styles.prop} ${styles.prop_optional}`}>
+
+      {/* -------------------------------------- controlsOptions -------------------------------------- */}
+
+      <div
+        className={`
+        ${styles.prop} 
+        ${styles.prop_optional}
+        ${!sliderProps.controls && styles.options_disabled}
+        `}
+      >
         <span className={styles.prop_name}>controlsOptions:</span>
         <div className={styles.options}>
+          {/* -------------------------------------- notInfinite -------------------------------------- */}
+
           <div className={styles.prop}>
             <span className={styles.prop_name}>notInfinite:</span>
             <div className={styles.prop_values}>
@@ -71,6 +84,9 @@ export default function Props(props: ComponentProps) {
               />
             </div>
           </div>
+
+          {/* -------------------------------------- showOnHover -------------------------------------- */}
+
           <div className={styles.prop}>
             <span className={styles.prop_name}>showOnHover:</span>
             <div className={styles.prop_values}>
@@ -90,6 +106,9 @@ export default function Props(props: ComponentProps) {
               />
             </div>
           </div>
+
+          {/* -------------------------------------- position -------------------------------------- */}
+
           <div className={styles.prop}>
             <span className={styles.prop_name}>position:</span>
             <div className={styles.prop_values}>
@@ -123,6 +142,9 @@ export default function Props(props: ComponentProps) {
               />
             </div>
           </div>
+
+          {/* -------------------------------------- alinging -------------------------------------- */}
+
           <div className={styles.prop}>
             <span className={styles.prop_name}>alinging:</span>
             <div className={styles.prop_values}>
@@ -149,6 +171,9 @@ export default function Props(props: ComponentProps) {
               />
             </div>
           </div>
+
+          {/* -------------------------------------- gap -------------------------------------- */}
+
           <div className={styles.prop}>
             <span className={styles.prop_name}>gap:</span>
             <div className={styles.prop_values}>
@@ -159,6 +184,9 @@ export default function Props(props: ComponentProps) {
               />
             </div>
           </div>
+
+          {/* -------------------------------------- buttonShape -------------------------------------- */}
+
           <div className={styles.prop}>
             <span className={styles.prop_name}>buttonShape:</span>
             <div className={styles.prop_values}>
@@ -185,6 +213,9 @@ export default function Props(props: ComponentProps) {
               />
             </div>
           </div>
+
+          {/* -------------------------------------- buttonSize -------------------------------------- */}
+
           <div className={styles.prop}>
             <span className={styles.prop_name}>buttonSize:</span>
             <div className={styles.prop_values}>
@@ -196,16 +227,22 @@ export default function Props(props: ComponentProps) {
               />
             </div>
           </div>
+
+          {/* -------------------------------------- buttonMargin -------------------------------------- */}
+
           <div className={styles.prop}>
             <span className={styles.prop_name}>buttonMargin:</span>
             <div className={styles.prop_values}>
               <StringNumberInput
-                name="butonMargin"
+                name="buttonMargin"
                 currentPropValue={sliderProps.buttonMargin}
                 updateSliderProp={updateSliderProp}
               />
             </div>
           </div>
+
+          {/* -------------------------------------- arrowColor -------------------------------------- */}
+
           <div className={styles.prop}>
             <span className={styles.prop_name}>arrowColor:</span>
             <div className={styles.prop_values}>
@@ -218,6 +255,9 @@ export default function Props(props: ComponentProps) {
           </div>
         </div>
       </div>
+
+      {/* -------------------------------------- startWithSlide -------------------------------------- */}
+
       <div className={styles.prop}>
         <span className={styles.prop_name}>startWithSlide:</span>
         <div className={styles.prop_values}>
@@ -228,6 +268,9 @@ export default function Props(props: ComponentProps) {
           />
         </div>
       </div>
+
+      {/* -------------------------------------- slidingType -------------------------------------- */}
+
       <div className={styles.prop}>
         <span className={styles.prop_name}>slidingType:</span>
         <div className={styles.prop_values}>
@@ -254,6 +297,9 @@ export default function Props(props: ComponentProps) {
           />
         </div>
       </div>
+
+      {/* -------------------------------------- slidingDirection -------------------------------------- */}
+
       <div className={styles.prop}>
         <span className={styles.prop_name}>slidingDirection:</span>
         <div className={styles.prop_values}>
@@ -287,6 +333,9 @@ export default function Props(props: ComponentProps) {
           />
         </div>
       </div>
+
+      {/* -------------------------------------- slidingTimingFunction -------------------------------------- */}
+
       <div className={styles.prop}>
         <span className={styles.prop_name}>slidingTimingFunction:</span>
         <div className={styles.prop_values}>
@@ -297,6 +346,9 @@ export default function Props(props: ComponentProps) {
           />
         </div>
       </div>
+
+      {/* -------------------------------------- slidingDuration -------------------------------------- */}
+
       <div className={styles.prop}>
         <span className={styles.prop_name}>slidingDuration:</span>
         <div className={styles.prop_values}>
@@ -307,6 +359,9 @@ export default function Props(props: ComponentProps) {
           />
         </div>
       </div>
+
+      {/* -------------------------------------- slidingDelay -------------------------------------- */}
+
       <div className={styles.prop}>
         <span className={styles.prop_name}>slidingDelay:</span>
         <div className={styles.prop_values}>
@@ -317,6 +372,9 @@ export default function Props(props: ComponentProps) {
           />
         </div>
       </div>
+
+      {/* -------------------------------------- stopOnHover -------------------------------------- */}
+
       <div className={styles.prop}>
         <span className={styles.prop_name}>stopOnHover:</span>
         <div className={styles.prop_values}>
@@ -336,6 +394,9 @@ export default function Props(props: ComponentProps) {
           />
         </div>
       </div>
+
+      {/* -------------------------------------- customPrevButtonFN -------------------------------------- */}
+
       <div className={styles.prop}>
         <span className={styles.prop_name}>customPrevButtonFN:</span>
         <div className={styles.prop_values}>
@@ -355,6 +416,9 @@ export default function Props(props: ComponentProps) {
           />
         </div>
       </div>
+
+      {/* -------------------------------------- customNextButtonFN -------------------------------------- */}
+
       <div className={styles.prop}>
         <span className={styles.prop_name}>customNextButtonFN:</span>
         <div className={styles.prop_values}>

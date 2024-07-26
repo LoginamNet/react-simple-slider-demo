@@ -1,10 +1,22 @@
+.container,
 .code {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+}
+
+.container {
+  min-width: var(--code-min-width);
   padding: 30px;
+  overflow: auto;
+}
+
+.code {
+  gap: 10px;
+  width: 100%;
+  padding: 0.5em;
   font-size: 16px;
-  font-family: var(--font-azeret_mono);
+  font-family: var(--font-azeret-mono);
+  background-color: var(--background-code);
 }
 
 /* ------------------- colors -------------------*/

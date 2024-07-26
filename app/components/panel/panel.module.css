@@ -9,22 +9,24 @@
 }
 
 .button {
+  margin-bottom: -1px;
   padding: 10px 15px;
-  font-family: var(--font-roboto-сondensed);
+  font-family: var(--font-source-sans-3);
+  font-weight: 600;
   font-size: 18px;
   border: none;
 }
 
 .button_props {
-  background-color: pink;
+  background-color: var(--panel-props);
 }
 
 .button_code {
-  background-color: rgb(192, 255, 245);
+  background-color: var(--panel-code);
 }
 
 .button_docs {
-  background-color: rgb(238, 165, 82);
+  background-color: var(--panel-docs);
 }
 
 .content {
@@ -47,13 +49,13 @@
 }
 
 .block_props {
-  border: 5px solid pink;
+  border: 5px solid var(--panel-props);
 }
 
 .block_code {
-  border: 5px solid rgb(192, 255, 245);
+  border: 5px solid var(--panel-code);
 }
 
 .block_docs {
-  border: 5px solid rgb(238, 165, 82);
+  border: 5px solid var(--panel-docs);
 }

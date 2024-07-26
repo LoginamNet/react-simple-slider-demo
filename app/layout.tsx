@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { Open_Sans } from "next/font/google";
-import { Roboto_Condensed } from "next/font/google";
+import { Source_Sans_3 } from "next/font/google";
 import { Azeret_Mono } from "next/font/google";
 
 import "./globals.css";
@@ -12,16 +12,16 @@ const openSans = Open_Sans({
   variable: "--font-opensans",
 });
 
-const robotoCondensed = Roboto_Condensed({
+const sourceSans3 = Source_Sans_3({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-roboto-сondensed",
+  variable: "--font-source-sans-3",
 });
 
 const azeretMono = Azeret_Mono({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-azeret_mono",
+  variable: "--font-azeret-mono",
 });
 
 export const metadata: Metadata = {
@@ -40,7 +40,7 @@ export default function RootLayout({
       lang="en"
       className={`
         ${openSans.variable} 
-        ${robotoCondensed.variable}
+        ${sourceSans3.variable}
         ${azeretMono.variable}`}
     >
       <body>{children}</body>
