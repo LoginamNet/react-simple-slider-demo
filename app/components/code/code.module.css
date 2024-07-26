@@ -1,24 +1,37 @@
+.code,
 .container,
-.code {
+.code_block {
   display: flex;
   flex-direction: column;
 }
 
-.container {
-  min-width: var(--code-min-width);
+.code {
+  gap: 30px;
   padding: 30px;
+}
+
+.container {
   overflow: auto;
 }
 
-.code {
+.code_block {
   gap: 10px;
   width: 100%;
+  min-width: var(--code-min-width);
   padding: 0.5em;
   font-size: 16px;
   font-family: var(--font-azeret-mono);
   background-color: var(--background-code);
 }
 
+.button {
+  padding: 10px 15px;
+  font-family: var(--font-source-sans-3);
+  font-weight: 600;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+}
 /* ------------------- colors -------------------*/
 
 .red {

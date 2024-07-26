@@ -1,8 +1,11 @@
 "use client";
 
+import { useRef } from "react";
+
 import Property from "./property";
 import Option from "./option";
 import OptionBoolean from "./option-boolean";
+import CopyButton from "./copy-button";
 
 import styles from "./code.module.css";
 
@@ -15,10 +18,13 @@ type ComponentProps = {
 export default function Code(props: ComponentProps) {
   const { sliderProps } = props;
 
+  const preRef = useRef<HTMLPreElement>(null);
+
   return (
-    <div className={styles.container}>
-      <pre className={styles.code}>
-        <div>
+    <div className={styles.code}>
+      {" "}
+      <div className={styles.container}>
+        <pre ref={preRef} className={styles.code_block}>
           <div>
             <span className={styles.fuchsia}>import</span>
             <span className={styles.navy}>{` SimpleSlider`}</span>
@@ -58,7 +64,7 @@ export default function Code(props: ComponentProps) {
             <span className={styles.fuchsia}>{` default`}</span>
             <span className={styles.blue}>{` function`}</span>
             <span className={styles.olive}>{` Slider`}</span>
-            <span className={styles.blue}>{` ()`}</span>
+            <span className={styles.blue}>{`()`}</span>
             <span className={styles.blue}>{` {`}</span>
           </div>
           <div>
@@ -263,8 +269,9 @@ export default function Code(props: ComponentProps) {
             <span>;</span>
           </div>
           <span className={styles.blue}>{`}`}</span>
-        </div>
-      </pre>
+        </pre>
+      </div>
+      <CopyButton preRef={preRef} />
     </div>
   );
 }

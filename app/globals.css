@@ -7,7 +7,7 @@
   --html-navy: #a8a8fa;
   --html-green: #008000;
   --html-teal: #32adad;
-  --html-fuchsia: #ff84ff;
+  --html-fuchsia: #da7eda;
   --html-olive: #a7a75f;
 
   --panel-code: #bdeee6;
@@ -20,7 +20,7 @@
   /* ------------------- width -------------------*/
 
   --main-max-width: 1200px;
-  --code-min-width: 720px;
+  --code-min-width: 580px;
 }
 
 * {
