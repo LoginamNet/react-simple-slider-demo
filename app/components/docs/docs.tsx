@@ -1,17 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
+import Link from "next/link";
+
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
+import TableProps from "./table-props";
+import TableOptions from "./table-options";
+
 import styles from "./docs.module.css";
-import Link from "next/link";
 
 export default function Docs() {
   return (
     <div className={styles.docs}>
       <h1>Simple Slider</h1>
-
       <div className={styles.badges}>
         <a href="https://atomOneDark.com/LoginamNet/react-simple-slider/blob/main/LICENCE">
           <img
@@ -39,9 +42,56 @@ export default function Docs() {
         </a>
       </div>
       <p>
-        A Simple Slider on React with multiple scrolling modes and the ability
-        to add custom buttons.
+        A <b> Simple Slider </b>
+        on React with multiple scrolling modes and the ability to add custom
+        buttons.
       </p>
+
+      <h2>Navigation</h2>
+      <hr />
+      <ul className={styles.nav}>
+        <li>
+          <Link href={"#usage"}>How to use</Link>
+        </li>
+        <li>
+          <Link href={"#props"}>Properties</Link>
+          <ul>
+            <li>
+              <Link href={"#controls-options"}>Controls options</Link>
+            </li>
+            <li>
+              <Link href={"#controls-options-example"}>
+                Controls options example
+              </Link>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <Link href={"#custom-buttons"}>Custom buttons</Link>
+          <ul>
+            <li>
+              <Link href={"#custom-prev-button"}>Previous button</Link>
+            </li>
+            <li>
+              <Link href={"#custom-next-button"}>Next button</Link>
+            </li>
+            <li>
+              <Link href={"#custom-buttons-example"}>
+                Custom buttons example
+              </Link>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <Link href={"#special-case"}>Special case</Link>
+        </li>
+        <li>
+          <Link href={"#plans"}>Plans</Link>
+        </li>
+        <li>
+          <Link href={"#licence"}>Licence</Link>
+        </li>
+      </ul>
 
       <h2>Features</h2>
       <hr />
@@ -54,14 +104,13 @@ export default function Docs() {
         <li>Lightweight 🎈</li>
       </ul>
 
-      <h2>Usage</h2>
+      <h2 id="usage">Usage</h2>
       <hr />
 
       <h3>Instalation</h3>
       <SyntaxHighlighter language="bash" style={atomOneDark}>
         npm i @loginamnet/simple-slider
       </SyntaxHighlighter>
-
       <h3>Import</h3>
       <SyntaxHighlighter language="javascript" style={atomOneDark}>
         {`import SimpleSlider from "@loginamnet/simple-slider";`}
@@ -117,7 +166,6 @@ export default function MySliderComponent() {
         </Link>
         {` method of React components.`}
       </p>
-
       <h3>Width, Height and Background</h3>
       <p>
         {`A Simple Slider occupies 100% of the width and height of the parent element, and each "child" component is wrapped in a Slide that occupies 100% of the size of the slider itself. Resize the parent container to resize the slider. At the same time, your "child" component may have a different size from the Slide, which can sometimes be useful.`}
@@ -125,135 +173,241 @@ export default function MySliderComponent() {
       <p>{`In the example above, each slide will have a size of 600x400px.`}</p>
       <p>{`Both the Simple Slider and the Slide have a transparent background. Add styles to the parent element and to each created "child" component, respectively (for example, to create a preloader).`}</p>
 
-      <h2>Props</h2>
+      <h2 id="props">Props</h2>
       <hr />
-      <table border={1}>
-        <thead>
-          <tr>
-            <th>Prop</th>
-            <th>Type</th>
-            <th>Values</th>
-            <th>Default</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>controls</td>
-            <td>boolean, string</td>
-            <td>true, false , &quot;on-hover&quot;</td>
-            <td>false</td>
-            <td>
-              direct control of the slider using the buttons without automatic
-              scrolling or with a stop at hover
-            </td>
-          </tr>
-          <tr>
-            <td>controlsOptions?</td>
-            <td>object</td>
-            <td>explanations and an example below</td>
-            <td>{`{}`}</td>
-            <td>
-              various options for setting slider controls when the
-              &quot;controls&quot; option is enabled
-            </td>
-          </tr>
-          <tr>
-            <td>startWithSlide?</td>
-            <td>number</td>
-            <td>number</td>
-            <td>1</td>
-            <td>the number of the slide to start scrolling from</td>
-          </tr>
-          <tr>
-            <td>slidingType?</td>
-            <td>string</td>
-            <td>
-              &quot;sequence&quot;, &quot;underlay&quot;, &quot;overlay&quot;
-            </td>
-            <td>&quot;overlay&quot;</td>
-            <td>the type of slide offset relative to each other</td>
-          </tr>
-          <tr>
-            <td>slidingDirection?</td>
-            <td>string</td>
-            <td>
-              &quot;left&quot;, &quot;top&quot;, &quot;right&quot;,
-              &quot;bottom&quot;
-            </td>
-            <td>&quot;left&quot;</td>
-            <td>the direction of movement of the slides</td>
-          </tr>
-          <tr>
-            <td>slidingDuration?</td>
-            <td>number</td>
-            <td>number</td>
-            <td>2000</td>
-            <td>the time of one slide movement cycle (ms)</td>
-          </tr>
-          <tr>
-            <td>slidingDelay?</td>
-            <td>number</td>
-            <td>number</td>
-            <td>1000</td>
-            <td>
-              delay before the start of the next slide movement for auto sliding
-              or the &quot;controls&quot; option with the value
-              &quot;on-hover&quot; (ms)
-            </td>
-          </tr>
-          <tr>
-            <td>slidingTimingFunction?</td>
-            <td>string</td>
-            <td>string</td>
-            <td>&quot;ease&quot;</td>
-            <td>
-              <Link
-                href={
-                  "https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function"
-                }
-              >
-                transition-timing-function
-              </Link>
-            </td>
-          </tr>
-          <tr>
-            <td>stopOnHover?</td>
-            <td>boolean</td>
-            <td>true, false</td>
-            <td>false</td>
-            <td>
-              stopping auto sliding with hover on slider (not relevant when the
-              &quot;controls&quot; option is set to &quot;on-hover&quot;)
-            </td>
-          </tr>
-          <tr>
-            <td>customPrevButtonFN?</td>
-            <td>function</td>
-            <td>explanations and an example below</td>
-            <td></td>
-            <td>
-              a function for rendering a custom button to move to the previous
-              slide
-            </td>
-          </tr>
-          <tr>
-            <td>customNextButtonFN?</td>
-            <td>function</td>
-            <td>explanations and an example below</td>
-            <td></td>
-            <td>
-              a function for rendering a custom button to move to the next slide
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h3>Controls Options</h3>
+      <TableProps />
+      <h3 id="controls-options">Controls Options</h3>
       <p>
-        controlsOptions will be applied only if the controls option is enabled.
-        If they are not specified, the buttons will have a standard design and
-        position inside the slider.
+        controlsOptions will be applied only if the
+        <b> controls </b>
+        option is enabled. If they are not specified, the buttons will have a
+        standard design and position inside the slider.
+      </p>
+      <TableOptions />
+
+      <h3 id="controls-options-example">Controls Options Example</h3>
+      <SyntaxHighlighter language="javascript" style={atomOneDark}>
+        {`import SimpleSlider from "@loginamnet/simple-slider";
+
+import MySlide1 from "./components";
+import MySlide2 from "./components";
+
+export default function MySliderComponent() {
+  return (
+    <div
+      style={{
+        width: "600px",
+        height: "400px",
+      }}
+    >
+      <SimpleSlider
+        controls="on-hover"
+        controlsOptions={{
+          notInfinite: true,
+          position: "center",
+          alinging: "end",
+          gap: 100,
+          buttonShape: "transparent",
+          buttonSize: "big",
+          arrowColor: "blue",
+          buttonMargin: "0 30px",
+        }}
+      >
+        <MySlide1 text="First Slide" />
+        <MySlide2>Second Slide</MySlide2>
+      </SimpleSlider>
+    </div>
+  );
+}`}
+      </SyntaxHighlighter>
+
+      <h3 id="custom-buttons">Custom Buttons</h3>
+      <p>
+        You can replace the standard slider buttons (or just one of them) with
+        custom ones!
+      </p>
+      <p>
+        {`To do this, you need to create a custom component of the button in a special way and transfer it to the slider as a function. For the "previous" and "next" buttons, these components will be slightly different.`}
+      </p>
+
+      <h3 id="custom-prev-button">Previous Button Component</h3>
+      <SyntaxHighlighter language="javascript" style={atomOneDark}>
+        {`export default function CustomPrevButton(
+  prevSlide: () => void,
+  sliding?: boolean,
+  atFirstSlide?: boolean
+) {
+  return (
+    <button
+      onClick={() => {
+        prevSlide();
+      }}
+      disabled={sliding || atFirstSlide}
+    >
+      Custom Previous Button!
+    </button>
+  );
+}`}
+      </SyntaxHighlighter>
+
+      <h3 id="custom-next-button">Next Button Component</h3>
+      <SyntaxHighlighter language="javascript" style={atomOneDark}>
+        {`export default function CustomNextButton(
+  nextSlide: () => void,
+  sliding?: boolean,
+  atFirstSlide?: boolean
+) {
+  return (
+    <button
+      onClick={() => {
+        nextSlide();
+      }}
+      disabled={sliding || atFirstSlide}
+    >
+      Custom Next Button!
+    </button>
+  );
+}`}
+      </SyntaxHighlighter>
+      <p>
+        For the correct behavior of the slider,
+        <b> it is important to use the </b>
+        <Link
+          href={
+            "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button"
+          }
+        >
+          button
+        </Link>
+        <b> tag! </b>
+        But its contents and styles depend entirely on your imagination.
+      </p>
+      <p>
+        The
+        <b> sliding </b>
+        property determines the behavior of the button during the slide movement
+        cycle.
+      </p>
+      <p>
+        The
+        <b> atFirstSlide </b>
+        and
+        <b> atLastSlide </b>
+        properties determine the behavior of the button when the first and last
+        slide are reached, respectively. These properties will only work if the
+        <b> notInfinite </b>
+        property in the
+        <b> controlsOptions </b>
+        object is set to
+        <b> true</b>.
+      </p>
+      <p>
+        In the above examples of custom buttons, all these properties are used
+        to disable the buttons, but you can apply them as you want.
+      </p>
+
+      <h3 id="custom-buttons-example">Slider With Custom Buttons Example</h3>
+      <SyntaxHighlighter language="javascript" style={atomOneDark}>
+        {`import SimpleSlider from "@loginamnet/simple-slider";
+
+import MySlide1 from "./components";
+import MySlide2 from "./components";
+import CustomPrevButton from "./components";
+import CustomNextButton from "./components";
+
+export default function MySliderComponent() {
+  return (
+    <div
+      style={{
+        width: "600px",
+        height: "400px",
+      }}
+    >
+      <SimpleSlider
+        controls="on-hover"
+        customPrevButtonFN={CustomPrevButton}
+        customNextButtonFN={CustomNextButton}
+      >
+        <MySlide1 text="First Slide" />
+        <MySlide2>Second Slide</MySlide2>
+      </SimpleSlider>
+    </div>
+  );
+}`}
+      </SyntaxHighlighter>
+
+      <h2 id="special-case">Special Case</h2>
+      <hr />
+      <p>
+        During normal operation of the slider outside the slide change cycle,
+        only the current slide remains visible - even if the size of the
+        component itself is smaller than the size of the slider.
+      </p>
+      <p>
+        However, with certain settings, it is possible to overlay one slide on
+        top of another to create a complete picture.
+      </p>
+      <p>
+        To achieve this effect, you need to set
+        <b> controls </b>
+        to
+        <b> true </b>
+        {`(not`}
+        <b> on-hover</b>
+        {`), the`}
+        <b> notInfinite </b>
+        property in the
+        <b> controlsOptions </b>
+        object is set to
+        <b> true </b>
+        and
+        <b> slidingType </b>
+        is set
+        <b> overlay </b>
+        {`(this value is set by default).`}
+      </p>
+      <SyntaxHighlighter language="javascript" style={atomOneDark}>
+        {`controls
+controlsOptions={{
+    notInfinite: true,
+}}`}
+      </SyntaxHighlighter>
+      <p>
+        If it is necessary that the slides be removed from the already laid out
+        stack - set the option
+        <b> startWithSlide </b>
+        {`equal to the number of slides (you may have to change`}
+        <b> slidingDirection </b>
+        {`option to the opposite too).`}
+      </p>
+      <SyntaxHighlighter language="javascript" style={atomOneDark}>
+        {`controls
+controlsOptions={{
+    notInfinite: true,
+}}
+{/* in this example, it is assumed that we have added five slides */}
+startWithSlide={5}`}
+      </SyntaxHighlighter>
+
+      <h2 id="plans">Plans</h2>
+      <hr />
+      <ul className={styles.plans}>
+        <li>{`Add a "dots" component that can be placed outside the slider`}</li>
+      </ul>
+
+      <h2 id="licence">Licence</h2>
+      <hr />
+      <Link
+        href={
+          "https://github.com/LoginamNet/react-simple-slider/blob/main/LICENCE"
+        }
+      >
+        MIT
+      </Link>
+      <p>
+        It can be used
+        <b> for free </b>
+        in any personal or commercial project 🎁
       </p>
     </div>
   );

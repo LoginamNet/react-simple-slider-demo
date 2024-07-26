@@ -7,7 +7,7 @@ type SliderProps = {
   gap?: number;
   buttonShape?: "square" | "circle" | "transparent";
   buttonSize?: "small" | "medium" | "big" | number;
-  butonMargin?: string | number;
+  buttonMargin?: string | number;
   arrowColor?: "white" | "black" | string;
   startWithSlide?: number;
   slidingType?: "sequence" | "underlay" | "overlay";

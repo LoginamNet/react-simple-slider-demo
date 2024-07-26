@@ -25,7 +25,7 @@ export default function Slider(props: ComponentProps) {
           gap: sliderProps.gap,
           buttonShape: sliderProps.buttonShape,
           buttonSize: sliderProps.buttonSize,
-          butonMargin: sliderProps.butonMargin,
+          buttonMargin: sliderProps.buttonMargin,
           arrowColor: sliderProps.arrowColor,
         }}
         startWithSlide={sliderProps.startWithSlide}

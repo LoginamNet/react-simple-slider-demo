@@ -201,7 +201,7 @@ export default function Props(props: ComponentProps) {
             <div className={styles.prop_values}>
               <StringNumberInput
                 name="butonMargin"
-                currentPropValue={sliderProps.butonMargin}
+                currentPropValue={sliderProps.buttonMargin}
                 updateSliderProp={updateSliderProp}
               />
             </div>

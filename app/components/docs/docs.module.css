@@ -1,26 +1,33 @@
 .docs {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
   padding: 30px;
   font-size: 18px;
   font-family: var(--font-roboto-сondensed);
 }
 
+.docs h2 {
+  padding-top: 20px;
+}
+
+.docs h3 {
+  padding-top: 15px;
+}
+
+.docs a {
+  color: var(--html-red);
+}
+
 .badges {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
-.features {
+.nav,
+.nav li ul,
+.features,
+.plans {
   padding-left: 30px;
-}
-
-.docs table {
-  border-collapse: collapse;
-}
-
-.docs th,
-.docs td {
-  padding: 10px;
 }
