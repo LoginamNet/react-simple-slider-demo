@@ -10,22 +10,17 @@ import { SliderProps } from "@/app/types/react-simple-slider-demo.types";
 
 type ComponentProps = {
   sliderProps: SliderProps;
+  currentPanel: "props" | "code" | "docs";
   updateSliderProp: (
     key: string,
     value: boolean | string | number | undefined
   ) => void;
+  switchCurrentPanel: (panel: "props" | "code" | "docs") => void;
 };
 
 export default function Panel(props: ComponentProps) {
-  const { sliderProps, updateSliderProp } = props;
-
-  const [currentPanel, setCurrentPanel] = useState<"props" | "code" | "docs">(
-    "props"
-  );
-
-  const switchCurrentPanel = (panel: "props" | "code" | "docs") => {
-    setCurrentPanel(panel);
-  };
+  const { sliderProps, currentPanel, updateSliderProp, switchCurrentPanel } =
+    props;
 
   return (
     <div className={styles.panel}>
@@ -33,19 +28,31 @@ export default function Panel(props: ComponentProps) {
 
       <div className={styles.buttons}>
         <button
-          className={`${styles.button} ${styles.button_props}`}
+          className={`
+            ${styles.button} 
+            ${styles.button_props}
+            ${currentPanel === "props" && styles.button_selected}
+            `}
           onClick={() => switchCurrentPanel("props")}
         >
           PROPS
         </button>
         <button
-          className={`${styles.button} ${styles.button_code}`}
+          className={`
+            ${styles.button} 
+            ${styles.button_code}
+            ${currentPanel === "code" && styles.button_selected}
+            `}
           onClick={() => switchCurrentPanel("code")}
         >
           CODE
         </button>
         <button
-          className={`${styles.button} ${styles.button_docs}`}
+          className={`
+            ${styles.button} 
+            ${styles.button_docs}
+            ${currentPanel === "docs" && styles.button_selected}
+            `}
           onClick={() => switchCurrentPanel("docs")}
         >
           DOCS

@@ -9,12 +9,17 @@
 }
 
 .button {
+  position: relative;
+  width: 90px;
   margin-bottom: -1px;
   padding: 10px 15px;
   font-family: var(--font-source-sans-3);
   font-weight: 600;
   font-size: 18px;
   border: none;
+  border-radius: 5px 5px 0 0;
+  box-shadow: none;
+  cursor: pointer;
 }
 
 .button_props {
@@ -29,6 +34,11 @@
   background-color: var(--panel-docs);
 }
 
+.button_selected {
+  z-index: 1;
+  box-shadow: 0px 4px 8px 10px rgba(0, 0, 0, 0.2);
+}
+
 .content {
   position: relative;
   width: 100%;
@@ -37,6 +47,7 @@
 
 .block {
   position: absolute;
+  z-index: 2;
   width: 0;
   border-radius: 15px;
   overflow: auto;

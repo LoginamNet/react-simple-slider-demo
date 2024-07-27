@@ -17,7 +17,7 @@
 .code_block {
   gap: 10px;
   width: 100%;
-  min-width: var(--code-min-width);
+  min-width: fit-content;
   padding: 0.5em;
   font-size: 16px;
   font-family: var(--font-azeret-mono);
@@ -25,6 +25,7 @@
 }
 
 .button {
+  width: 240px;
   padding: 10px 15px;
   font-family: var(--font-source-sans-3);
   font-weight: 600;
@@ -32,6 +33,7 @@
   border: none;
   border-radius: 5px;
 }
+
 /* ------------------- colors -------------------*/
 
 .red {
@@ -64,4 +66,12 @@
 
 .olive {
   color: var(--html-olive);
+}
+
+/* ------------------- media -------------------*/
+
+@media (max-width: 490px) {
+  .button {
+    width: 100%;
+  }
 }

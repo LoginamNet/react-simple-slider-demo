@@ -5,9 +5,9 @@ import { useState } from "react";
 import Slider from "./components/slider/slider";
 import Panel from "./components/panel/panel";
 
-import { SliderProps } from "./types/react-simple-slider-demo.types";
-
 import styles from "./page.module.css";
+
+import { SliderProps } from "./types/react-simple-slider-demo.types";
 
 export default function Home() {
   const [currentSliderProps, setCurrentSliderProps] = useState<SliderProps>({
@@ -24,6 +24,9 @@ export default function Home() {
     customPrevButtonFN: undefined,
     customNextButtonFN: undefined,
   });
+  const [currentPanel, setCurrentPanel] = useState<"props" | "code" | "docs">(
+    "code"
+  );
 
   const updateSliderProp = (
     key: string,
@@ -32,12 +35,21 @@ export default function Home() {
     setCurrentSliderProps({ ...currentSliderProps, [key]: value });
   };
 
+  const switchCurrentPanel = (panel: "props" | "code" | "docs") => {
+    setCurrentPanel(panel);
+  };
+
   return (
     <main className={styles.main}>
-      <Slider sliderProps={currentSliderProps} />
+      <Slider
+        sliderProps={currentSliderProps}
+        switchCurrentPanel={switchCurrentPanel}
+      />
       <Panel
         sliderProps={currentSliderProps}
+        currentPanel={currentPanel}
         updateSliderProp={updateSliderProp}
+        switchCurrentPanel={switchCurrentPanel}
       />
     </main>
   );

@@ -8,7 +8,10 @@ import styles from "./slider.module.css";
 
 import { SliderProps } from "@/app/types/react-simple-slider-demo.types";
 
-type ComponentProps = { sliderProps: SliderProps };
+type ComponentProps = {
+  sliderProps: SliderProps;
+  switchCurrentPanel: (panel: "props" | "code" | "docs") => void;
+};
 
 export default function Slider(props: ComponentProps) {
   const { sliderProps } = props;
