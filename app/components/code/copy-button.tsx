@@ -34,6 +34,7 @@ export default function CopyButton(props: ComponentProps) {
     <button
       className={`
           ${styles.button}
+          ${clicked && styles.button_copied}
           `}
       onClick={() => handleClick()}
     >

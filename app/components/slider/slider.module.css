@@ -1,4 +1,4 @@
 .slider {
   color: white;
-  height: 500px;
+  height: var(--slider-height);
 }

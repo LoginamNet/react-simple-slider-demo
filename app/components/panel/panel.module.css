@@ -1,7 +1,6 @@
 .panel {
   width: 100%;
-  height: fit-content;
-  color: white;
+  color: var(--text-white);
 }
 
 .buttons {
@@ -40,15 +39,13 @@
 }
 
 .content {
-  position: relative;
-  width: 100%;
-  height: fit-content;
+  display: flex;
 }
 
 .block {
-  position: absolute;
   z-index: 2;
   width: 0;
+  height: 0;
   border-radius: 15px;
   overflow: auto;
 }
@@ -57,6 +54,7 @@
 .block_code,
 .block_docs {
   width: 100%;
+  height: fit-content;
 }
 
 .block_props {

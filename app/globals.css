@@ -10,16 +10,22 @@
   --html-fuchsia: #da7eda;
   --html-olive: #a7a75f;
 
+  --text-white: #ffffff;
+  --text-black: #000000;
+
   --panel-code: #bdeee6;
   --panel-docs: #eea552;
-  --panel-props: #fccad2;
+  --panel-props: #c25f5f;
 
   --background-code: #282c34;
   --background-label: #2c2c2c;
+  --background-options: #363636;
 
-  /* ------------------- width -------------------*/
+  --button-copied: #009e3d;
 
-  --main-max-width: 1200px;
+  /* ------------------- height -------------------*/
+
+  --slider-height: 500px;
 }
 
 * {
@@ -43,6 +49,10 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+button {
+  cursor: pointer;
 }
 
 h1,

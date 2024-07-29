@@ -30,8 +30,17 @@
   font-family: var(--font-source-sans-3);
   font-weight: 600;
   font-size: 18px;
+  color: var(--text-black);
+  background-color: var(--panel-code);
   border: none;
   border-radius: 5px;
+}
+
+.button_copied {
+  color: var(--text-white);
+  background-color: var(--button-copied);
+  pointer-events: none;
+  cursor: default;
 }
 
 /* ------------------- colors -------------------*/

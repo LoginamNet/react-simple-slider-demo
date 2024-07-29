@@ -3,8 +3,6 @@
   flex-direction: column;
   gap: 20px;
   padding: 30px;
-  font-size: 18px;
-  font-family: var(--font-source-sans-3);
 }
 
 .docs h2 {

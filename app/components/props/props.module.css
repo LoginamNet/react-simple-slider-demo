@@ -1,21 +1,18 @@
-.props {
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  gap: 10px;
-  padding: 30px;
-  font-size: 16px;
-  font-family: var(--font-azeret-mono);
-}
-
+.props,
 .options {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   width: fit-content;
+  gap: 10px;
+}
+
+.props {
+  padding: 30px;
+}
+
+.options {
   padding: 20px;
-  background: rgb(54, 54, 54);
-  border: 1px solid rgb(177, 177, 177);
+  background: var(--background-options);
   border-radius: 5px;
 }
 
@@ -35,7 +32,7 @@
 }
 
 .prop_name {
-  width: 220px;
+  width: 190px;
 }
 
 .prop_values {
@@ -84,6 +81,6 @@
 }
 
 .label_selected {
-  background-color: red;
-  border: 1px solid red;
+  background-color: var(--panel-props);
+  background-color: var(--panel-props);
 }
