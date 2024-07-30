@@ -11,21 +11,20 @@ type ComponentProps = {
 export default function Property(props: ComponentProps) {
   const { name, value, defaultValue } = props;
 
-  return (
-    value &&
-    value !== defaultValue && (
-      <div>
-        {`        `}
-        <span className={styles.red}>{name}</span>
-        <span>=</span>
-        <span>{`{`}</span>
-        {typeof value === "string" ? (
-          <span className={styles.maroon}>{`"${value}"`}</span>
-        ) : (
-          <span className={styles.green}>{`${value}`}</span>
-        )}
-        <span>{`}`}</span>
-      </div>
-    )
+  return value && Number(value) > 0 && value !== defaultValue ? (
+    <div>
+      {`        `}
+      <span className={styles.red}>{name}</span>
+      <span>=</span>
+      <span>{`{`}</span>
+      {typeof value === "string" ? (
+        <span className={styles.maroon}>{`"${value}"`}</span>
+      ) : (
+        <span className={styles.green}>{`${value}`}</span>
+      )}
+      <span>{`}`}</span>
+    </div>
+  ) : (
+    ""
   );
 }

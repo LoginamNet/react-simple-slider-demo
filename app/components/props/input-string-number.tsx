@@ -11,26 +11,47 @@ type ComponentProps = {
 export default function StringNumberInput(props: ComponentProps) {
   const { name, currentPropValue, updateSliderProp } = props;
 
-  const [stringValue, setStringValue] = useState<string | undefined>();
-  const [numberValue, setNumberValue] = useState<string | undefined>();
+  const [stringValue, setStringValue] = useState<string>(
+    currentPropValue && typeof currentPropValue === "string"
+      ? currentPropValue
+      : ""
+  );
+  const [numberValue, setNumberValue] = useState<number | string>(
+    (currentPropValue && typeof currentPropValue === "number") ||
+      currentPropValue === 0
+      ? currentPropValue
+      : ""
+  );
 
   const handleStringValueChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setNumberValue(undefined);
+    setNumberValue("");
     setStringValue(event.target.value);
   };
 
   const handleNumberValueChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setStringValue(undefined);
-    setNumberValue(event.target.value);
+    setStringValue("");
+
+    const result = Number(event.target.value.replace(/\D/g, ""));
+    setNumberValue(result || result === 0 ? result : "");
   };
 
   useEffect(() => {
     updateSliderProp(
       name,
-      stringValue ? stringValue : numberValue ? Number(numberValue) : 30
+      stringValue
+        ? stringValue
+        : numberValue || numberValue === 0
+        ? numberValue
+        : 30
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stringValue, numberValue]);
+
+  useEffect(() => {
+    ((currentPropValue && typeof currentPropValue === "number") ||
+      currentPropValue === 0) &&
+      setNumberValue(currentPropValue);
+  }, [currentPropValue]);
 
   return (
     <div className={styles.input_container}>
@@ -41,7 +62,11 @@ export default function StringNumberInput(props: ComponentProps) {
             ${styles.input_string_short}`}
         type="text"
         placeholder="30px"
-        value={stringValue ? stringValue : ""}
+        value={
+          currentPropValue && typeof currentPropValue === "string"
+            ? stringValue
+            : ""
+        }
         onChange={(event) => handleStringValueChange(event)}
       />
       <input
@@ -50,8 +75,12 @@ export default function StringNumberInput(props: ComponentProps) {
             ${styles.input_number}`}
         type="text"
         placeholder="an integer"
-        pattern="/^[0-9]+$/"
-        value={numberValue ? numberValue : ""}
+        value={
+          (currentPropValue && typeof currentPropValue === "number") ||
+          currentPropValue === 0
+            ? numberValue
+            : ""
+        }
         onChange={(event) => handleNumberValueChange(event)}
       />
     </div>

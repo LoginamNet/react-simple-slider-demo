@@ -1,7 +1,9 @@
+import { ChangeEvent, useEffect, useState } from "react";
 import styles from "./props.module.css";
 
 type ComponentProps = {
   name: string;
+  currentPropValue: number | undefined;
   placeholder?: string;
   updateSliderProp: (
     key: string,
@@ -10,7 +12,20 @@ type ComponentProps = {
 };
 
 export default function NumberInput(props: ComponentProps) {
-  const { name, placeholder, updateSliderProp } = props;
+  const { name, currentPropValue, placeholder, updateSliderProp } = props;
+
+  const [value, setValue] = useState(currentPropValue ? currentPropValue : "");
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const result = event.target.value.replace(/\D/g, "");
+
+    setValue(Number(result));
+  };
+
+  useEffect(() => {
+    updateSliderProp(name, Number(value));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [value]);
 
   return (
     <div className={styles.input_container}>
@@ -20,8 +35,8 @@ export default function NumberInput(props: ComponentProps) {
           ${styles.input_number}`}
         type="text"
         placeholder={placeholder}
-        pattern="/^[0-9]+$/"
-        onChange={(event) => updateSliderProp(name, Number(event.target.value))}
+        value={value}
+        onChange={(event) => handleChange(event)}
       />
     </div>
   );

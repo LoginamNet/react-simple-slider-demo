@@ -38,7 +38,7 @@
 .prop_values {
   display: flex;
   gap: 2px;
-  border-radius: 5px;
+  border-radius: none;
   overflow: hidden;
 }
 
@@ -50,7 +50,7 @@
 .input {
   height: 100%;
   padding: 5px 10px;
-  border: none;
+  border: 1px solid var(--text-white);
   border-radius: 0;
   outline: none;
 }
@@ -81,6 +81,7 @@
 }
 
 .label_selected {
+  color: var(--text-black);
   background-color: var(--panel-props);
-  background-color: var(--panel-props);
+  border: 1px solid var(--panel-props);
 }

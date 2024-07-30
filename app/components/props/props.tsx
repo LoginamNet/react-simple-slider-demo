@@ -179,6 +179,7 @@ export default function Props(props: ComponentProps) {
             <div className={styles.prop_values}>
               <NumberInput
                 name="gap"
+                currentPropValue={sliderProps.gap}
                 placeholder="20"
                 updateSliderProp={updateSliderProp}
               />
@@ -263,6 +264,7 @@ export default function Props(props: ComponentProps) {
         <div className={styles.prop_values}>
           <NumberInput
             name="startWithSlide"
+            currentPropValue={sliderProps.startWithSlide}
             placeholder="1"
             updateSliderProp={updateSliderProp}
           />
@@ -354,6 +356,7 @@ export default function Props(props: ComponentProps) {
         <div className={styles.prop_values}>
           <NumberInput
             name="slidingDuration"
+            currentPropValue={sliderProps.slidingDuration}
             placeholder="2000"
             updateSliderProp={updateSliderProp}
           />
@@ -367,6 +370,7 @@ export default function Props(props: ComponentProps) {
         <div className={styles.prop_values}>
           <NumberInput
             name="slidingDelay"
+            currentPropValue={sliderProps.slidingDelay}
             placeholder="1000"
             updateSliderProp={updateSliderProp}
           />

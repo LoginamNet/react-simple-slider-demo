@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 import Slider from "./components/slider/slider";
 import Panel from "./components/panel/panel";
@@ -28,15 +28,31 @@ export default function Home() {
     "code"
   );
 
-  const updateSliderProp = (
-    key: string,
-    value: boolean | string | number | undefined
-  ) => {
-    setCurrentSliderProps({ ...currentSliderProps, [key]: value });
-  };
+  const updateSliderProp = useCallback(
+    (key: string, value: boolean | string | number | undefined) => {
+      setCurrentSliderProps({ ...currentSliderProps, [key]: value });
+    },
+    [currentSliderProps]
+  );
 
   const switchCurrentPanel = (panel: "props" | "code" | "docs") => {
     setCurrentPanel(panel);
+  };
+
+  const switchMobileProps = (mobile: boolean) => {
+    if (mobile) {
+      setCurrentSliderProps({
+        ...currentSliderProps,
+        buttonMargin: 0,
+        buttonShape: "transparent",
+      });
+    } else {
+      delete currentSliderProps["buttonMargin"];
+      setCurrentSliderProps({
+        ...currentSliderProps,
+        buttonShape: "square",
+      });
+    }
   };
 
   return (
@@ -44,6 +60,7 @@ export default function Home() {
       <Slider
         sliderProps={currentSliderProps}
         switchCurrentPanel={switchCurrentPanel}
+        switchMobileProps={switchMobileProps}
       />
       <Panel
         sliderProps={currentSliderProps}

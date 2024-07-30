@@ -12,7 +12,7 @@ export default function Option(props: ComponentProps) {
   const { name, value, defaultValue } = props;
 
   return (
-    value &&
+    (value || value === 0) &&
     value !== defaultValue && (
       <div>
         {`          `}
