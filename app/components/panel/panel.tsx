@@ -23,7 +23,7 @@ export default function Panel(props: ComponentProps) {
     props;
 
   return (
-    <div className={styles.panel}>
+    <div className={styles.panel} id="panel">
       {/* -------------------------------------- panel buttons -------------------------------------- */}
 
       <div className={styles.buttons}>

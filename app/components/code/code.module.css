@@ -33,7 +33,6 @@
   color: var(--text-black);
   background-color: var(--panel-code);
   border: none;
-  border-radius: 5px;
 }
 
 .button_copied {

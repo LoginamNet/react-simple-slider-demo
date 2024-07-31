@@ -45,7 +45,7 @@ export default function TableProps() {
           <tr>
             <td>startWithSlide?</td>
             <td>number</td>
-            <td>number</td>
+            <td>number (MIN: 1)</td>
             <td>1</td>
             <td>the number of the slide to start scrolling from</td>
           </tr>
@@ -71,14 +71,14 @@ export default function TableProps() {
           <tr>
             <td>slidingDuration?</td>
             <td>number</td>
-            <td>number</td>
+            <td>number (MIN: 1)</td>
             <td>2000</td>
             <td>the time of one slide movement cycle (ms)</td>
           </tr>
           <tr>
             <td>slidingDelay?</td>
             <td>number</td>
-            <td>number</td>
+            <td>number (MIN: 50)</td>
             <td>1000</td>
             <td>
               delay before the start of the next slide movement for auto sliding

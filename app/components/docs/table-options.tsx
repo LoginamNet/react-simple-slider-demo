@@ -60,7 +60,7 @@ export default function TableOptions() {
           <tr>
             <td>gap?</td>
             <td>number</td>
-            <td>number</td>
+            <td>number (MIN: 0)</td>
             <td>20</td>
             <td>the distance between the buttons (px)</td>
           </tr>
@@ -78,7 +78,7 @@ export default function TableOptions() {
             <td>string, number</td>
             <td>
               &quot;small&quot;c, &quot;cmedium&quot;c, &quot;cbig&quot;c,
-              number
+              number (MIN: 1)
             </td>
             <td>&quot;cmedium&quot</td>
             <td>the size of the standard slider buttons (px)</td>
@@ -86,7 +86,7 @@ export default function TableOptions() {
           <tr>
             <td>buttonMargin?</td>
             <td>string, number</td>
-            <td>string</td>
+            <td>string, number (MIN: 0)</td>
             <td>30</td>
             <td>
               the margin of the standard slider buttons (px). using a string,

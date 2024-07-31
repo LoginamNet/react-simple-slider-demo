@@ -59,6 +59,7 @@ export default function Home() {
     <main className={styles.main}>
       <Slider
         sliderProps={currentSliderProps}
+        currentPanel={currentPanel}
         switchCurrentPanel={switchCurrentPanel}
         switchMobileProps={switchMobileProps}
       />

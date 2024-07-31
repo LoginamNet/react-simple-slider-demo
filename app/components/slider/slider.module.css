@@ -20,12 +20,40 @@
   color: var(--text-black);
 }
 
-.slide_1 {
+.slide_1,
+.slide_4 {
   background-color: var(--background-slide-1);
 }
 
 .slide_2 {
   background-color: var(--background-slide-2);
+}
+
+.slide_3 {
+  background-color: var(--background-slide-3);
+}
+
+.button {
+  width: 240px;
+  padding: 10px 15px;
+  font-family: var(--font-source-sans-3);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--text-black);
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--panel-code);
+  border: none;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 3rem;
+  text-transform: uppercase;
+  background-color: var(--text-white);
 }
 
 .info {
