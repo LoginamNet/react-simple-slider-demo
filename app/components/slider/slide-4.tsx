@@ -17,9 +17,9 @@ export default function Slide4() {
       <div style={{ width: "100%", height: "150px" }}>
         <SimpleSlider
           slidingType="sequence"
-          slidingDirection="top"
-          slidingDuration={700}
-          slidingDelay={1000}
+          slidingDirection="bottom"
+          slidingDuration={500}
+          slidingDelay={300}
         >
           <span className={styles.text}>{`I'm just`}</span>
           <span className={styles.text}>{`sliding`}</span>

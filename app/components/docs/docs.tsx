@@ -284,7 +284,9 @@ export default function MySliderComponent() {
 ) {
   return (
     <button
-      onClick={() => {
+      onClick={(event) => {
+        event.stopPropagation();
+
         prevSlide();
       }}
       disabled={sliding || atFirstSlide}
@@ -312,7 +314,9 @@ export default function MySliderComponent() {
 ) {
   return (
     <button
-      onClick={() => {
+      onClick={(event) => {
+        event.stopPropagation();
+
         nextSlide();
       }}
       disabled={sliding || atFirstSlide}

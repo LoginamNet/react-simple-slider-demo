@@ -34,6 +34,10 @@ export default function Code(props: ComponentProps) {
             >{` "@loginamnet/simple-slider"`}</span>
             <span>;</span>
           </div>
+          <br />
+          <span
+            className={styles.green}
+          >{`// ---------- import your slide components here ----------`}</span>
           {(sliderProps.customPrevButtonFN ||
             sliderProps.customNextButtonFN) && <br />}
           {sliderProps.customPrevButtonFN && (
@@ -252,6 +256,15 @@ export default function Code(props: ComponentProps) {
             {`      `}
             <span>{`>`}</span>
           </div>
+          {[...Array(5)].map((e, index) => (
+            <div key={index}>
+              {`        `}
+              <span>{`<`}</span>
+              <span className={styles.teal}>{`Slide${index + 1}`}</span>
+              <span>{` /`}</span>
+              <span>{`>`}</span>
+            </div>
+          ))}
           <div>
             {`      `}
             <span>{`<`}</span>

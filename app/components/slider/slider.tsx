@@ -8,12 +8,12 @@ import CustomNextButton from "../buttons/custom-next-button";
 
 import Slide1 from "./slide-1";
 import Slide2 from "./slide-2";
+import Slide3 from "./slide-3";
+import Slide4 from "./slide-4";
 
 import styles from "./slider.module.css";
 
 import { SliderProps } from "@/app/types/react-simple-slider-demo.types";
-import Slide3 from "./slide-3";
-import Slide4 from "./slide-4";
 
 type ComponentProps = {
   sliderProps: SliderProps;
@@ -84,7 +84,7 @@ export default function Slider(props: ComponentProps) {
             currentPanel={currentPanel}
             switchCurrentPanel={switchCurrentPanel}
           />
-          {/* <Slide4 /> */}
+          <Slide4 />
         </SimpleSlider>
       </div>
       <div className={styles.info}>
