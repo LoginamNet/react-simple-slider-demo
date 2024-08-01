@@ -256,7 +256,7 @@ export default function Code(props: ComponentProps) {
             {`      `}
             <span>{`>`}</span>
           </div>
-          {[...Array(5)].map((e, index) => (
+          {[...Array(7)].map((e, index) => (
             <div key={index}>
               {`        `}
               <span>{`<`}</span>

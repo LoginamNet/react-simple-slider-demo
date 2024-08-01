@@ -16,7 +16,7 @@
   justify-content: center;
   gap: 20px;
   height: 100%;
-  padding: 30px 250px;
+  padding: 30px 300px;
   color: var(--text-black);
 }
 
@@ -43,7 +43,7 @@
 }
 
 .button {
-  width: 240px;
+  max-width: 240px;
   padding: 10px 15px;
   font-family: var(--font-source-sans-3);
   font-weight: 600;
@@ -66,6 +66,7 @@
 
 .social {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -104,6 +105,24 @@
   }
 }
 
+@media (max-width: 1190px) {
+  .slide {
+    padding: 30px 220px;
+  }
+}
+
+@media (max-width: 960px) {
+  .slide {
+    padding: 30px 150px;
+  }
+}
+
+@media (max-width: 760px) {
+  .slide {
+    padding: 30px 120px;
+  }
+}
+
 @media (max-width: 690px) {
   .slide {
     padding: 30px 70px;
@@ -111,6 +130,18 @@
 }
 
 @media (max-width: 400px) {
+  .slide h1 {
+    font-size: 30px;
+  }
+
+  .text {
+    font-size: 2rem;
+  }
+
+  .social {
+    gap: 10px;
+  }
+
   .info p {
     width: 100%;
   }

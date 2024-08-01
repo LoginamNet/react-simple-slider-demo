@@ -12,7 +12,7 @@ export default function Slide7() {
   ${styles.slide_7}
   `}
     >
-      <h1>Communication!</h1>
+      <h1>Contacts!</h1>
       <p>{`Questions, suggestions, criticism? The author is ready to answer everything`}</p>
       <div className={styles.social}>
         <Link

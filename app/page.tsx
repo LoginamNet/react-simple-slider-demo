@@ -16,10 +16,11 @@ export default function Home() {
     showOnHover: undefined,
     position: "edge",
     alinging: "center",
-    buttonShape: "square",
+    buttonShape: "transparent",
     buttonSize: "medium",
-    slidingType: "overlay",
+    slidingType: "sequence",
     slidingDirection: "left",
+    slidingDuration: 1000,
     stopOnHover: false,
     customPrevButtonFN: undefined,
     customNextButtonFN: undefined,
@@ -44,13 +45,11 @@ export default function Home() {
       setCurrentSliderProps({
         ...currentSliderProps,
         buttonMargin: 0,
-        buttonShape: "transparent",
       });
     } else {
-      delete currentSliderProps["buttonMargin"];
       setCurrentSliderProps({
         ...currentSliderProps,
-        buttonShape: "square",
+        buttonMargin: 30,
       });
     }
   };
