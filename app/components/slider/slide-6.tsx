@@ -8,24 +8,27 @@ type ComponentProps = {
   switchCurrentPanel: (panel: "props" | "code" | "docs") => void;
 };
 
-export default function Slide3(props: ComponentProps) {
+export default function Slide6(props: ComponentProps) {
   const { switchCurrentPanel } = props;
 
   return (
     <div
       className={`
   ${styles.slide}
-  ${styles.slide_3}
+  ${styles.slide_6}
   `}
     >
-      <h1>Customize!</h1>
-      <p>Change the properties of the slider to suit your needs</p>
+      <h1>Any questions?</h1>
+      <p>
+        Check out the documentation and learn more about the different slider
+        features
+      </p>
       <Link
         className={styles.button}
         href={"#panel"}
-        onClick={() => switchCurrentPanel("props")}
+        onClick={() => switchCurrentPanel("docs")}
       >
-        To PROPS!
+        To DOCS!
       </Link>
     </div>
   );

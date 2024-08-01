@@ -30,14 +30,15 @@
   font-family: var(--font-source-sans-3);
   font-weight: 600;
   font-size: 18px;
-  color: var(--text-black);
-  background-color: var(--panel-code);
-  border: none;
+  color: var(--text-white);
+  background-color: transparent;
+  border: 3px solid var(--text-white);
 }
 
 .button_copied {
   color: var(--text-white);
   background-color: var(--button-copied);
+  border: 3px solid var(--button-copied);
   pointer-events: none;
   cursor: default;
 }
@@ -77,6 +78,13 @@
 }
 
 /* ------------------- media -------------------*/
+
+@media (pointer: fine) {
+  .button:hover {
+    color: var(--text-black);
+    background-color: var(--text-white);
+  }
+}
 
 @media (max-width: 490px) {
   .button {

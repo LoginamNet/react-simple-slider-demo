@@ -10,6 +10,9 @@ import Slide1 from "./slide-1";
 import Slide2 from "./slide-2";
 import Slide3 from "./slide-3";
 import Slide4 from "./slide-4";
+import Slide5 from "./slide-5";
+import Slide6 from "./slide-6";
+import Slide7 from "./slide-7";
 
 import styles from "./slider.module.css";
 
@@ -17,14 +20,12 @@ import { SliderProps } from "@/app/types/react-simple-slider-demo.types";
 
 type ComponentProps = {
   sliderProps: SliderProps;
-  currentPanel: "props" | "code" | "docs";
   switchCurrentPanel: (panel: "props" | "code" | "docs") => void;
   switchMobileProps: (mobile: boolean) => void;
 };
 
 export default function Slider(props: ComponentProps) {
-  const { sliderProps, currentPanel, switchCurrentPanel, switchMobileProps } =
-    props;
+  const { sliderProps, switchCurrentPanel, switchMobileProps } = props;
 
   const sliderRef = useRef<HTMLDivElement>(null);
 
@@ -80,11 +81,11 @@ export default function Slider(props: ComponentProps) {
         >
           <Slide1 />
           <Slide2 />
-          <Slide3
-            currentPanel={currentPanel}
-            switchCurrentPanel={switchCurrentPanel}
-          />
+          <Slide3 switchCurrentPanel={switchCurrentPanel} />
           <Slide4 />
+          <Slide5 switchCurrentPanel={switchCurrentPanel} />
+          <Slide6 switchCurrentPanel={switchCurrentPanel} />
+          <Slide7 />
         </SimpleSlider>
       </div>
       <div className={styles.info}>

@@ -14,7 +14,12 @@ export default function Slide4() {
     >
       <h1>He-he-he</h1>
       <p>{`Don't pay attention, just a slider in the slider`}</p>
-      <div style={{ width: "100%", height: "150px" }}>
+      <div
+        style={{
+          width: "100%",
+          height: "150px",
+        }}
+      >
         <SimpleSlider
           slidingType="sequence"
           slidingDirection="bottom"

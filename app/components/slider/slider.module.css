@@ -25,12 +25,21 @@
   background-color: var(--background-slide-1);
 }
 
-.slide_2 {
+.slide_2,
+.slide_6 {
   background-color: var(--background-slide-2);
 }
 
 .slide_3 {
   background-color: var(--background-slide-3);
+}
+
+.slide_5 {
+  background-color: var(--background-slide-5);
+}
+
+.slide_7 {
+  background-color: var(--background-slide-7);
 }
 
 .button {
@@ -42,8 +51,7 @@
   color: var(--text-black);
   text-align: center;
   text-decoration: none;
-  background-color: var(--panel-code);
-  border: none;
+  border: 3px solid var(--text-black);
 }
 
 .text {
@@ -56,6 +64,28 @@
   background-color: var(--text-white);
 }
 
+.social {
+  display: flex;
+  gap: 20px;
+}
+
+.button_link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  border: 3px solid var(--text-black);
+}
+
+.button_link:hover {
+  background-color: var(--text-black);
+}
+
+.button_link:hover svg path {
+  fill: var(--text-white);
+}
+
 .info {
   display: flex;
   flex-wrap: wrap;
@@ -66,6 +96,13 @@
 }
 
 /* ------------------- media -------------------*/
+
+@media (pointer: fine) {
+  .button:hover {
+    color: var(--text-white);
+    background-color: var(--text-black);
+  }
+}
 
 @media (max-width: 690px) {
   .slide {
