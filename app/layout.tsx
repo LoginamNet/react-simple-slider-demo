@@ -27,11 +27,11 @@ const azeretMono = Azeret_Mono({
 export const metadata: Metadata = {
   title: "Simple Slider DEMO",
   description:
-    "A DEMO for simple slider on React with multiple scrolling modes and the ability to add custom buttons!",
+    "A DEMO for simple slider on React with multiple scrolling modes and the ability to add custom buttons! Check out the documentation and learn more about the different slider features",
   openGraph: {
     title: "Simple Slider DEMO",
     description:
-      "A DEMO for simple slider on React with multiple scrolling modes and the ability to add custom buttons!",
+      "A DEMO for simple slider on React with multiple scrolling modes and the ability to add custom buttons! Check out the documentation and learn more about the different slider features",
     url: "",
     siteName: "Simple Slider DEMO",
     type: "website",
