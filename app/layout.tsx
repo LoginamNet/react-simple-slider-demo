@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Simple Slider DEMO",
     description:
       "A DEMO for simple slider on React with multiple scrolling modes and the ability to add custom buttons! Check out the documentation and learn more about the different slider features",
-    url: "",
+    url: "https://simple-slider-demo.netlify.app/",
     siteName: "Simple Slider DEMO",
     type: "website",
     images: [
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
         secureUrl: "https://i.postimg.cc/MHyfbF1S/Simple-Slider-DEMO.webp",
         width: 1200,
         height: 630,
-        alt: "Превью для сайта https:",
+        alt: "Превью для сайта https://simple-slider-demo.netlify.app/",
       },
     ],
   },
