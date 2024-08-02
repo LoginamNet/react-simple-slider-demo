@@ -20,7 +20,7 @@ export default function Home() {
     buttonSize: "medium",
     slidingType: "sequence",
     slidingDirection: "left",
-    slidingDuration: 1000,
+    // slidingDuration: 1000,
     stopOnHover: false,
     customPrevButtonFN: undefined,
     customNextButtonFN: undefined,

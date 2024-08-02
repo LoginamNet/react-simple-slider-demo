@@ -175,7 +175,9 @@ export default function Props(props: ComponentProps) {
           {/* -------------------------------------- gap -------------------------------------- */}
 
           <div className={styles.prop}>
-            <span className={styles.prop_name}>gap:</span>
+            <span className={styles.prop_name}>
+              gap <span className={styles.prop_min}>(MIN: 0)</span>:
+            </span>
             <div className={styles.prop_values}>
               <NumberInput
                 name="gap"
@@ -218,7 +220,9 @@ export default function Props(props: ComponentProps) {
           {/* -------------------------------------- buttonSize -------------------------------------- */}
 
           <div className={styles.prop}>
-            <span className={styles.prop_name}>buttonSize:</span>
+            <span className={styles.prop_name}>
+              buttonSize <span className={styles.prop_min}>(MIN: 1)</span>:
+            </span>
             <div className={styles.prop_values}>
               <RadioNumberInput
                 name="buttonSize"
@@ -232,7 +236,9 @@ export default function Props(props: ComponentProps) {
           {/* -------------------------------------- buttonMargin -------------------------------------- */}
 
           <div className={styles.prop}>
-            <span className={styles.prop_name}>buttonMargin:</span>
+            <span className={styles.prop_name}>
+              buttonMargin <span className={styles.prop_min}>(MIN: 0)</span>:
+            </span>
             <div className={styles.prop_values}>
               <StringNumberInput
                 name="buttonMargin"
@@ -260,7 +266,9 @@ export default function Props(props: ComponentProps) {
       {/* -------------------------------------- startWithSlide -------------------------------------- */}
 
       <div className={styles.prop}>
-        <span className={styles.prop_name}>startWithSlide:</span>
+        <span className={styles.prop_name}>
+          startWithSlide <span className={styles.prop_min}>(MIN: 1)</span>:
+        </span>
         <div className={styles.prop_values}>
           <NumberInput
             name="startWithSlide"
@@ -352,7 +360,9 @@ export default function Props(props: ComponentProps) {
       {/* -------------------------------------- slidingDuration -------------------------------------- */}
 
       <div className={styles.prop}>
-        <span className={styles.prop_name}>slidingDuration:</span>
+        <span className={styles.prop_name}>
+          slidingDuration <span className={styles.prop_min}>(MIN: 1)</span>:
+        </span>
         <div className={styles.prop_values}>
           <NumberInput
             name="slidingDuration"
@@ -366,7 +376,9 @@ export default function Props(props: ComponentProps) {
       {/* -------------------------------------- slidingDelay -------------------------------------- */}
 
       <div className={styles.prop}>
-        <span className={styles.prop_name}>slidingDelay:</span>
+        <span className={styles.prop_name}>
+          slidingDelay <span className={styles.prop_min}>(MIN: 50)</span>:
+        </span>
         <div className={styles.prop_values}>
           <NumberInput
             name="slidingDelay"

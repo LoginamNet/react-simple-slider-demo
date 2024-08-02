@@ -35,6 +35,10 @@
   width: 190px;
 }
 
+.prop_min {
+  opacity: 0.5;
+}
+
 .prop_values {
   display: flex;
   gap: 2px;

@@ -22,7 +22,6 @@ export default function Code(props: ComponentProps) {
 
   return (
     <div className={styles.code}>
-      {" "}
       <div className={styles.container}>
         <pre ref={preRef} className={styles.code_block}>
           <div>
@@ -35,9 +34,15 @@ export default function Code(props: ComponentProps) {
             <span>;</span>
           </div>
           <br />
+
+          {/* -------------------------------------- import slides comment -------------------------------------- */}
+
           <span
             className={styles.green}
           >{`// ---------- import your slide components here ----------`}</span>
+
+          {/* -------------------------------------- import custom buttons -------------------------------------- */}
+
           {(sliderProps.customPrevButtonFN ||
             sliderProps.customNextButtonFN) && <br />}
           {sliderProps.customPrevButtonFN && (
@@ -63,6 +68,9 @@ export default function Code(props: ComponentProps) {
             </div>
           )}
           <br />
+
+          {/* -------------------------------------- slider component export -------------------------------------- */}
+
           <div>
             <span className={styles.fuchsia}>export</span>
             <span className={styles.fuchsia}>{` default`}</span>
@@ -94,13 +102,44 @@ export default function Code(props: ComponentProps) {
             <span>{`}>`}</span>
           </div>
 
-          {/* -------------------------------------- controls -------------------------------------- */}
+          {/* -------------------------------------- simple slider -------------------------------------- */}
 
           <div>
             {`      `}
             <span>{`<`}</span>
             <span className={styles.teal}>SimpleSlider</span>
+            {!sliderProps.controls &&
+              !sliderProps.startWithSlide &&
+              sliderProps.slidingType === "overlay" &&
+              sliderProps.slidingDirection === "left" &&
+              (!sliderProps.slidingTimingFunction ||
+                sliderProps.slidingTimingFunction === "ease") &&
+              (!sliderProps.slidingDuration ||
+                sliderProps.slidingDuration === 2000) &&
+              (!sliderProps.slidingDelay ||
+                sliderProps.slidingDelay === 1000 ||
+                sliderProps.slidingDelay < 50) &&
+              !sliderProps.stopOnHover &&
+              !sliderProps.customPrevButtonFN &&
+              !sliderProps.customNextButtonFN && <span>{` /`}</span>}
+            {!sliderProps.controls &&
+              !sliderProps.startWithSlide &&
+              sliderProps.slidingType === "overlay" &&
+              sliderProps.slidingDirection === "left" &&
+              (!sliderProps.slidingTimingFunction ||
+                sliderProps.slidingTimingFunction === "ease") &&
+              (!sliderProps.slidingDuration ||
+                sliderProps.slidingDuration === 2000) &&
+              (!sliderProps.slidingDelay ||
+                sliderProps.slidingDelay === 1000 ||
+                sliderProps.slidingDelay < 50) &&
+              !sliderProps.stopOnHover &&
+              !sliderProps.customPrevButtonFN &&
+              !sliderProps.customNextButtonFN && <span>{`>`}</span>}
           </div>
+
+          {/* -------------------------------------- controls -------------------------------------- */}
+
           {sliderProps.controls && sliderProps.controls !== "on-hover" && (
             <div>
               {`        `}
@@ -120,73 +159,101 @@ export default function Code(props: ComponentProps) {
 
           {/* -------------------------------------- controlsOptions -------------------------------------- */}
 
-          {(sliderProps.notInfinite ||
-            sliderProps.showOnHover ||
-            (sliderProps.position && sliderProps.position !== "edge") ||
-            (sliderProps.alinging && sliderProps.alinging !== "center") ||
-            (sliderProps.gap && sliderProps.gap !== 20) ||
-            (sliderProps.buttonShape && sliderProps.buttonShape !== "square") ||
-            (sliderProps.buttonSize && sliderProps.buttonSize !== "medium") ||
-            (sliderProps.buttonMargin && sliderProps.buttonMargin !== 30) ||
-            (sliderProps.arrowColor &&
-              sliderProps.arrowColor !== "#000000")) && (
-            <div>
-              {`        `}
-              <span className={styles.red}>controlsOptions</span>
-              <span>=</span>
-              <span>{`{`}</span>
-              <span className={styles.blue}>{`{`}</span>
-            </div>
+          {sliderProps.controls &&
+            (sliderProps.notInfinite ||
+              sliderProps.showOnHover ||
+              (sliderProps.position && sliderProps.position !== "edge") ||
+              (sliderProps.alinging && sliderProps.alinging !== "center") ||
+              (sliderProps.gap && sliderProps.gap !== 20) ||
+              (sliderProps.buttonShape &&
+                sliderProps.buttonShape !== "square") ||
+              (sliderProps.buttonSize && sliderProps.buttonSize !== "medium") ||
+              (sliderProps.buttonMargin && sliderProps.buttonMargin !== 30) ||
+              (sliderProps.arrowColor &&
+                sliderProps.arrowColor !== "#000000")) && (
+              <div>
+                {`        `}
+                <span className={styles.red}>controlsOptions</span>
+                <span>=</span>
+                <span>{`{`}</span>
+                <span className={styles.blue}>{`{`}</span>
+              </div>
+            )}
+          {sliderProps.controls && (
+            <OptionBoolean
+              name={"notInfinite"}
+              value={sliderProps.notInfinite}
+            />
           )}
-          <OptionBoolean name={"notInfinite"} value={sliderProps.notInfinite} />
-          <OptionBoolean name={"showOnHover"} value={sliderProps.showOnHover} />
-          <Option
-            name={"position"}
-            value={sliderProps.position}
-            defaultValue={"edge"}
-          />
-          <Option
-            name={"alinging"}
-            value={sliderProps.alinging}
-            defaultValue={"center"}
-          />
-          <Option name={"gap"} value={sliderProps.gap} defaultValue={20} />
-          <Option
-            name={"buttonShape"}
-            value={sliderProps.buttonShape}
-            defaultValue={"square"}
-          />
-          <Option
-            name={"buttonSize"}
-            value={sliderProps.buttonSize}
-            defaultValue={"medium"}
-          />
-          <Option
-            name={"buttonMargin"}
-            value={sliderProps.buttonMargin}
-            defaultValue={30}
-          />
-          <Option
-            name={"arrowColor"}
-            value={sliderProps.arrowColor}
-            defaultValue={"#000000"}
-          />
-          {(sliderProps.notInfinite ||
-            sliderProps.showOnHover ||
-            (sliderProps.position && sliderProps.position !== "edge") ||
-            (sliderProps.alinging && sliderProps.alinging !== "center") ||
-            (sliderProps.gap && sliderProps.gap !== 20) ||
-            (sliderProps.buttonShape && sliderProps.buttonShape !== "square") ||
-            (sliderProps.buttonSize && sliderProps.buttonSize !== "medium") ||
-            (sliderProps.buttonMargin && sliderProps.buttonMargin !== 30) ||
-            (sliderProps.arrowColor &&
-              sliderProps.arrowColor !== "#000000")) && (
-            <div>
-              {`        `}
-              <span className={styles.blue}>{`}`}</span>
-              <span>{`}`}</span>
-            </div>
+          {sliderProps.controls && (
+            <OptionBoolean
+              name={"showOnHover"}
+              value={sliderProps.showOnHover}
+            />
           )}
+          {sliderProps.controls && (
+            <Option
+              name={"position"}
+              value={sliderProps.position}
+              defaultValue={"edge"}
+            />
+          )}
+          {sliderProps.controls && (
+            <Option
+              name={"alinging"}
+              value={sliderProps.alinging}
+              defaultValue={"center"}
+            />
+          )}
+          {sliderProps.controls && (
+            <Option name={"gap"} value={sliderProps.gap} defaultValue={20} />
+          )}
+          {sliderProps.controls && (
+            <Option
+              name={"buttonShape"}
+              value={sliderProps.buttonShape}
+              defaultValue={"square"}
+            />
+          )}
+          {sliderProps.controls && (
+            <Option
+              name={"buttonSize"}
+              value={sliderProps.buttonSize}
+              defaultValue={"medium"}
+            />
+          )}
+          {sliderProps.controls && (
+            <Option
+              name={"buttonMargin"}
+              value={sliderProps.buttonMargin}
+              defaultValue={30}
+            />
+          )}
+          {sliderProps.controls && (
+            <Option
+              name={"arrowColor"}
+              value={sliderProps.arrowColor}
+              defaultValue={"#000000"}
+            />
+          )}
+          {sliderProps.controls &&
+            (sliderProps.notInfinite ||
+              sliderProps.showOnHover ||
+              (sliderProps.position && sliderProps.position !== "edge") ||
+              (sliderProps.alinging && sliderProps.alinging !== "center") ||
+              (sliderProps.gap && sliderProps.gap !== 20) ||
+              (sliderProps.buttonShape &&
+                sliderProps.buttonShape !== "square") ||
+              (sliderProps.buttonSize && sliderProps.buttonSize !== "medium") ||
+              (sliderProps.buttonMargin && sliderProps.buttonMargin !== 30) ||
+              (sliderProps.arrowColor &&
+                sliderProps.arrowColor !== "#000000")) && (
+              <div>
+                {`        `}
+                <span className={styles.blue}>{`}`}</span>
+                <span>{`}`}</span>
+              </div>
+            )}
           <Property
             name={"startWithSlide"}
             value={sliderProps.startWithSlide}
@@ -255,13 +322,37 @@ export default function Code(props: ComponentProps) {
               <span>{`}`}</span>
             </div>
           )}
+          {(sliderProps.controls ||
+            sliderProps.startWithSlide ||
+            sliderProps.slidingType !== "overlay" ||
+            sliderProps.slidingDirection !== "left" ||
+            (sliderProps.slidingTimingFunction &&
+              sliderProps.slidingTimingFunction !== "ease") ||
+            (sliderProps.slidingDuration &&
+              sliderProps.slidingDuration !== 2000) ||
+            (sliderProps.slidingDelay &&
+              sliderProps.slidingDelay !== 1000 &&
+              sliderProps.slidingDelay >= 50) ||
+            sliderProps.stopOnHover ||
+            sliderProps.customPrevButtonFN ||
+            sliderProps.customNextButtonFN) && (
+            <div>
+              {`      `}
+              <span>{`>`}</span>
+            </div>
+          )}
+
+          {/* -------------------------------------- slides comment -------------------------------------- */}
+
           <div>
-            {`      `}
-            <span>{`>`}</span>
+            {`        `}
+            <span
+              className={styles.green}
+            >{`{/* place the imported slides or create new ones here */}`}</span>
           </div>
-          <span
-            className={styles.green}
-          >{`// ---------- import your slide components here ----------`}</span>
+
+          {/* -------------------------------------- slides -------------------------------------- */}
+
           {[...Array(7)].map((e, index) => (
             <div key={index}>
               {`        `}
@@ -271,6 +362,9 @@ export default function Code(props: ComponentProps) {
               <span>{`>`}</span>
             </div>
           ))}
+
+          {/* -------------------------------------- simple slider closure -------------------------------------- */}
+
           <div>
             {`      `}
             <span>{`<`}</span>

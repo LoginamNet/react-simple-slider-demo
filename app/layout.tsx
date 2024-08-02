@@ -28,6 +28,36 @@ export const metadata: Metadata = {
   title: "Simple Slider DEMO",
   description:
     "A DEMO for simple slider on React with multiple scrolling modes and the ability to add custom buttons!",
+  openGraph: {
+    title: "Simple Slider DEMO",
+    description:
+      "A DEMO for simple slider on React with multiple scrolling modes and the ability to add custom buttons!",
+    url: "",
+    siteName: "Simple Slider DEMO",
+    type: "website",
+    images: [
+      {
+        url: "https://i.postimg.cc/MHyfbF1S/Simple-Slider-DEMO.webp",
+        secureUrl: "https://i.postimg.cc/MHyfbF1S/Simple-Slider-DEMO.webp",
+        width: 1200,
+        height: 630,
+        alt: "Превью для сайта https:",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({

@@ -10,7 +10,18 @@ export default function Slide1() {
   ${styles.slide_1}
   `}
     >
-      <h1>Oh, hello!</h1>
+      <h1>
+        Oh,
+        <span
+          style={{
+            color: "var(--text-white)",
+            backgroundColor: "var(--text-black)",
+            padding: "0 1rem",
+          }}
+        >
+          HELLO!
+        </span>
+      </h1>
       <p>Just sliding here...</p>
       <p>{`I think it's worth checking out the other slides to learn more!`}</p>
     </div>
