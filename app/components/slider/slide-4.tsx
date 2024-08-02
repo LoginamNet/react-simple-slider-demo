@@ -17,7 +17,7 @@ export default function Slide4() {
       <div
         style={{
           width: "100%",
-          height: "150px",
+          height: "100px",
         }}
       >
         <SimpleSlider

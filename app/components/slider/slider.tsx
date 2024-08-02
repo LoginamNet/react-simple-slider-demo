@@ -36,15 +36,6 @@ export default function Slider(props: ComponentProps) {
   }, [switchMobileProps]);
 
   useEffect(() => {
-    const handleResize = () => {
-      checkMainWidth();
-    };
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, [checkMainWidth]);
-
-  useEffect(() => {
     checkMainWidth();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sliderRef.current?.offsetWidth]);

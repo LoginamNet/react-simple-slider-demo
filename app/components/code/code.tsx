@@ -191,6 +191,7 @@ export default function Code(props: ComponentProps) {
             name={"startWithSlide"}
             value={sliderProps.startWithSlide}
             defaultValue={1}
+            minValue={1}
           />
           <Property
             name={"slidingType"}
@@ -206,11 +207,13 @@ export default function Code(props: ComponentProps) {
             name={"slidingDuration"}
             value={sliderProps.slidingDuration}
             defaultValue={2000}
+            minValue={1}
           />
           <Property
             name={"slidingDelay"}
             value={sliderProps.slidingDelay}
             defaultValue={1000}
+            minValue={50}
           />
           <Property
             name={"slidingTimingFunction"}
@@ -256,6 +259,9 @@ export default function Code(props: ComponentProps) {
             {`      `}
             <span>{`>`}</span>
           </div>
+          <span
+            className={styles.green}
+          >{`// ---------- import your slide components here ----------`}</span>
           {[...Array(7)].map((e, index) => (
             <div key={index}>
               {`        `}

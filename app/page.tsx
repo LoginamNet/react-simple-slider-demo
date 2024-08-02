@@ -41,17 +41,11 @@ export default function Home() {
   };
 
   const switchMobileProps = (mobile: boolean) => {
-    if (mobile) {
+    mobile &&
       setCurrentSliderProps({
         ...currentSliderProps,
         buttonMargin: 0,
       });
-    } else {
-      setCurrentSliderProps({
-        ...currentSliderProps,
-        buttonMargin: 30,
-      });
-    }
   };
 
   return (

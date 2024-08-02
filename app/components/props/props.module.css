@@ -59,6 +59,21 @@
   display: none;
 }
 
+.input_number,
+.input_string {
+  font-weight: 600;
+}
+
+.input_number::placeholder,
+.input_string::placeholder {
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.input_string {
+  width: 252px;
+}
+
 .input_number {
   width: 125px;
 }
@@ -81,6 +96,7 @@
 }
 
 .label_selected {
+  font-weight: 600;
   color: var(--text-black);
   background-color: var(--panel-props);
   border: 1px solid var(--panel-props);
