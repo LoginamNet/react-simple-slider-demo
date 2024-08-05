@@ -15,13 +15,9 @@
   </a>
 </p>
 
-![FSimple Slider Demo GIF](public/slider-demo.gif)
-
-  <p>
-    A <strong>Simple Slider</strong> on React with multiple scrolling modes and the ability to add custom buttons.
-  </p>
-
-[DEMO](https://simple-slider-demo.netlify.app/).
+<p>
+  A <strong>Simple Slider</strong> on React with multiple scrolling modes and the ability to add custom buttons.
+</p>
 
 ## Demonstration
 
