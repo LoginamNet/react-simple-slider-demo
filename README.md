@@ -15,10 +15,20 @@
   </a>
 </p>
 
+![FSimple Slider Demo GIF](public/slider-demo.gif)
+
   <p>
     A <strong>Simple Slider</strong> on React with multiple scrolling modes and the ability to add custom buttons.
   </p>
-  
+
+[DEMO](https://simple-slider-demo.netlify.app/).
+
+## Demonstration
+
+![FSimple Slider Demo GIF](public/slider-demo.gif)
+
+A friendly [DEMO](https://simple-slider-demo.netlify.app/). where you can try all kinds of settings and copy the resulting code!
+
 ## Features
 
 - Several directions of movement and types of slide changes :last_quarter_moon:
