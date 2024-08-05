@@ -23,7 +23,7 @@
 
 ![FSimple Slider Demo GIF](public/slider-demo.gif)
 
-A friendly [DEMO](https://simple-slider-demo.netlify.app/). where you can try all kinds of settings and copy the resulting code!
+A friendly [DEMO](https://simple-slider-demo.netlify.app/), where you can try all kinds of settings and copy the resulting code!
 
 ## Features
 
