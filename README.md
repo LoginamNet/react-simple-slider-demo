@@ -256,6 +256,50 @@ export default function MySliderComponent() {
 }
 ```
 
+## Preloader
+
+The slider and its elements use a client-side rendering, which, when there are a large number of slides, may cause them to appear briefly on the screen before they are fully loaded. If you are not using a global preloader, you should consider adding this element directly to the container where the slider is located.
+
+Note that for the slider and preloader container, the **overflow** property should be set to **"hidden"**. The preloader itself should occupy 100% of the width and height of the container.
+
+Once all the elements have loaded inside the container, remove the preloader. For React, the simplest way is to use a combination of **useState** and **useEffect**.
+
+```javascript
+import { useEffect, useState } from "react";
+
+import SimpleSlider from "@loginamnet/simple-slider";
+
+import Preloader from "./components";
+import MySlide1 from "./components";
+import MySlide2 from "./components";
+
+export default function MySliderComponent() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(false);
+  }, []);
+
+  return (
+    <div
+      style={{
+        width: "600px",
+        height: "400px",
+        overflow: "hidden",
+      }}
+    >
+      {loading && <Preloader />}
+      <SimpleSlider>
+        <MySlide1 text="First Slide" />
+        <MySlide2>Second Slide</MySlide2>
+      </SimpleSlider>
+    </div>
+  );
+}
+```
+
+There are many different ideas for the styling of the preloader available online, so it has been decided not to include this element directly within the slider in order to allow for greater creative freedom.
+
 ## Special Case
 
 During normal operation of the slider outside the slide change cycle, only the current slide remains visible - even if the size of the component itself is smaller than the size of the slider.

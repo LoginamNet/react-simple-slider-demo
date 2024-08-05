@@ -88,6 +88,9 @@ export default function Docs() {
           </ul>
         </li>
         <li>
+          <Link href={"#preloader"}>Preloader</Link>
+        </li>
+        <li>
           <Link href={"#special-case"}>Special case</Link>
         </li>
         <li>
@@ -400,6 +403,77 @@ export default function MySliderComponent() {
   );
 }`}
       </SyntaxHighlighter>
+
+      {/* -------------------------------------- Preloader -------------------------------------- */}
+
+      <h2 id="preloader">Preloader</h2>
+      <hr />
+      <p>
+        The slider and its elements use a client-side rendering, which, when
+        there are a large number of slides, may cause them to appear briefly on
+        the screen before they are fully loaded. If you are not using a global
+        preloader, you should consider adding this element directly to the
+        container where the slider is located.
+      </p>
+      <p>
+        Note that for the slider and preloader container, the
+        <b> overflow </b>
+        property should be set to <b> {`"hidden"`}</b>. The preloader itself
+        should occupy 100% of the width and height of the container.
+      </p>
+      <p>
+        Once all the elements have loaded inside the container, remove the
+        preloader. For React, the simplest way is to use a combination of
+        <b> useState </b>
+        and
+        <b> useEffect</b>.
+      </p>
+      <SyntaxHighlighter
+        codeTagProps={{
+          style: { fontFamily: "var(--font-azeret-mono)", fontSize: "16px" },
+        }}
+        language="javascript"
+        style={atomOneDark}
+      >
+        {`import { useEffect, useState } from "react";
+
+import SimpleSlider from "@loginamnet/simple-slider";
+
+import Preloader from "./components";
+import MySlide1 from "./components";
+import MySlide2 from "./components";
+
+export default function MySliderComponent() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(false);
+  }, []);
+
+  return (
+    <div
+      style={{
+        width: "600px",
+        height: "400px",
+        overflow: "hidden",
+      }}
+    >
+      {loading && <Preloader />}
+      <SimpleSlider>
+        <MySlide1 text="First Slide" />
+        <MySlide2>Second Slide</MySlide2>
+      </SimpleSlider>
+    </div>
+  );
+}
+`}
+      </SyntaxHighlighter>
+      <p>
+        There are many different ideas for the styling of the preloader
+        available online, so it has been decided not to include this element
+        directly within the slider in order to allow for greater creative
+        freedom.
+      </p>
 
       {/* -------------------------------------- Special Case -------------------------------------- */}
 
