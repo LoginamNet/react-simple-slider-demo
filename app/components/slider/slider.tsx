@@ -1,7 +1,8 @@
 "use client";
 
-import { useRef, useCallback, useEffect } from "react";
+import { useRef, useCallback, useEffect, useState } from "react";
 
+import Preloader from "../preloader/preloader";
 import SimpleSlider from "@loginamnet/simple-slider";
 import CustomPrevButton from "../buttons/custom-prev-button";
 import CustomNextButton from "../buttons/custom-next-button";
@@ -28,6 +29,7 @@ export default function Slider(props: ComponentProps) {
   const { sliderProps, switchCurrentPanel, switchMobileProps } = props;
 
   const sliderRef = useRef<HTMLDivElement>(null);
+  const [loading, setLoading] = useState(true);
 
   const checkMainWidth = useCallback(() => {
     if (sliderRef.current) {
@@ -40,9 +42,14 @@ export default function Slider(props: ComponentProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sliderRef.current?.offsetWidth]);
 
+  useEffect(() => {
+    setLoading(false);
+  }, []);
+
   return (
     <div className={styles.container}>
       <div className={styles.slider} ref={sliderRef}>
+        {loading && <Preloader text={"Placing the slides..."} />}
         <SimpleSlider
           controls={sliderProps.controls}
           controlsOptions={{
@@ -80,9 +87,13 @@ export default function Slider(props: ComponentProps) {
         </SimpleSlider>
       </div>
       <div className={styles.info}>
-        <p>{`Width: ${sliderRef.current?.offsetWidth}px`}</p>
+        <p>{`Width: ${
+          sliderRef.current ? sliderRef.current?.offsetWidth + "px" : "..."
+        } `}</p>
         <span>|</span>
-        <p>{`Height: ${sliderRef.current?.offsetHeight}px`}</p>
+        <p>{`Height:  ${
+          sliderRef.current ? sliderRef.current?.offsetHeight + "px" : "..."
+        }`}</p>
       </div>
     </div>
   );

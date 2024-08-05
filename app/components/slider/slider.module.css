@@ -10,6 +10,7 @@
 
 .slider {
   height: var(--slider-height);
+  overflow: hidden;
 }
 
 .slide {
@@ -79,14 +80,6 @@
   border: 3px solid var(--text-black);
 }
 
-.button_link:hover {
-  background-color: var(--text-black);
-}
-
-.button_link:hover svg path {
-  fill: var(--text-white);
-}
-
 .info {
   display: flex;
   flex-wrap: wrap;
@@ -102,6 +95,14 @@
   .button:hover {
     color: var(--text-white);
     background-color: var(--text-black);
+  }
+
+  .button_link:hover {
+    background-color: var(--text-black);
+  }
+
+  .button_link:hover svg path {
+    fill: var(--text-white);
   }
 }
 

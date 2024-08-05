@@ -98,6 +98,10 @@ export default function Code(props: ComponentProps) {
             <span className={styles.navy}>{` height`}</span>
             <span>:</span>
             <span className={styles.maroon}>{` "500px"`}</span>
+            <span>,</span>
+            <span className={styles.navy}>{` overflow`}</span>
+            <span>:</span>
+            <span className={styles.maroon}>{` "hidden"`}</span>
             <span className={styles.blue}>{` }`}</span>
             <span>{`}>`}</span>
           </div>
