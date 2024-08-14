@@ -1,14 +1,27 @@
 type SliderProps = {
-  controls?: boolean | "on-hover";
-  notInfinite?: true;
-  showOnHover?: true;
-  position?: "edge" | "start" | "center" | "end";
-  alinging?: "start" | "center" | "end";
-  gap?: number;
-  buttonShape?: "square" | "circle" | "transparent";
-  buttonSize?: "small" | "medium" | "big" | number;
-  buttonMargin?: string | number;
-  arrowColor?: "white" | "black" | string;
+  controls?: boolean | "manual";
+  controlsNotInfinite?: true;
+  controlsShowOnHover?: true;
+  controlsPosition?: "edge" | "start" | "center" | "end";
+  controlsAlinging?: "start" | "center" | "end";
+  controlsReverse?: true;
+  controlsGap?: number;
+  controlsButtonShape?: "square" | "circle" | "transparent";
+  controlsButtonSize?: "small" | "medium" | "big" | number;
+  controlsButtonMargin?: string | number;
+  controlsArrowColor?: "white" | "black" | string;
+  dots?: boolean;
+  dotsShowOnHover?: true;
+  dotsDirection?: "horizontal" | "vertical";
+  dotsPosition?: "start" | "center" | "end";
+  dotsAlinging?: "start" | "center" | "end";
+  dotsReverse?: true;
+  dotsGap?: number;
+  dotsMargin?: string | number;
+  dotShape?: "square" | "circle";
+  dotSize?: "small" | "medium" | "big" | number;
+  dotColor?: "white" | "black" | string;
+  activeDotColor?: string;
   startWithSlide?: number;
   slidingType?: "sequence" | "underlay" | "overlay";
   slidingDirection?: "left" | "top" | "right" | "bottom";
@@ -18,6 +31,7 @@ type SliderProps = {
   stopOnHover?: boolean;
   customPrevButtonFN?: true | undefined;
   customNextButtonFN?: true | undefined;
+  customDotFN?: true | undefined;
 };
 
 export type { SliderProps };

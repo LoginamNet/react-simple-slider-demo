@@ -22,6 +22,7 @@ export default function RadioInput(props: ComponentProps) {
     >
       {label === "true" ||
       label === "false" ||
+      label === "undefined" ||
       label === "default" ||
       label === "custom"
         ? label

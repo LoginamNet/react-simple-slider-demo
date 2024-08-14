@@ -50,18 +50,18 @@ export default function Slider(props: ComponentProps) {
     <div className={styles.container}>
       <div className={styles.slider} ref={sliderRef}>
         {loading && <Preloader text={"Placing the slides..."} />}
-        <SimpleSlider
+        {/* <SimpleSlider
           controls={sliderProps.controls}
           controlsOptions={{
-            notInfinite: sliderProps.notInfinite,
-            showOnHover: sliderProps.showOnHover,
-            position: sliderProps.position,
-            alinging: sliderProps.alinging,
-            gap: sliderProps.gap,
-            buttonShape: sliderProps.buttonShape,
-            buttonSize: sliderProps.buttonSize,
-            buttonMargin: sliderProps.buttonMargin,
-            arrowColor: sliderProps.arrowColor,
+            notInfinite: sliderProps.controlsNotInfinite,
+            showOnHover: sliderProps.controlsShowOnHover,
+            position: sliderProps.controlsPosition,
+            alinging: sliderProps.controlsAlinging,
+            gap: sliderProps.controlsGap,
+            buttonShape: sliderProps.controlsButtonShape,
+            buttonSize: sliderProps.controlsButtonSize,
+            buttonMargin: sliderProps.controlsButtonMargin,
+            arrowColor: sliderProps.controlsArrowColor,
           }}
           startWithSlide={sliderProps.startWithSlide}
           slidingType={sliderProps.slidingType}
@@ -84,7 +84,7 @@ export default function Slider(props: ComponentProps) {
           <Slide5 switchCurrentPanel={switchCurrentPanel} />
           <Slide6 switchCurrentPanel={switchCurrentPanel} />
           <Slide7 />
-        </SimpleSlider>
+        </SimpleSlider> */}
       </div>
       <div className={styles.info}>
         <p>{`Width: ${

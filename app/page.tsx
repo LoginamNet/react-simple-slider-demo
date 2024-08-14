@@ -12,12 +12,20 @@ import { SliderProps } from "./types/react-simple-slider-demo.types";
 export default function Home() {
   const [currentSliderProps, setCurrentSliderProps] = useState<SliderProps>({
     controls: true,
-    notInfinite: undefined,
-    showOnHover: undefined,
-    position: "edge",
-    alinging: "center",
-    buttonShape: "transparent",
-    buttonSize: "medium",
+    controlsNotInfinite: undefined,
+    controlsShowOnHover: undefined,
+    controlsPosition: "edge",
+    controlsAlinging: "center",
+    controlsReverse: undefined,
+    controlsButtonShape: "transparent",
+    controlsButtonSize: "medium",
+    dots: true,
+    dotsShowOnHover: undefined,
+    dotsPosition: "center",
+    dotsAlinging: "end",
+    dotsReverse: undefined,
+    dotShape: "square",
+    dotSize: "medium",
     slidingType: "sequence",
     slidingDirection: "left",
     slidingDuration: 1000,
@@ -25,6 +33,7 @@ export default function Home() {
     stopOnHover: false,
     customPrevButtonFN: undefined,
     customNextButtonFN: undefined,
+    customDotFN: undefined,
   });
   const [currentPanel, setCurrentPanel] = useState<"props" | "code" | "docs">(
     "code"
@@ -45,7 +54,7 @@ export default function Home() {
     mobile &&
       setCurrentSliderProps({
         ...currentSliderProps,
-        buttonMargin: 0,
+        controlsButtonMargin: 0,
       });
   };
 
