@@ -31,10 +31,10 @@
     - [Example](#dots-options-example)
 - [Archived properties](#archived-props)
 - [Custom Components](#custom-copmonents)
-  - [Custom previous button](#custom-prev)
-  - [Custom next button](#custom-next)
+  - [Previous button](#custom-prev)
+  - [Next button](#custom-next)
     - [Example](#custom-buttons-example)
-  - [Custom dots](#custom-dots)
+  - [Dots](#custom-dots)
     - [Example](#custom-dots-example)
 - [Preloader](#preloader)
 - [Plans](#plans)
@@ -125,22 +125,22 @@ Both the Simple Slider and the Slide have a transparent background. Add styles t
 
 ## Props<a id='props'></a>
 
-| Prop                     | Type              | Values                                           | Default   | Description                                                                                                                |
-| ------------------------ | ----------------- | ------------------------------------------------ | --------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `controls?`              | boolean, string   | true, false , "manual"                           | false     | аctivates the slider control buttons and disables automatic sliding if the value is set to "manual"                        |
-| `controlsOptions?`       | undefined, object | [explanations and an example](#controls-options) | undefined | various options for setting slider controls when the "controls" option is enabled                                          |
-| `dots?`                  | boolean           | true, false                                      | false     | аctivates the slider dots component                                                                                        |
-| `dotsOptions?`           | undefined, object | [explanations and an example](#dots-options)     | undefined | various options for setting slider dots component when the "dots" option is enabled                                        |
-| `startWithSlide?`        | number            | number (MIN: 1)                                  | 1         | the number of the slide to start scrolling from                                                                            |
-| `slidingType?`           | string            | "sequence", "underlay", "overlay"                | "overlay" | the type of slide offset relative to each other                                                                            |
-| `slidingDirection?`      | string            | "left", "top", "right", "bottom"                 | "left"    | the direction of movement of the slides                                                                                    |
-| `slidingDuration?`       | number            | number (MIN: 1)                                  | 2000      | the time of one slide movement cycle (ms)                                                                                  |
-| `slidingDelay?`          | number            | number (MIN: 50)                                 | 1000      | delay before the start of the next slide movement for auto sliding or the "controls" option with the value "on-hover" (ms) |
-| `slidingTimingFunction?` | string            | string                                           | "ease"    | [transition-timing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function)                  |
-| `stopOnHover?`           | boolean           | true, false                                      | false     | stopping auto sliding with hover on slider (not relevant when the "controls" option is set to "on-hover")                  |
-| `customPrevButtonFN?`    | function          | [explanations and an example](#custom-prev)      |           | a function for rendering a custom button to move to the previous slide                                                     |
-| `customNextButtonFN?`    | function          | [explanations and an example](#custom-next)      |           | a function for rendering a custom button to move to the next slide                                                         |
-| `customDotFn?`           | function          | [explanations and an example](#custom-dots)      |           | a function for rendering a custom dot for slider dots component                                                            |
+| Prop                     | Type                       | Values                                           | Default   | Description                                                                                                                |
+| ------------------------ | -------------------------- | ------------------------------------------------ | --------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `controls?`              | undefined, boolean, string | true, false , "manual"                           | undefined | аctivates the slider control buttons and disables automatic sliding if the value is set to "manual"                        |
+| `controlsOptions?`       | undefined, object          | [explanations and an example](#controls-options) | undefined | various options for setting slider controls when the "controls" option is enabled                                          |
+| `dots?`                  | undefined, boolean         | true, false                                      | undefined | аctivates the slider dots component                                                                                        |
+| `dotsOptions?`           | undefined, object          | [explanations and an example](#dots-options)     | undefined | various options for setting slider dots component when the "dots" option is enabled                                        |
+| `startWithSlide?`        | number                     | number (MIN: 1)                                  | 1         | the number of the slide to start scrolling from                                                                            |
+| `slidingType?`           | string                     | "sequence", "underlay", "overlay"                | "overlay" | the type of slide offset relative to each other                                                                            |
+| `slidingDirection?`      | string                     | "left", "top", "right", "bottom"                 | "left"    | the direction of movement of the slides                                                                                    |
+| `slidingDuration?`       | number                     | number (MIN: 1)                                  | 2000      | the time of one slide movement cycle (ms)                                                                                  |
+| `slidingDelay?`          | number                     | number (MIN: 50)                                 | 1000      | delay before the start of the next slide movement for auto sliding or the "controls" option with the value "on-hover" (ms) |
+| `slidingTimingFunction?` | string                     | string                                           | "ease"    | [transition-timing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function)                  |
+| `stopOnHover?`           | undefined, boolean         | true, false                                      | undefined | stopping auto sliding with hover on slider (not relevant when the "controls" option is set to "on-hover")                  |
+| `customPrevButtonFN?`    | undefined, function        | [explanations and an example](#custom-prev)      | undefined | a function for rendering a custom button to move to the previous slide                                                     |
+| `customNextButtonFN?`    | undefined, function        | [explanations and an example](#custom-next)      | undefined | a function for rendering a custom button to move to the next slide                                                         |
+| `customDotFn?`           | undefined, function        | [explanations and an example](#custom-dots)      | undefined | a function for rendering a custom dot for slider dots component                                                            |
 
 **Controls Options**<a id='controls-options'></a>
 
@@ -148,11 +148,11 @@ controlsOptions will be applied only if the **controls** option is enabled. If t
 
 | Prop            | Type               | Values                                    | Default   | Description                                                                                                                    |
 | --------------- | ------------------ | ----------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `notInfinite?`  | undefined, boolean | undefined, true                           | undefined | disables endless sliding and stops on the first and last slides                                                                |
-| `showOnHover?`  | undefined, boolean | undefined, true                           | undefined | displays buttons only when hovering over the slider                                                                            |
+| `notInfinite?`  | undefined, boolean | true                                      | undefined | disables endless sliding and stops on the first and last slides                                                                |
+| `showOnHover?`  | undefined, boolean | true                                      | undefined | displays buttons only when hovering over the slider                                                                            |
 | `position?`     | string             | "edge", "start", "center", "end"          | "edge"    | defines the position of the buttons parallel to the axis of motion (at the edges, at the beginning, at the end, in the center) |
 | `alinging?`     | string             | "start", "center", "end"                  | "center"  | defines the position of the buttons perpendicular to the axis of motion (at the beginning, at the end, in the center)          |
-| `reverse?`      | undefined, boolean | undefined, true                           | undefined | swaps the control buttons                                                                                                      |
+| `reverse?`      | undefined, boolean | true                                      | undefined | swaps the control buttons                                                                                                      |
 | `gap?`          | number             | number (MIN: 0)                           | 20        | the distance between the button (px)                                                                                           |
 | `buttonShape?`  | string             | "square", "circle", "transparent"         | "square"  | the shape of the standard slider buttons                                                                                       |
 | `buttonSize?`   | string, number     | "small", "medium", "big", number (MIN: 1) | "medium"  | the size of the standard slider buttons (px)                                                                                   |
@@ -201,19 +201,19 @@ export default function MySliderComponent() {
 
 dotsOptions will be applied only if the **dots** option is enabled. If they are not specified, the dots will have a standard design and position inside the slider.
 
-| Prop              | Type               | Values                                    | Default      | Description                                                                                                                           |
-| ----------------- | ------------------ | ----------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
-| `showOnHover?`    | undefined, boolean | undefined, true                           | undefined    | displays dots component only when hovering over the slider                                                                            |
-| `direction?`      | string             | "horizontal", "vertical";                 | "horizontal" | defines the vertical or horizontal position of the dots inside dots component                                                         |
-| `position?`       | string             | "start", "center", "end"                  | "center"     | defines the position of the dots component parallel to the axis of motion (at the edges, at the beginning, at the end, in the center) |
-| `alinging?`       | string             | "start", "center", "end";                 | "end"        | defines the position of the dots component perpendicular to the axis of motion (at the beginning, at the end, in the center)          |
-| `reverse?`        | undefined, boolean | undefined, true                           | undefined    | changes the direction of dots inside dots component                                                                                   |
-| `gap?`            | number             | number (MIN: 0)                           | 10           | the distance between the dots inside dots component (px)                                                                              |
-| `margin?`         | string, number     | string, number (MIN: 0)                   | 30           | the margin of the standard slider dots component (px). using a string, you can achieve different values vertically and horizontally   |
-| `dotShape?`       | string             | "square", "circle"                        | "square"     | the shape of the standard slider dots                                                                                                 |
-| `dotSize?`        | string, number     | "small", "medium", "big", number (MIN: 1) | "medium"     | the size of the standard slider dot (px)                                                                                              |
-| `dotColor?`       | string             | string                                    | "#787878"    | [color](https://developer.mozilla.org/en-US/docs/Web/CSS/color) of the standard slider dot for non-active slide                       |
-| `activeDotColor?` | string             | string                                    | "#000000"    | [color](https://developer.mozilla.org/en-US/docs/Web/CSS/color) of the standard slider dot for active slide                           |
+| Prop              | Type               | Values                                    | Default      | Description                                                                                                                         |
+| ----------------- | ------------------ | ----------------------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `showOnHover?`    | undefined, boolean | true                                      | undefined    | displays dots component only when hovering over the slider                                                                          |
+| `direction?`      | string             | "horizontal", "vertical";                 | "horizontal" | defines the vertical or horizontal position of the dots inside dots component                                                       |
+| `position?`       | string             | "start", "center", "end"                  | "center"     | defines the position of the dots component parallel to the axis of motion (at the beginning, at the end, in the center)             |
+| `alinging?`       | string             | "start", "center", "end";                 | "end"        | defines the position of the dots component perpendicular to the axis of motion (at the beginning, at the end, in the center)        |
+| `reverse?`        | undefined, boolean | true                                      | undefined    | changes the direction of dots inside dots component                                                                                 |
+| `gap?`            | number             | number (MIN: 0)                           | 10           | the distance between the dots inside dots component (px)                                                                            |
+| `margin?`         | string, number     | string, number (MIN: 0)                   | 30           | the margin of the standard slider dots component (px). using a string, you can achieve different values vertically and horizontally |
+| `dotShape?`       | string             | "square", "circle"                        | "square"     | the shape of the standard slider dots                                                                                               |
+| `dotSize?`        | string, number     | "small", "medium", "big", number (MIN: 1) | "medium"     | the size of the standard slider dot (px)                                                                                            |
+| `dotColor?`       | string             | string                                    | "#787878"    | [color](https://developer.mozilla.org/en-US/docs/Web/CSS/color) of the standard slider dot for non-active slide                     |
+| `activeDotColor?` | string             | string                                    | "#000000"    | [color](https://developer.mozilla.org/en-US/docs/Web/CSS/color) of the standard slider dot for active slide                         |
 
 **Dots Options Example**<a id='dots-options-example'></a>
 
@@ -257,6 +257,8 @@ export default function MySliderComponent() {
 
 ## Archived Props<a id='archived-props'></a>
 
+Changing, deleting, and adding slider properties based on the version.
+
 <details>
   <summary>Version 1.0.11 & Erlier</summary>
 
@@ -264,19 +266,19 @@ export default function MySliderComponent() {
 
 Slider properties have been changed, in the form of a "from/to" comparison.
 
-Props
+**Props**
 
-from (Version 1.0.11 & Erlier):
+\*from (1.0.11 & Erlier):\*\*
 
-| Prop        | Type            | Values                   | Default | Description                                                                                        |
-| ----------- | --------------- | ------------------------ | ------- | -------------------------------------------------------------------------------------------------- |
-| `controls?` | boolean, string | true, false , "on-hover" | false   | direct control of the slider using the buttons without automatic scrolling or with a stop at hover |
+| Prop        | Type                       | Values                   | Default   | Description                                                                                        |
+| ----------- | -------------------------- | ------------------------ | --------- | -------------------------------------------------------------------------------------------------- |
+| `controls?` | undefined, boolean, string | true, false , "on-hover" | undefined | direct control of the slider using the buttons without automatic scrolling or with a stop at hover |
 
-to (Actual version):
+_to (actual):_
 
-| Prop        | Type            | Values                 | Default | Description                                                                                         |
-| ----------- | --------------- | ---------------------- | ------- | --------------------------------------------------------------------------------------------------- |
-| `controls?` | boolean, string | true, false , "manual" | false   | аctivates the slider control buttons and disables automatic sliding if the value is set to "manual" |
+| Prop        | Type                       | Values                 | Default   | Description                                                                                         |
+| ----------- | -------------------------- | ---------------------- | --------- | --------------------------------------------------------------------------------------------------- |
+| `controls?` | undefined, boolean, string | true, false , "manual" | undefined | аctivates the slider control buttons and disables automatic sliding if the value is set to "manual" |
 
 ### Not Exist
 
@@ -284,21 +286,21 @@ This versions of the slider does not support the following properties:
 
 **Props**
 
-| Prop           | Type              | Values                                       | Default   | Description                                                                         |
-| -------------- | ----------------- | -------------------------------------------- | --------- | ----------------------------------------------------------------------------------- |
-| `dots?`        | boolean, string   | true, false , "on-hover"                     | false     | direct control of the slider using the dots component                               |
-| `dotsOptions?` | undefined, object | [explanations and an example](#dots-options) | undefined | various options for setting slider dots component when the "dots" option is enabled |
-| `customDotFn?` | function          | [explanations and an example](#custom-dots)  |           | a function for rendering a custom dot for slider dots component                     |
+| Prop           | Type                       | Values                                       | Default   | Description                                                                         |
+| -------------- | -------------------------- | -------------------------------------------- | --------- | ----------------------------------------------------------------------------------- |
+| `dots?`        | undefined, boolean, string | true, false , "on-hover"                     | undefined | direct control of the slider using the dots component                               |
+| `dotsOptions?` | undefined, object          | [explanations and an example](#dots-options) | undefined | various options for setting slider dots component when the "dots" option is enabled |
+| `customDotFn?` | undefined, function        | [explanations and an example](#custom-dots)  | undefined | a function for rendering a custom dot for slider dots component                     |
 
 **Controls Options**
 
-| Prop       | Type    | Values      | Default | Description               |
-| ---------- | ------- | ----------- | ------- | ------------------------- |
-| `reverse?` | boolean | true, false | false   | swaps the control buttons |
+| Prop       | Type               | Values      | Default   | Description               |
+| ---------- | ------------------ | ----------- | --------- | ------------------------- |
+| `reverse?` | undefined, boolean | true, false | undefined | swaps the control buttons |
 
 </details>
 
-## Custom Components<a id='archived-props'></a>
+## Custom Components<a id='custom-copmonents'></a>
 
 **Custom Buttons**
 
@@ -306,7 +308,7 @@ You can replace the standard slider buttons (or just one of them) with custom on
 
 To do this, you need to create a custom component of the button in a special way and transfer it to the slider as a function. For the "previous" and "next" buttons, these components will be slightly different.
 
-**Custom Previous Button**<a id='custom-prev'></a>
+**Custom Previous Button Component**<a id='custom-prev'></a>
 
 ```javascript
 export default function CustomPrevButton(
@@ -329,7 +331,7 @@ export default function CustomPrevButton(
 }
 ```
 
-**Custom Next Button**<a id='custom-next'></a>
+**Custom Next Button Component**<a id='custom-next'></a>
 
 ```javascript
 export default function CustomNextButton(
@@ -399,7 +401,7 @@ To do this, you need to create a custom component of the dot in a special way an
 
 **NOTE**: If you use custom dot, **dotShape**, **dotSize**, **dotColor** and **activeDotColor** properties will not be applied. The styling will depend on the styles within your component and your creativity.
 
-**Dot Component**
+**Custom Dot Component**
 
 ```javascript
 export default function CustomDot(
@@ -515,7 +517,7 @@ During normal operation of the slider outside the slide change cycle, only the c
 
 However, with certain settings, it is possible to overlay one slide on top of another to create a complete picture.
 
-To achieve this effect, you need to set the **controls** to **true** (not **on-hover**), the **notInfinite** property in the **controlsOptions** object is set to **true**, the **dots** property to **false** (this value is set by default) and **slidingType** is set to **overlay** (this value is set by default).
+To achieve this effect, you need to set the **controls** to **manual**, the **notInfinite** property in the **controlsOptions** object is set to **true**, the **dots** property to **false** (this value is set by default) and **slidingType** is set to **overlay** (this value is set by default).
 
 ```javascript
 controls
