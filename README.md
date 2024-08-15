@@ -1,3 +1,10 @@
+<style>
+  .archive {
+      border: 1px solid gainsboro;
+      padding: 15px 15px 0 15px
+  }
+</style>
+
 # Simple Slider
 
 <p>
@@ -18,8 +25,6 @@
 <p>
   A <strong>Simple Slider</strong> on React with multiple scrolling modes and the ability to add custom buttons.
 </p>
-
-## Navigation
 
 ## Navigation
 
@@ -259,8 +264,7 @@ export default function MySliderComponent() {
 
 Changing, deleting, and adding slider properties based on the version.
 
-<div style="border: 1px solid gainsboro">
-<div style="padding: 15px 15px 0 15px">
+<div class="archive">
 <details>
   <summary>Version 1.0.11 & Erlier</summary>
 
@@ -301,7 +305,6 @@ This versions of the slider does not support the following properties:
 | `reverse?` | undefined, boolean | true, false | undefined | swaps the control buttons |
 
 </details>
-</div>
 </div>
 
 ## Custom Components<a id='custom-copmonents'></a>
@@ -358,7 +361,8 @@ export default function CustomNextButton(
 }
 ```
 
-For the correct behavior of the slider, **it is important to use the [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) tag!** But its contents and styles depend entirely on your imagination.
+> [!IMPORTANT]
+> For the correct behavior of the slider, **it is important to use the [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) tag!** But its contents and styles depend entirely on your imagination.
 
 The **sliding** property determines the behavior of the button during the slide movement cycle.
 
@@ -403,8 +407,6 @@ You can replace the standard slider dots with custom ones!
 
 To do this, you need to create a custom component of the dot in a special way and transfer it to the slider as a function.
 
-**NOTE**: If you use custom dot, **dotShape**, **dotSize**, **dotColor** and **activeDotColor** properties will not be applied. The styling will depend on the styles within your component and your creativity.
-
 > [!NOTE]
 > If you use custom dot, **dotShape**, **dotSize**, **dotColor** and **activeDotColor** properties will not be applied. The styling will depend on the styles within your component and your creativity.
 
@@ -438,7 +440,8 @@ export default function CustomDot(
 }
 ```
 
-For the correct behavior of the slider, **it is important to use the [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) tag!** But its contents and styles depend entirely on your imagination.
+> [!IMPORTANT]
+> For the correct behavior of the slider, **it is important to use the [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) tag!** But its contents and styles depend entirely on your imagination.
 
 The **nextSlideIndex** property defines the index of the next slide and in combination with **index** property can be useful for stabilizing the state of active and inactive dot (you can see the example above)
 
@@ -478,7 +481,8 @@ export default function MySliderComponent() {
 
 The slider and its elements use a client-side rendering, which, when there are a large number of slides, may cause them to appear briefly on the screen before they are fully loaded. If you are not using a global preloader, you should consider adding this element directly to the container where the slider is located.
 
-Note that for the slider and preloader container, the **overflow** property should be set to **"hidden"**. The preloader itself should occupy 100% of the width and height of the container.
+> [!IMPORTANT]
+> For the slider and preloader container, the **overflow** property should be set to **"hidden"**. The preloader itself should occupy 100% of the width and height of the container.
 
 Once all the elements have loaded inside the container, remove the preloader. For React, the simplest way is to use a combination of **useState** and **useEffect**.
 
