@@ -9,7 +9,8 @@
   padding-top: 20px;
 }
 
-.docs h3 {
+.docs h3,
+.docs h4 {
   padding-top: 15px;
 }
 
@@ -28,4 +29,18 @@
 .features,
 .plans {
   padding-left: 30px;
+}
+
+.details {
+  border: 1px solid var(--text-white);
+  padding: 15px;
+}
+
+.details p {
+  padding-top: 10px;
+}
+
+.details span {
+  display: block;
+  margin-bottom: 10px;
 }

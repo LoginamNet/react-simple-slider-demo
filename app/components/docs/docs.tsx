@@ -9,6 +9,7 @@ import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import TableProps from "./table-props";
 import TableConrtolsOptions from "./table-controls-options";
 import TableDotsOptions from "./table-dots-options";
+import Archive1_0_11 from "./archive-1-0-11";
 
 import styles from "./docs.module.css";
 
@@ -338,6 +339,15 @@ export default function MySliderComponent() {
   );
 }`}
       </SyntaxHighlighter>
+
+      {/* -------------------------------------- Archived Props -------------------------------------- */}
+
+      <h3 id="archived-props">Archived Props</h3>
+      <p>
+        Changing, deleting, and adding slider properties based on the version.
+      </p>
+
+      <Archive1_0_11 />
 
       {/* -------------------------------------- Custom Components -------------------------------------- */}
 

@@ -259,6 +259,8 @@ export default function MySliderComponent() {
 
 Changing, deleting, and adding slider properties based on the version.
 
+<div style="border: 1px solid gainsboro">
+<div style="padding: 15px 15px 0 15px">
 <details>
   <summary>Version 1.0.11 & Erlier</summary>
 
@@ -268,7 +270,7 @@ Slider properties have been changed, in the form of a "from/to" comparison.
 
 **Props**
 
-\*from (1.0.11 & Erlier):\*\*
+_from (1.0.11 & Erlier):_
 
 | Prop        | Type                       | Values                   | Default   | Description                                                                                        |
 | ----------- | -------------------------- | ------------------------ | --------- | -------------------------------------------------------------------------------------------------- |
@@ -299,6 +301,8 @@ This versions of the slider does not support the following properties:
 | `reverse?` | undefined, boolean | true, false | undefined | swaps the control buttons |
 
 </details>
+</div>
+</div>
 
 ## Custom Components<a id='custom-copmonents'></a>
 
