@@ -66,21 +66,11 @@ export default function Docs() {
             <li>
               <Link href={"#controls-options"}>Controls options</Link>
             </li>
-            <ul>
-              <li>
-                <Link href={"#controls-options-example"}>Example</Link>
-              </li>
-            </ul>
           </ul>
           <ul>
             <li>
               <Link href={"#dots-options"}>Dots options</Link>
             </li>
-            <ul>
-              <li>
-                <Link href={"#dots-options-example"}>Example</Link>
-              </li>
-            </ul>
           </ul>
         </li>
         <li>
@@ -95,19 +85,9 @@ export default function Docs() {
             <li>
               <Link href={"#custom-next-button"}>Next button</Link>
             </li>
-            <ul>
-              <li>
-                <Link href={"#custom-buttons-example"}>Example</Link>
-              </li>
-            </ul>
             <li>
               <Link href={"#custom-dots"}>Dots</Link>
             </li>
-            <ul>
-              <li>
-                <Link href={"#custom-dots-example"}>Example</Link>
-              </li>
-            </ul>
           </ul>
         </li>
         <li>
@@ -240,7 +220,7 @@ export default function MySliderComponent() {
 
       {/* -------------------------------------- Controls Options Example -------------------------------------- */}
 
-      <h3 id="controls-options-example">Controls Options Example</h3>
+      <h3>Controls Options Example</h3>
       <SyntaxHighlighter
         codeTagProps={{
           style: { fontFamily: "var(--font-azeret-mono)", fontSize: "16px" },
@@ -295,7 +275,7 @@ export default function MySliderComponent() {
 
       {/* -------------------------------------- Dots Options Example -------------------------------------- */}
 
-      <h3 id="dots-options-example">Dots Options Example</h3>
+      <h3>Dots Options Example</h3>
       <SyntaxHighlighter
         codeTagProps={{
           style: { fontFamily: "var(--font-azeret-mono)", fontSize: "16px" },
@@ -458,7 +438,7 @@ export default function MySliderComponent() {
 
       {/* -------------------------------------- Slider With Custom Buttons Example -------------------------------------- */}
 
-      <h3 id="custom-buttons-example">Slider With Custom Buttons Example</h3>
+      <h3>Slider With Custom Buttons Example</h3>
       <SyntaxHighlighter
         codeTagProps={{
           style: { fontFamily: "var(--font-azeret-mono)", fontSize: "16px" },
@@ -513,7 +493,7 @@ export default function MySliderComponent() {
 
       {/* -------------------------------------- Custom Dot -------------------------------------- */}
 
-      <h3 id="custom-dots-example">Custom Dot Component</h3>
+      <h3>Custom Dot Component</h3>
       <SyntaxHighlighter
         codeTagProps={{
           style: { fontFamily: "var(--font-azeret-mono)", fontSize: "16px" },

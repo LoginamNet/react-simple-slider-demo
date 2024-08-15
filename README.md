@@ -1,7 +1,7 @@
 <style>
   .archive {
       border: 1px solid gainsboro;
-      padding: 15px 15px 0 15px
+      padding: 15px;
   }
 </style>
 
@@ -31,16 +31,12 @@
 - [How to use](#usage)
 - [Properties](#props)
   - [Controls options](#controls-options)
-    - [Example](#controls-options-example)
   - [Dots options](#dots-options)
-    - [Example](#dots-options-example)
 - [Archived properties](#archived-props)
 - [Custom Components](#custom-copmonents)
   - [Previous button](#custom-prev)
   - [Next button](#custom-next)
-    - [Example](#custom-buttons-example)
   - [Dots](#custom-dots)
-    - [Example](#custom-dots-example)
 - [Preloader](#preloader)
 - [Plans](#plans)
 - [Licence](#licence)
@@ -164,7 +160,7 @@ controlsOptions will be applied only if the **controls** option is enabled. If t
 | `buttonMargin?` | string, number     | string, number (MIN: 0)                   | 30        | the margin of the standard slider buttons (px). using a string, you can achieve different values vertically and horizontally   |
 | `arrowColor?`   | string             | string                                    | "#000000" | [color](https://developer.mozilla.org/en-US/docs/Web/CSS/color) of the standard slider buttons arrows                          |
 
-**Controls Options Example**<a id='controls-options-example'></a>
+**Controls Options Example**
 
 ```javascript
 import SimpleSlider from "@loginamnet/simple-slider";
@@ -220,7 +216,7 @@ dotsOptions will be applied only if the **dots** option is enabled. If they are 
 | `dotColor?`       | string             | string                                    | "#787878"    | [color](https://developer.mozilla.org/en-US/docs/Web/CSS/color) of the standard slider dot for non-active slide                     |
 | `activeDotColor?` | string             | string                                    | "#000000"    | [color](https://developer.mozilla.org/en-US/docs/Web/CSS/color) of the standard slider dot for active slide                         |
 
-**Dots Options Example**<a id='dots-options-example'></a>
+**Dots Options Example**
 
 ```javascript
 import SimpleSlider from "@loginamnet/simple-slider";
@@ -264,8 +260,7 @@ export default function MySliderComponent() {
 
 Changing, deleting, and adding slider properties based on the version.
 
-<div class="archive">
-<details>
+<details class="archive">
   <summary>Version 1.0.11 & Erlier</summary>
 
 ### Changed
@@ -305,7 +300,6 @@ This versions of the slider does not support the following properties:
 | `reverse?` | undefined, boolean | true, false | undefined | swaps the control buttons |
 
 </details>
-</div>
 
 ## Custom Components<a id='custom-copmonents'></a>
 
@@ -370,7 +364,7 @@ The **atFirstSlide** and **atLastSlide** properties determine the behavior of th
 
 In the above examples of custom buttons, all these properties are used to disable the buttons, but you can apply them as you want.
 
-**Slider With Custom Buttons Example**<a id='custom-buttons-example'></a>
+**Slider With Custom Buttons Example**
 
 ```javascript
 import SimpleSlider from "@loginamnet/simple-slider";
@@ -451,7 +445,7 @@ The **slidingDuration** property defines the time of one cycle of movement, whic
 
 In the above examples of custom dots componet, these properties are used to disable the dot-button and styling the colors of active/inactive dots, but you can apply them as you want.
 
-**Slider With Custom Dots Example**<a id='custom-dots-example'></a>
+**Slider With Custom Dots Example**
 
 ```javascript
 import SimpleSlider from "@loginamnet/simple-slider";
