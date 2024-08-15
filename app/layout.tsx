@@ -8,19 +8,19 @@ import "./globals.css";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
-  display: "swap",
+  display: "fallback",
   variable: "--font-opensans",
 });
 
 const sourceSans3 = Source_Sans_3({
   subsets: ["latin"],
-  display: "swap",
+  display: "fallback",
   variable: "--font-source-sans-3",
 });
 
 const azeretMono = Azeret_Mono({
   subsets: ["latin"],
-  display: "swap",
+  display: "fallback",
   variable: "--font-azeret-mono",
 });
 
