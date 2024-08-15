@@ -42,7 +42,7 @@
 
 ## Demonstration
 
-![FSimple Slider Demo GIF](slider-demo.gif)
+![FSimple Slider Demo GIF](public/slider-demo.gif)
 
 A friendly [DEMO](https://simple-slider-demo.netlify.app/), where you can try all kinds of settings and copy the resulting code!
 
@@ -404,6 +404,9 @@ You can replace the standard slider dots with custom ones!
 To do this, you need to create a custom component of the dot in a special way and transfer it to the slider as a function.
 
 **NOTE**: If you use custom dot, **dotShape**, **dotSize**, **dotColor** and **activeDotColor** properties will not be applied. The styling will depend on the styles within your component and your creativity.
+
+> [!NOTE]
+> If you use custom dot, **dotShape**, **dotSize**, **dotColor** and **activeDotColor** properties will not be applied. The styling will depend on the styles within your component and your creativity.
 
 **Custom Dot Component**
 
