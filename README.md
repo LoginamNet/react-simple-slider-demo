@@ -1,10 +1,3 @@
-<style>
-  .archive {
-      border: 1px solid gainsboro;
-      padding: 15px;
-  }
-</style>
-
 # Simple Slider
 
 <p>
@@ -260,7 +253,7 @@ export default function MySliderComponent() {
 
 Changing, deleting, and adding slider properties based on the version.
 
-<details class="archive">
+<details>
   <summary>Version 1.0.11 & Erlier</summary>
 
 ### Changed
