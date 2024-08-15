@@ -21,8 +21,17 @@
 
 ## Navigation
 
-- [How to use](#1.1)
+## Navigation
+
+- [How to use](#usage)
 - [Properties](#props)
+  - [Controls options](#controls-options)
+  - [Controls options example](#controls-options-example)
+  - [Dots options](#dots-options)
+  - [Dots options example](#dots-options-example)
+  - [Dots options](#dots-options)
+  - [Controls options](#custom-buttons)
+- [Archived properties](#archived-props)
 
 ## Demonstration
 
