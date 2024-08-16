@@ -115,7 +115,8 @@ A Simple Slider occupies 100% of the width and height of the parent element, and
 
 In the example above, each slide will have a size of 600x400px.
 
-Both the Simple Slider and the Slide have a transparent background. Add styles to the parent element and to each created "child" component, respectively (for example, to create a preloader).
+> [!TIP]
+> Both the Simple Slider and the slide wrapper have a transparent background. Add styles to the parent element and to each created "child" component, respectively (for example, to create a preloader).
 
 ## Props<a id='props'></a>
 
@@ -170,9 +171,10 @@ export default function MySliderComponent() {
       }}
     >
       <SimpleSlider
-        controls="on-hover"
+        controls="manual"
         controlsOptions={{
           notInfinite: true,
+          showOnHover: true,
           position: "center",
           alinging: "end",
           reverse: true,
@@ -253,6 +255,8 @@ export default function MySliderComponent() {
 
 Changing, deleting, and adding slider properties based on the version.
 
+---
+
 <details>
   <summary>Version 1.0.11 & Erlier</summary>
 
@@ -293,6 +297,8 @@ This versions of the slider does not support the following properties:
 | `reverse?` | undefined, boolean | true, false | undefined | swaps the control buttons |
 
 </details>
+
+---
 
 ## Custom Components<a id='custom-copmonents'></a>
 
@@ -430,7 +436,7 @@ export default function CustomDot(
 > [!IMPORTANT]
 > For the correct behavior of the slider, **it is important to use the [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) tag!** But its contents and styles depend entirely on your imagination.
 
-The **nextSlideIndex** property defines the index of the next slide and in combination with **index** property can be useful for stabilizing the state of active and inactive dot (you can see the example above)
+The **nextSlideIndex** property defines the index of the next slide and in combination with **index** property can be useful for stabilizing the state of active and inactive dot (you can see the example above).
 
 The **sliding** property determines the behavior of the dot during the slide movement cycle.
 

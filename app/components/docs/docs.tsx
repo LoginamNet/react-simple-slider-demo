@@ -199,7 +199,10 @@ export default function MySliderComponent() {
         {`A Simple Slider occupies 100% of the width and height of the parent element, and each "child" component is wrapped in a Slide that occupies 100% of the size of the slider itself. Resize the parent container to resize the slider. At the same time, your "child" component may have a different size from the Slide, which can sometimes be useful.`}
       </p>
       <p>{`In the example above, each slide will have a size of 600x400px.`}</p>
-      <p>{`Both the Simple Slider and the Slide have a transparent background. Add styles to the parent element and to each created "child" component, respectively (for example, to create a preloader).`}</p>
+      <div className={`${styles.alert} ${styles.alert_tip}`}>
+        <span>Tip</span>
+        <p>{`Both the Simple Slider and the Slide have a transparent background. Add styles to the parent element and to each created "child" component, respectively (for example, to create a preloader).`}</p>
+      </div>
 
       {/* -------------------------------------- Props -------------------------------------- */}
 
@@ -399,19 +402,23 @@ export default function MySliderComponent() {
   );
 }`}
       </SyntaxHighlighter>
-      <p>
-        For the correct behavior of the slider,
-        <b> it is important to use the </b>
-        <Link
-          href={
-            "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button"
-          }
-        >
-          button
-        </Link>
-        <b> tag! </b>
-        But its contents and styles depend entirely on your imagination.
-      </p>
+      <div className={`${styles.alert} ${styles.alert_important}`}>
+        <span>Important</span>
+        <p>
+          For the correct behavior of the slider,
+          <b> it is important to use the </b>
+          <Link
+            href={
+              "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button"
+            }
+          >
+            button
+          </Link>
+          <b> tag! </b>
+          But its contents and styles depend entirely on your imagination.
+        </p>
+      </div>
+
       <p>
         The
         <b> sliding </b>
@@ -480,16 +487,19 @@ export default function MySliderComponent() {
         To do this, you need to create a custom component of the dot in a
         special way and transfer it to the slider as a function.
       </p>
-      <p>
-        <b>NOTE: </b>If you use custom <b>dot, </b>
-        <b>dotShape, </b>
-        <b>dotSize, </b>
-        <b>dotColor </b>and
-        <b>activeDotColor </b> properties will not be applied. The styling will
-        depend on the styles within your component and your creativity. You can
-        replace the standard slider buttons (or just one of them) with custom
-        ones!
-      </p>
+      <div className={`${styles.alert} ${styles.alert_note}`}>
+        <span>Note</span>
+        <p>
+          If you use custom <b>dot, </b>
+          <b>dotShape, </b>
+          <b>dotSize, </b>
+          <b>dotColor </b>and
+          <b>activeDotColor </b> properties will not be applied. The styling
+          will depend on the styles within your component and your creativity.
+          You can replace the standard slider buttons (or just one of them) with
+          custom ones!
+        </p>
+      </div>
 
       {/* -------------------------------------- Custom Dot -------------------------------------- */}
 
@@ -527,6 +537,41 @@ export default function MySliderComponent() {
   );
 }`}
       </SyntaxHighlighter>
+      <div className={`${styles.alert} ${styles.alert_important}`}>
+        <span>Important</span>
+        <p>
+          For the correct behavior of the slider,
+          <b> it is important to use the </b>
+          <Link
+            href={
+              "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button"
+            }
+          >
+            button
+          </Link>
+          <b> tag! </b>
+          But its contents and styles depend entirely on your imagination.
+        </p>
+      </div>
+
+      <p>
+        The <b>nextSlideIndex </b> property defines the index of the next slide
+        and in combination with index property can be useful for stabilizing the
+        state of active and inactive dot (you can see the example above).
+      </p>
+      <p>
+        The <b>sliding </b> property determines the behavior of the dot during
+        the slide movement cycle.
+      </p>
+      <p>
+        The <b>slidingDuration </b> property defines the time of one cycle of
+        movement, which can be useful for timing the change of styles.
+      </p>
+      <p>
+        In the above examples of custom dots componet, these properties are used
+        to disable the dot-button and styling the colors of active/inactive
+        dots, but you can apply them as you want.
+      </p>
 
       {/* -------------------------------------- Preloader -------------------------------------- */}
 
@@ -539,12 +584,17 @@ export default function MySliderComponent() {
         preloader, you should consider adding this element directly to the
         container where the slider is located.
       </p>
-      <p>
-        Note that for the slider and preloader container, the
-        <b> overflow </b>
-        property should be set to <b> {`"hidden"`}</b>. The preloader itself
-        should occupy 100% of the width and height of the container.
-      </p>
+
+      <div className={`${styles.alert} ${styles.alert_important}`}>
+        <span>Important</span>
+        <p>
+          For the slider and preloader container, the
+          <b> overflow </b>
+          property should be set to <b> {`"hidden"`}</b>. The preloader itself
+          should occupy 100% of the width and height of the container.
+        </p>
+      </div>
+
       <p>
         Once all the elements have loaded inside the container, remove the
         preloader. For React, the simplest way is to use a combination of

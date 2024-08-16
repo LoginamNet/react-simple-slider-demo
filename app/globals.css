@@ -28,6 +28,10 @@
 
   --button-copied: #009e3d;
 
+  --alert-tip: #03b346;
+  --alert-note: #2e70ff;
+  --alert-important: #9745da;
+
   /* ------------------- height -------------------*/
 
   --slider-height: 500px;
