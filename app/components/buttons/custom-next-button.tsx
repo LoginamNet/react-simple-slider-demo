@@ -7,15 +7,13 @@ export default function CustomNextButton(
 ) {
   return (
     <button
-      className={`${styles.button} ${styles.button_next} ${
-        sliding && styles.disabled
-      }`}
+      className={styles.button}
       onClick={() => {
         nextSlide();
       }}
       disabled={sliding || atFirstSlide}
     >
-      CUSTOM NEXT
+      NEXT
     </button>
   );
 }

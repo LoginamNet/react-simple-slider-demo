@@ -7,7 +7,9 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 import TableProps from "./table-props";
-import TableOptions from "./table-options";
+import TableConrtolsOptions from "./table-controls-options";
+import TableDotsOptions from "./table-dots-options";
+import Archive1_0_11 from "./archive-1-0-11";
 
 import styles from "./docs.module.css";
 
@@ -64,15 +66,18 @@ export default function Docs() {
             <li>
               <Link href={"#controls-options"}>Controls options</Link>
             </li>
+          </ul>
+          <ul>
             <li>
-              <Link href={"#controls-options-example"}>
-                Controls options example
-              </Link>
+              <Link href={"#dots-options"}>Dots options</Link>
             </li>
           </ul>
         </li>
         <li>
-          <Link href={"#custom-buttons"}>Custom buttons</Link>
+          <Link href={"#archived-props"}>Archived properties</Link>
+        </li>
+        <li>
+          <Link href={"#custom-copmonents"}>Custom components</Link>
           <ul>
             <li>
               <Link href={"#custom-prev-button"}>Previous button</Link>
@@ -81,9 +86,7 @@ export default function Docs() {
               <Link href={"#custom-next-button"}>Next button</Link>
             </li>
             <li>
-              <Link href={"#custom-buttons-example"}>
-                Custom buttons example
-              </Link>
+              <Link href={"#custom-dots"}>Dots</Link>
             </li>
           </ul>
         </li>
@@ -196,7 +199,10 @@ export default function MySliderComponent() {
         {`A Simple Slider occupies 100% of the width and height of the parent element, and each "child" component is wrapped in a Slide that occupies 100% of the size of the slider itself. Resize the parent container to resize the slider. At the same time, your "child" component may have a different size from the Slide, which can sometimes be useful.`}
       </p>
       <p>{`In the example above, each slide will have a size of 600x400px.`}</p>
-      <p>{`Both the Simple Slider and the Slide have a transparent background. Add styles to the parent element and to each created "child" component, respectively (for example, to create a preloader).`}</p>
+      <div className={`${styles.alert} ${styles.alert_tip}`}>
+        <span>Tip</span>
+        <p>{`Both the Simple Slider and the Slide have a transparent background. Add styles to the parent element and to each created "child" component, respectively (for example, to create a preloader).`}</p>
+      </div>
 
       {/* -------------------------------------- Props -------------------------------------- */}
 
@@ -208,16 +214,16 @@ export default function MySliderComponent() {
 
       <h3 id="controls-options">Controls Options</h3>
       <p>
-        controlsOptions will be applied only if the
+        Will be applied only if the
         <b> controls </b>
         option is enabled. If they are not specified, the buttons will have a
         standard design and position inside the slider.
       </p>
-      <TableOptions />
+      <TableConrtolsOptions />
 
       {/* -------------------------------------- Controls Options Example -------------------------------------- */}
 
-      <h3 id="controls-options-example">Controls Options Example</h3>
+      <h3>Controls Options Example</h3>
       <SyntaxHighlighter
         codeTagProps={{
           style: { fontFamily: "var(--font-azeret-mono)", fontSize: "16px" },
@@ -259,7 +265,74 @@ export default function MySliderComponent() {
 }`}
       </SyntaxHighlighter>
 
-      {/* -------------------------------------- Custom Buttons -------------------------------------- */}
+      {/* -------------------------------------- Dots Options -------------------------------------- */}
+
+      <h3 id="dots-options">Dots Options</h3>
+      <p>
+        Will be applied only if the
+        <b> dots </b>
+        option is enabled. If they are not specified, the dots will have a
+        standard design and position inside the slider.
+      </p>
+      <TableDotsOptions />
+
+      {/* -------------------------------------- Dots Options Example -------------------------------------- */}
+
+      <h3>Dots Options Example</h3>
+      <SyntaxHighlighter
+        codeTagProps={{
+          style: { fontFamily: "var(--font-azeret-mono)", fontSize: "16px" },
+        }}
+        language="javascript"
+        style={atomOneDark}
+      >
+        {`import SimpleSlider from "@loginamnet/simple-slider";
+
+import MySlide1 from "./components";
+import MySlide2 from "./components";
+
+export default function MySliderComponent() {
+  return (
+    <div
+      style={{
+        width: "600px",
+        height: "400px",
+      }}
+    >
+      <SimpleSlider
+        dots
+        dotsOptions={{
+          showOnHover: true,
+          direction: "vertical",
+          position: "end",
+          alinging: "end",
+          reverse: true,
+          gap: 5,
+          margin: "100px 10px",
+          dotShape: "circle",
+          dotSize: 22,
+          dotColor: "green",
+          activeDotColor: "blue",
+        }}
+      >
+        <MySlide1 text="First Slide" />
+        <MySlide2>Second Slide</MySlide2>
+      </SimpleSlider>
+    </div>
+  );
+}`}
+      </SyntaxHighlighter>
+
+      {/* -------------------------------------- Archived Props -------------------------------------- */}
+
+      <h3 id="archived-props">Archived Props</h3>
+      <p>
+        Changing, deleting, and adding slider properties based on the version.
+      </p>
+
+      <Archive1_0_11 />
+
+      {/* -------------------------------------- Custom Components -------------------------------------- */}
 
       <h3 id="custom-buttons">Custom Buttons</h3>
       <p>
@@ -270,9 +343,9 @@ export default function MySliderComponent() {
         {`To do this, you need to create a custom component of the button in a special way and transfer it to the slider as a function. For the "previous" and "next" buttons, these components will be slightly different.`}
       </p>
 
-      {/* -------------------------------------- Previous Button Component -------------------------------------- */}
+      {/* -------------------------------------- Custom Previous Button -------------------------------------- */}
 
-      <h3 id="custom-prev-button">Previous Button Component</h3>
+      <h3 id="custom-prev-button">Custom Previous Button Component</h3>
       <SyntaxHighlighter
         codeTagProps={{
           style: { fontFamily: "var(--font-azeret-mono)", fontSize: "16px" },
@@ -300,9 +373,9 @@ export default function MySliderComponent() {
 }`}
       </SyntaxHighlighter>
 
-      {/* -------------------------------------- Next Button Component -------------------------------------- */}
+      {/* -------------------------------------- Custom Next Button -------------------------------------- */}
 
-      <h3 id="custom-next-button">Next Button Component</h3>
+      <h3 id="custom-next-button">Custom Next Button Component</h3>
       <SyntaxHighlighter
         codeTagProps={{
           style: { fontFamily: "var(--font-azeret-mono)", fontSize: "16px" },
@@ -329,19 +402,23 @@ export default function MySliderComponent() {
   );
 }`}
       </SyntaxHighlighter>
-      <p>
-        For the correct behavior of the slider,
-        <b> it is important to use the </b>
-        <Link
-          href={
-            "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button"
-          }
-        >
-          button
-        </Link>
-        <b> tag! </b>
-        But its contents and styles depend entirely on your imagination.
-      </p>
+      <div className={`${styles.alert} ${styles.alert_important}`}>
+        <span>Important</span>
+        <p>
+          For the correct behavior of the slider,
+          <b> it is important to use the </b>
+          <Link
+            href={
+              "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button"
+            }
+          >
+            button
+          </Link>
+          <b> tag! </b>
+          But its contents and styles depend entirely on your imagination.
+        </p>
+      </div>
+
       <p>
         The
         <b> sliding </b>
@@ -368,7 +445,7 @@ export default function MySliderComponent() {
 
       {/* -------------------------------------- Slider With Custom Buttons Example -------------------------------------- */}
 
-      <h3 id="custom-buttons-example">Slider With Custom Buttons Example</h3>
+      <h3>Slider With Custom Buttons Example</h3>
       <SyntaxHighlighter
         codeTagProps={{
           style: { fontFamily: "var(--font-azeret-mono)", fontSize: "16px" },
@@ -404,6 +481,98 @@ export default function MySliderComponent() {
 }`}
       </SyntaxHighlighter>
 
+      <h3 id="custom-dots">Custom dots</h3>
+      <p>You can replace the standard slider dots with custom ones!</p>
+      <p>
+        To do this, you need to create a custom component of the dot in a
+        special way and transfer it to the slider as a function.
+      </p>
+      <div className={`${styles.alert} ${styles.alert_note}`}>
+        <span>Note</span>
+        <p>
+          If you use custom <b>dot, </b>
+          <b>dotShape, </b>
+          <b>dotSize, </b>
+          <b>dotColor </b>and
+          <b>activeDotColor </b> properties will not be applied. The styling
+          will depend on the styles within your component and your creativity.
+          You can replace the standard slider buttons (or just one of them) with
+          custom ones!
+        </p>
+      </div>
+
+      {/* -------------------------------------- Custom Dot -------------------------------------- */}
+
+      <h3>Custom Dot Component</h3>
+      <SyntaxHighlighter
+        codeTagProps={{
+          style: { fontFamily: "var(--font-azeret-mono)", fontSize: "16px" },
+        }}
+        language="javascript"
+        style={atomOneDark}
+      >
+        {`export default function CustomDot(
+  index: number,
+  switchToSlideFN: (selectedSlideIndex: number) => void,
+  nextSlideIndex?: number,
+  sliding?: boolean,
+  slidingDuration?: number
+) {
+  return (
+    <button
+      key={index}
+      style={{
+        backgroundColor: \`\${index === nextSlideIndex ? "red" : "white"}\`,
+        transition: \`background-color \${slidingDuration}ms\`,
+      }}
+      disabled={sliding}
+      onClick={(event) => {
+        event.stopPropagation();
+
+        switchToSlideFN(index);
+      }}
+    >
+      {index + 1}
+    </button>
+  );
+}`}
+      </SyntaxHighlighter>
+      <div className={`${styles.alert} ${styles.alert_important}`}>
+        <span>Important</span>
+        <p>
+          For the correct behavior of the slider,
+          <b> it is important to use the </b>
+          <Link
+            href={
+              "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button"
+            }
+          >
+            button
+          </Link>
+          <b> tag! </b>
+          But its contents and styles depend entirely on your imagination.
+        </p>
+      </div>
+
+      <p>
+        The <b>nextSlideIndex </b> property defines the index of the next slide
+        and in combination with index property can be useful for stabilizing the
+        state of active and inactive dot (you can see the example above).
+      </p>
+      <p>
+        The <b>sliding </b> property determines the behavior of the dot during
+        the slide movement cycle.
+      </p>
+      <p>
+        The <b>slidingDuration </b> property defines the time of one cycle of
+        movement, which can be useful for timing the change of styles.
+      </p>
+      <p>
+        In the above examples of custom dots componet, these properties are used
+        to disable the dot-button and styling the colors of active/inactive
+        dots, but you can apply them as you want.
+      </p>
+
       {/* -------------------------------------- Preloader -------------------------------------- */}
 
       <h2 id="preloader">Preloader</h2>
@@ -415,12 +584,17 @@ export default function MySliderComponent() {
         preloader, you should consider adding this element directly to the
         container where the slider is located.
       </p>
-      <p>
-        Note that for the slider and preloader container, the
-        <b> overflow </b>
-        property should be set to <b> {`"hidden"`}</b>. The preloader itself
-        should occupy 100% of the width and height of the container.
-      </p>
+
+      <div className={`${styles.alert} ${styles.alert_important}`}>
+        <span>Important</span>
+        <p>
+          For the slider and preloader container, the
+          <b> overflow </b>
+          property should be set to <b> {`"hidden"`}</b>. The preloader itself
+          should occupy 100% of the width and height of the container.
+        </p>
+      </div>
+
       <p>
         Once all the elements have loaded inside the container, remove the
         preloader. For React, the simplest way is to use a combination of
@@ -492,16 +666,13 @@ export default function MySliderComponent() {
         To achieve this effect, you need to set
         <b> controls </b>
         to
-        <b> true </b>
-        {`(not`}
-        <b> on-hover</b>
-        {`), the`}
+        <b> manual </b>, the
         <b> notInfinite </b>
         property in the
         <b> controlsOptions </b>
         object is set to
-        <b> true </b>
-        and
+        <b> true </b>, the <b> dots </b> property to <b> false </b> (this value
+        is set by default) and
         <b> slidingType </b>
         is set
         <b> overlay </b>
@@ -547,7 +718,7 @@ startWithSlide={5}`}
       <h2 id="plans">Plans</h2>
       <hr />
       <ul className={styles.plans}>
-        <li>{`Add a "dots" component that can be placed outside the slider`}</li>
+        <li>{`Make it possible to import slider control functions and some internal states to create external control components`}</li>
       </ul>
 
       {/* -------------------------------------- Licence -------------------------------------- */}

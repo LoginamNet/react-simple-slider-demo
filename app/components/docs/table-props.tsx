@@ -19,27 +19,46 @@ export default function TableProps() {
         </thead>
         <tbody>
           <tr>
-            <td>controls</td>
-            <td>boolean, string</td>
-            <td>true, false , &quot;on-hover&quot;</td>
-            <td>false</td>
+            <td>controls?</td>
+            <td>undefined, boolean, string</td>
+            <td>true, false , &quot;manual&quot;</td>
+            <td>undefined</td>
             <td>
-              direct control of the slider using the buttons without automatic
-              scrolling or with a stop at hover
+              аctivates the slider control buttons and disables automatic
+              sliding if the value is set to &quot;manual&quot;
             </td>
           </tr>
           <tr>
             <td>controlsOptions?</td>
-            <td>object</td>
+            <td>undefined, object</td>
             <td>
               <Link href={"#controls-options"}>
-                explanations and an example below
+                explanations and an example
               </Link>
             </td>
-            <td>{`{}`}</td>
+            <td>{`undefined`}</td>
             <td>
               various options for setting slider controls when the
               &quot;controls&quot; option is enabled
+            </td>
+          </tr>
+          <tr>
+            <td>dots?</td>
+            <td>undefined, boolean</td>
+            <td>true, false</td>
+            <td>undefined</td>
+            <td>аctivates the slider dots component</td>
+          </tr>
+          <tr>
+            <td>dotsOptions?</td>
+            <td>undefined, object</td>
+            <td>
+              <Link href={"#dots-options"}>explanations and an example</Link>
+            </td>
+            <td>{`undefined`}</td>
+            <td>
+              various options for setting slider controls when the
+              &quot;dots&quot; option is enabled
             </td>
           </tr>
           <tr>
@@ -103,9 +122,9 @@ export default function TableProps() {
           </tr>
           <tr>
             <td>stopOnHover?</td>
-            <td>boolean</td>
+            <td>undefined, boolean</td>
             <td>true, false</td>
-            <td>false</td>
+            <td>undefined</td>
             <td>
               stopping auto sliding with hover on slider (not relevant when the
               &quot;controls&quot; option is set to &quot;on-hover&quot;)
@@ -113,13 +132,13 @@ export default function TableProps() {
           </tr>
           <tr>
             <td>customPrevButtonFN?</td>
-            <td>function</td>
+            <td>undefined, function</td>
             <td>
               <Link href={"#custom-prev-button"}>
-                explanations and an example below
+                explanations and an example
               </Link>
             </td>
-            <td></td>
+            <td>undefined</td>
             <td>
               a function for rendering a custom button to move to the previous
               slide
@@ -127,15 +146,26 @@ export default function TableProps() {
           </tr>
           <tr>
             <td>customNextButtonFN?</td>
-            <td>function</td>
+            <td>undefined, function</td>
             <td>
               <Link href={"#custom-next-button"}>
-                explanations and an example below
+                explanations and an example
               </Link>
             </td>
-            <td></td>
+            <td>undefined</td>
             <td>
               a function for rendering a custom button to move to the next slide
+            </td>
+          </tr>
+          <tr>
+            <td>customDotFN?</td>
+            <td>undefined, function</td>
+            <td>
+              <Link href={"#custom-dots"}>explanations and an example</Link>
+            </td>
+            <td>undefined</td>
+            <td>
+              a function for rendering a custom dot for slider dots component
             </td>
           </tr>
         </tbody>

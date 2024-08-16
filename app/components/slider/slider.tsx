@@ -6,6 +6,7 @@ import Preloader from "../preloader/preloader";
 import SimpleSlider from "@loginamnet/simple-slider";
 import CustomPrevButton from "../buttons/custom-prev-button";
 import CustomNextButton from "../buttons/custom-next-button";
+import CustomDot from "../dots/custom-dot";
 
 import Slide1 from "./slide-1";
 import Slide2 from "./slide-2";
@@ -53,15 +54,30 @@ export default function Slider(props: ComponentProps) {
         <SimpleSlider
           controls={sliderProps.controls}
           controlsOptions={{
-            notInfinite: sliderProps.notInfinite,
-            showOnHover: sliderProps.showOnHover,
-            position: sliderProps.position,
-            alinging: sliderProps.alinging,
-            gap: sliderProps.gap,
-            buttonShape: sliderProps.buttonShape,
-            buttonSize: sliderProps.buttonSize,
-            buttonMargin: sliderProps.buttonMargin,
-            arrowColor: sliderProps.arrowColor,
+            notInfinite: sliderProps.controlsNotInfinite,
+            showOnHover: sliderProps.controlsShowOnHover,
+            position: sliderProps.controlsPosition,
+            alinging: sliderProps.controlsAlinging,
+            reverse: sliderProps.controlsReverse,
+            gap: sliderProps.controlsGap,
+            buttonShape: sliderProps.controlsButtonShape,
+            buttonSize: sliderProps.controlsButtonSize,
+            buttonMargin: sliderProps.controlsButtonMargin,
+            arrowColor: sliderProps.controlsArrowColor,
+          }}
+          dots={sliderProps.dots}
+          dotsOptions={{
+            showOnHover: sliderProps.dotsShowOnHover,
+            direction: sliderProps.dotsDirection,
+            position: sliderProps.dotsPosition,
+            alinging: sliderProps.dotsAlinging,
+            reverse: sliderProps.dotsReverse,
+            gap: sliderProps.dotsGap,
+            margin: sliderProps.dotsMargin,
+            dotShape: sliderProps.dotShape,
+            dotSize: sliderProps.dotSize,
+            dotColor: sliderProps.dotColor,
+            activeDotColor: sliderProps.activeDotColor,
           }}
           startWithSlide={sliderProps.startWithSlide}
           slidingType={sliderProps.slidingType}
@@ -76,6 +92,7 @@ export default function Slider(props: ComponentProps) {
           customNextButtonFN={
             sliderProps.customNextButtonFN && CustomNextButton
           }
+          customDotFN={sliderProps.customDotFN && CustomDot}
         >
           <Slide1 />
           <Slide2 />

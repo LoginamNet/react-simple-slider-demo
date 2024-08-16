@@ -43,9 +43,9 @@ export default function Props(props: ComponentProps) {
             updateSliderProp={updateSliderProp}
           />
           <RadioInput
-            label="on-hover"
+            label="manual"
             name="controls"
-            value={"on-hover"}
+            value={"manual"}
             currentPropValue={sliderProps.controls}
             updateSliderProp={updateSliderProp}
           />
@@ -63,116 +63,138 @@ export default function Props(props: ComponentProps) {
       >
         <span className={styles.prop_name}>controlsOptions:</span>
         <div className={styles.options}>
-          {/* -------------------------------------- notInfinite -------------------------------------- */}
+          {/* -------------------------------------- controlsNotInfinite -------------------------------------- */}
 
           <div className={styles.prop}>
             <span className={styles.prop_name}>notInfinite:</span>
             <div className={styles.prop_values}>
               <RadioInput
-                label="false"
-                name="notInfinite"
+                label="undefined"
+                name="controlsNotInfinite"
                 value={undefined}
-                currentPropValue={sliderProps.notInfinite}
+                currentPropValue={sliderProps.controlsNotInfinite}
                 updateSliderProp={updateSliderProp}
               />
               <RadioInput
                 label="true"
-                name="notInfinite"
+                name="controlsNotInfinite"
                 value={true}
-                currentPropValue={sliderProps.notInfinite}
+                currentPropValue={sliderProps.controlsNotInfinite}
                 updateSliderProp={updateSliderProp}
               />
             </div>
           </div>
 
-          {/* -------------------------------------- showOnHover -------------------------------------- */}
+          {/* -------------------------------------- controlsShowOnHover -------------------------------------- */}
 
           <div className={styles.prop}>
             <span className={styles.prop_name}>showOnHover:</span>
             <div className={styles.prop_values}>
               <RadioInput
-                label="false"
-                name="showOnHover"
+                label="undefined"
+                name="controlsShowOnHover"
                 value={undefined}
-                currentPropValue={sliderProps.showOnHover}
+                currentPropValue={sliderProps.controlsShowOnHover}
                 updateSliderProp={updateSliderProp}
               />
               <RadioInput
                 label="true"
-                name="showOnHover"
+                name="controlsShowOnHover"
                 value={true}
-                currentPropValue={sliderProps.showOnHover}
+                currentPropValue={sliderProps.controlsShowOnHover}
                 updateSliderProp={updateSliderProp}
               />
             </div>
           </div>
 
-          {/* -------------------------------------- position -------------------------------------- */}
+          {/* -------------------------------------- controlsPosition -------------------------------------- */}
 
           <div className={styles.prop}>
             <span className={styles.prop_name}>position:</span>
             <div className={styles.prop_values}>
               <RadioInput
                 label="edge"
-                name="position"
+                name="controlsPosition"
                 value={"edge"}
-                currentPropValue={sliderProps.position}
+                currentPropValue={sliderProps.controlsPosition}
                 updateSliderProp={updateSliderProp}
               />
               <RadioInput
                 label="start"
-                name="position"
+                name="controlsPosition"
                 value={"start"}
-                currentPropValue={sliderProps.position}
+                currentPropValue={sliderProps.controlsPosition}
                 updateSliderProp={updateSliderProp}
               />
               <RadioInput
                 label="center"
-                name="position"
+                name="controlsPosition"
                 value={"center"}
-                currentPropValue={sliderProps.position}
+                currentPropValue={sliderProps.controlsPosition}
                 updateSliderProp={updateSliderProp}
               />
               <RadioInput
                 label="end"
-                name="position"
+                name="controlsPosition"
                 value={"end"}
-                currentPropValue={sliderProps.position}
+                currentPropValue={sliderProps.controlsPosition}
                 updateSliderProp={updateSliderProp}
               />
             </div>
           </div>
 
-          {/* -------------------------------------- alinging -------------------------------------- */}
+          {/* -------------------------------------- controlsAlinging -------------------------------------- */}
 
           <div className={styles.prop}>
             <span className={styles.prop_name}>alinging:</span>
             <div className={styles.prop_values}>
               <RadioInput
                 label="start"
-                name="alinging"
+                name="controlsAlinging"
                 value={"start"}
-                currentPropValue={sliderProps.alinging}
+                currentPropValue={sliderProps.controlsAlinging}
                 updateSliderProp={updateSliderProp}
               />
               <RadioInput
                 label="center"
-                name="alinging"
+                name="controlsAlinging"
                 value={"center"}
-                currentPropValue={sliderProps.alinging}
+                currentPropValue={sliderProps.controlsAlinging}
                 updateSliderProp={updateSliderProp}
               />
               <RadioInput
                 label="end"
-                name="alinging"
+                name="controlsAlinging"
                 value={"end"}
-                currentPropValue={sliderProps.alinging}
+                currentPropValue={sliderProps.controlsAlinging}
                 updateSliderProp={updateSliderProp}
               />
             </div>
           </div>
 
-          {/* -------------------------------------- gap -------------------------------------- */}
+          {/* -------------------------------------- controlsReverse -------------------------------------- */}
+
+          <div className={styles.prop}>
+            <span className={styles.prop_name}>reverse:</span>
+            <div className={styles.prop_values}>
+              <RadioInput
+                label="undefined"
+                name="controlsReverse"
+                value={undefined}
+                currentPropValue={sliderProps.controlsReverse}
+                updateSliderProp={updateSliderProp}
+              />
+              <RadioInput
+                label="true"
+                name="controlsReverse"
+                value={true}
+                currentPropValue={sliderProps.controlsReverse}
+                updateSliderProp={updateSliderProp}
+              />
+            </div>
+          </div>
+
+          {/* -------------------------------------- controlsGap -------------------------------------- */}
 
           <div className={styles.prop}>
             <span className={styles.prop_name}>
@@ -180,44 +202,44 @@ export default function Props(props: ComponentProps) {
             </span>
             <div className={styles.prop_values}>
               <NumberInput
-                name="gap"
-                currentPropValue={sliderProps.gap}
+                name="controlsGap"
+                currentPropValue={sliderProps.controlsGap}
                 placeholder="20"
                 updateSliderProp={updateSliderProp}
               />
             </div>
           </div>
 
-          {/* -------------------------------------- buttonShape -------------------------------------- */}
+          {/* -------------------------------------- controlsButtonShape -------------------------------------- */}
 
           <div className={styles.prop}>
             <span className={styles.prop_name}>buttonShape:</span>
             <div className={styles.prop_values}>
               <RadioInput
                 label="square"
-                name="buttonShape"
+                name="controlsButtonShape"
                 value={"square"}
-                currentPropValue={sliderProps.buttonShape}
+                currentPropValue={sliderProps.controlsButtonShape}
                 updateSliderProp={updateSliderProp}
               />
               <RadioInput
                 label="circle"
-                name="buttonShape"
+                name="controlsButtonShape"
                 value={"circle"}
-                currentPropValue={sliderProps.buttonShape}
+                currentPropValue={sliderProps.controlsButtonShape}
                 updateSliderProp={updateSliderProp}
               />
               <RadioInput
                 label="transparent"
-                name="buttonShape"
+                name="controlsButtonShape"
                 value={"transparent"}
-                currentPropValue={sliderProps.buttonShape}
+                currentPropValue={sliderProps.controlsButtonShape}
                 updateSliderProp={updateSliderProp}
               />
             </div>
           </div>
 
-          {/* -------------------------------------- buttonSize -------------------------------------- */}
+          {/* -------------------------------------- controlsButtonSize -------------------------------------- */}
 
           <div className={styles.prop}>
             <span className={styles.prop_name}>
@@ -225,15 +247,15 @@ export default function Props(props: ComponentProps) {
             </span>
             <div className={styles.prop_values}>
               <RadioNumberInput
-                name="buttonSize"
+                name="controlsButtonSize"
                 values={["small", "medium", "big"]}
-                currentPropValue={sliderProps.buttonSize}
+                currentPropValue={sliderProps.controlsButtonSize}
                 updateSliderProp={updateSliderProp}
               />
             </div>
           </div>
 
-          {/* -------------------------------------- buttonMargin -------------------------------------- */}
+          {/* -------------------------------------- controlsButtonMargin -------------------------------------- */}
 
           <div className={styles.prop}>
             <span className={styles.prop_name}>
@@ -241,20 +263,274 @@ export default function Props(props: ComponentProps) {
             </span>
             <div className={styles.prop_values}>
               <StringNumberInput
-                name="buttonMargin"
-                currentPropValue={sliderProps.buttonMargin}
+                name="controlsButtonMargin"
+                currentPropValue={sliderProps.controlsButtonMargin}
                 updateSliderProp={updateSliderProp}
               />
             </div>
           </div>
 
-          {/* -------------------------------------- arrowColor -------------------------------------- */}
+          {/* -------------------------------------- controlsArrowColor -------------------------------------- */}
 
           <div className={styles.prop}>
             <span className={styles.prop_name}>arrowColor:</span>
             <div className={styles.prop_values}>
               <StringInput
-                name="arrowColor"
+                name="controlsArrowColor"
+                placeholder="#000000"
+                updateSliderProp={updateSliderProp}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* -------------------------------------- dots -------------------------------------- */}
+
+      <div className={styles.prop}>
+        <span className={styles.prop_name}>dots:</span>
+        <div className={styles.prop_values}>
+          <RadioInput
+            label="false"
+            name="dots"
+            value={false}
+            currentPropValue={sliderProps.dots}
+            updateSliderProp={updateSliderProp}
+          />
+          <RadioInput
+            label="true"
+            name="dots"
+            value={true}
+            currentPropValue={sliderProps.dots}
+            updateSliderProp={updateSliderProp}
+          />
+        </div>
+      </div>
+
+      {/* -------------------------------------- dotsOptions -------------------------------------- */}
+
+      <div
+        className={`
+        ${styles.prop} 
+        ${styles.prop_optional}
+        ${!sliderProps.dots && styles.options_disabled}
+        `}
+      >
+        <span className={styles.prop_name}>dotsOptions:</span>
+        <div className={styles.options}>
+          {/* -------------------------------------- dotsShowOnHover -------------------------------------- */}
+
+          <div className={styles.prop}>
+            <span className={styles.prop_name}>showOnHover:</span>
+            <div className={styles.prop_values}>
+              <RadioInput
+                label="undefined"
+                name="dotsShowOnHover"
+                value={undefined}
+                currentPropValue={sliderProps.dotsShowOnHover}
+                updateSliderProp={updateSliderProp}
+              />
+              <RadioInput
+                label="true"
+                name="dotsShowOnHover"
+                value={true}
+                currentPropValue={sliderProps.dotsShowOnHover}
+                updateSliderProp={updateSliderProp}
+              />
+            </div>
+          </div>
+
+          {/* -------------------------------------- dotsDirection -------------------------------------- */}
+
+          <div className={styles.prop}>
+            <span className={styles.prop_name}>direction:</span>
+            <div className={styles.prop_values}>
+              <RadioInput
+                label="horizontal"
+                name="dotsDirection"
+                value={"horizontal"}
+                currentPropValue={sliderProps.dotsDirection}
+                updateSliderProp={updateSliderProp}
+              />
+              <RadioInput
+                label="vertical"
+                name="dotsDirection"
+                value={"vertical"}
+                currentPropValue={sliderProps.dotsDirection}
+                updateSliderProp={updateSliderProp}
+              />
+            </div>
+          </div>
+
+          {/* -------------------------------------- dotsPosition -------------------------------------- */}
+
+          <div className={styles.prop}>
+            <span className={styles.prop_name}>position:</span>
+            <div className={styles.prop_values}>
+              <RadioInput
+                label="start"
+                name="dotsPosition"
+                value={"start"}
+                currentPropValue={sliderProps.dotsPosition}
+                updateSliderProp={updateSliderProp}
+              />
+              <RadioInput
+                label="center"
+                name="dotsPosition"
+                value={"center"}
+                currentPropValue={sliderProps.dotsPosition}
+                updateSliderProp={updateSliderProp}
+              />
+              <RadioInput
+                label="end"
+                name="dotsPosition"
+                value={"end"}
+                currentPropValue={sliderProps.dotsPosition}
+                updateSliderProp={updateSliderProp}
+              />
+            </div>
+          </div>
+
+          {/* -------------------------------------- dotsAlinging -------------------------------------- */}
+
+          <div className={styles.prop}>
+            <span className={styles.prop_name}>alinging:</span>
+            <div className={styles.prop_values}>
+              <RadioInput
+                label="start"
+                name="dotsAlinging"
+                value={"start"}
+                currentPropValue={sliderProps.dotsAlinging}
+                updateSliderProp={updateSliderProp}
+              />
+              <RadioInput
+                label="center"
+                name="dotsAlinging"
+                value={"center"}
+                currentPropValue={sliderProps.dotsAlinging}
+                updateSliderProp={updateSliderProp}
+              />
+              <RadioInput
+                label="end"
+                name="dotsAlinging"
+                value={"end"}
+                currentPropValue={sliderProps.dotsAlinging}
+                updateSliderProp={updateSliderProp}
+              />
+            </div>
+          </div>
+
+          {/* -------------------------------------- dotsReverse -------------------------------------- */}
+
+          <div className={styles.prop}>
+            <span className={styles.prop_name}>reverse:</span>
+            <div className={styles.prop_values}>
+              <RadioInput
+                label="undefined"
+                name="dotsReverse"
+                value={undefined}
+                currentPropValue={sliderProps.dotsReverse}
+                updateSliderProp={updateSliderProp}
+              />
+              <RadioInput
+                label="true"
+                name="dotsReverse"
+                value={true}
+                currentPropValue={sliderProps.dotsReverse}
+                updateSliderProp={updateSliderProp}
+              />
+            </div>
+          </div>
+
+          {/* -------------------------------------- dotsGap -------------------------------------- */}
+
+          <div className={styles.prop}>
+            <span className={styles.prop_name}>
+              gap <span className={styles.prop_min}>(MIN: 0)</span>:
+            </span>
+            <div className={styles.prop_values}>
+              <NumberInput
+                name="dotsGap"
+                currentPropValue={sliderProps.dotsGap}
+                placeholder="10"
+                updateSliderProp={updateSliderProp}
+              />
+            </div>
+          </div>
+
+          {/* -------------------------------------- dotsMargin -------------------------------------- */}
+
+          <div className={styles.prop}>
+            <span className={styles.prop_name}>
+              margin <span className={styles.prop_min}>(MIN: 0)</span>:
+            </span>
+            <div className={styles.prop_values}>
+              <StringNumberInput
+                name="dotsMargin"
+                currentPropValue={sliderProps.dotsMargin}
+                updateSliderProp={updateSliderProp}
+              />
+            </div>
+          </div>
+
+          {/* -------------------------------------- dotShape -------------------------------------- */}
+
+          <div className={styles.prop}>
+            <span className={styles.prop_name}>dotShape:</span>
+            <div className={styles.prop_values}>
+              <RadioInput
+                label="square"
+                name="dotShape"
+                value={"square"}
+                currentPropValue={sliderProps.dotShape}
+                updateSliderProp={updateSliderProp}
+              />
+              <RadioInput
+                label="circle"
+                name="dotShape"
+                value={"circle"}
+                currentPropValue={sliderProps.dotShape}
+                updateSliderProp={updateSliderProp}
+              />
+            </div>
+          </div>
+
+          {/* -------------------------------------- dotSize -------------------------------------- */}
+
+          <div className={styles.prop}>
+            <span className={styles.prop_name}>
+              dotSize <span className={styles.prop_min}>(MIN: 1)</span>:
+            </span>
+            <div className={styles.prop_values}>
+              <RadioNumberInput
+                name="dotSize"
+                values={["small", "medium", "big"]}
+                currentPropValue={sliderProps.dotSize}
+                updateSliderProp={updateSliderProp}
+              />
+            </div>
+          </div>
+
+          {/* -------------------------------------- dotColor -------------------------------------- */}
+
+          <div className={styles.prop}>
+            <span className={styles.prop_name}>dotColor:</span>
+            <div className={styles.prop_values}>
+              <StringInput
+                name="dotColor"
+                placeholder="#787878"
+                updateSliderProp={updateSliderProp}
+              />
+            </div>
+          </div>
+
+          {/* -------------------------------------- activeDotColor -------------------------------------- */}
+
+          <div className={styles.prop}>
+            <span className={styles.prop_name}>activeDotColor:</span>
+            <div className={styles.prop_values}>
+              <StringInput
+                name="activeDotColor"
                 placeholder="#000000"
                 updateSliderProp={updateSliderProp}
               />
@@ -450,6 +726,28 @@ export default function Props(props: ComponentProps) {
             name="customNextButtonFN"
             value={true}
             currentPropValue={sliderProps.customNextButtonFN}
+            updateSliderProp={updateSliderProp}
+          />
+        </div>
+      </div>
+
+      {/* -------------------------------------- customDotFN -------------------------------------- */}
+
+      <div className={styles.prop}>
+        <span className={styles.prop_name}>customDotFN:</span>
+        <div className={styles.prop_values}>
+          <RadioInput
+            label="default"
+            name="customDotFN"
+            value={undefined}
+            currentPropValue={sliderProps.customDotFN}
+            updateSliderProp={updateSliderProp}
+          />
+          <RadioInput
+            label="custom"
+            name="customDotFN"
+            value={true}
+            currentPropValue={sliderProps.customDotFN}
             updateSliderProp={updateSliderProp}
           />
         </div>

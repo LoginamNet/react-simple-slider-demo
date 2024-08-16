@@ -41,7 +41,7 @@ export default function Code(props: ComponentProps) {
             className={styles.green}
           >{`// ---------- import your slide components here ----------`}</span>
 
-          {/* -------------------------------------- import custom buttons -------------------------------------- */}
+          {/* -------------------------------------- import custom buttons & dots -------------------------------------- */}
 
           {(sliderProps.customPrevButtonFN ||
             sliderProps.customNextButtonFN) && <br />}
@@ -64,6 +64,15 @@ export default function Code(props: ComponentProps) {
               <span
                 className={styles.maroon}
               >{` "../buttons/custom-next-button"`}</span>
+              <span>;</span>
+            </div>
+          )}
+          {sliderProps.customDotFN && (
+            <div>
+              <span className={styles.fuchsia}>import</span>
+              <span className={styles.navy}>{` CustomDot`}</span>
+              <span className={styles.fuchsia}>{` from`}</span>
+              <span className={styles.maroon}>{` "../dots/custom-dot"`}</span>
               <span>;</span>
             </div>
           )}
@@ -125,38 +134,25 @@ export default function Code(props: ComponentProps) {
                 sliderProps.slidingDelay < 50) &&
               !sliderProps.stopOnHover &&
               !sliderProps.customPrevButtonFN &&
-              !sliderProps.customNextButtonFN && <span>{` /`}</span>}
-            {!sliderProps.controls &&
-              !sliderProps.startWithSlide &&
-              sliderProps.slidingType === "overlay" &&
-              sliderProps.slidingDirection === "left" &&
-              (!sliderProps.slidingTimingFunction ||
-                sliderProps.slidingTimingFunction === "ease") &&
-              (!sliderProps.slidingDuration ||
-                sliderProps.slidingDuration === 2000) &&
-              (!sliderProps.slidingDelay ||
-                sliderProps.slidingDelay === 1000 ||
-                sliderProps.slidingDelay < 50) &&
-              !sliderProps.stopOnHover &&
-              !sliderProps.customPrevButtonFN &&
-              !sliderProps.customNextButtonFN && <span>{`>`}</span>}
+              !sliderProps.customNextButtonFN &&
+              !sliderProps.customDotFN && <span>{`>`}</span>}
           </div>
 
           {/* -------------------------------------- controls -------------------------------------- */}
 
-          {sliderProps.controls && sliderProps.controls !== "on-hover" && (
+          {sliderProps.controls && sliderProps.controls !== "manual" && (
             <div>
               {`        `}
               <span className={styles.red}>controls</span>
             </div>
           )}
-          {sliderProps.controls && sliderProps.controls === "on-hover" && (
+          {sliderProps.controls && sliderProps.controls === "manual" && (
             <div>
               {`        `}
               <span className={styles.red}>controls</span>
               <span>=</span>
               <span>{`{`}</span>
-              <span className={styles.maroon}>{`"on-hover"`}</span>
+              <span className={styles.maroon}>{`"manual"`}</span>
               <span>{`}`}</span>
             </div>
           )}
@@ -164,17 +160,22 @@ export default function Code(props: ComponentProps) {
           {/* -------------------------------------- controlsOptions -------------------------------------- */}
 
           {sliderProps.controls &&
-            (sliderProps.notInfinite ||
-              sliderProps.showOnHover ||
-              (sliderProps.position && sliderProps.position !== "edge") ||
-              (sliderProps.alinging && sliderProps.alinging !== "center") ||
-              (sliderProps.gap && sliderProps.gap !== 20) ||
-              (sliderProps.buttonShape &&
-                sliderProps.buttonShape !== "square") ||
-              (sliderProps.buttonSize && sliderProps.buttonSize !== "medium") ||
-              (sliderProps.buttonMargin && sliderProps.buttonMargin !== 30) ||
-              (sliderProps.arrowColor &&
-                sliderProps.arrowColor !== "#000000")) && (
+            (sliderProps.controlsNotInfinite ||
+              sliderProps.controlsShowOnHover ||
+              (sliderProps.controlsPosition &&
+                sliderProps.controlsPosition !== "edge") ||
+              (sliderProps.controlsAlinging &&
+                sliderProps.controlsAlinging !== "center") ||
+              sliderProps.controlsReverse ||
+              (sliderProps.controlsGap && sliderProps.controlsGap !== 20) ||
+              (sliderProps.controlsButtonShape &&
+                sliderProps.controlsButtonShape !== "square") ||
+              (sliderProps.controlsButtonSize &&
+                sliderProps.controlsButtonSize !== "medium") ||
+              (sliderProps.controlsButtonMargin &&
+                sliderProps.controlsButtonMargin !== 30) ||
+              (sliderProps.controlsArrowColor &&
+                sliderProps.controlsArrowColor !== "#000000")) && (
               <div>
                 {`        `}
                 <span className={styles.red}>controlsOptions</span>
@@ -186,78 +187,214 @@ export default function Code(props: ComponentProps) {
           {sliderProps.controls && (
             <OptionBoolean
               name={"notInfinite"}
-              value={sliderProps.notInfinite}
+              value={sliderProps.controlsNotInfinite}
             />
           )}
           {sliderProps.controls && (
             <OptionBoolean
               name={"showOnHover"}
-              value={sliderProps.showOnHover}
+              value={sliderProps.controlsShowOnHover}
             />
           )}
           {sliderProps.controls && (
             <Option
               name={"position"}
-              value={sliderProps.position}
+              value={sliderProps.controlsPosition}
               defaultValue={"edge"}
             />
           )}
           {sliderProps.controls && (
             <Option
               name={"alinging"}
-              value={sliderProps.alinging}
+              value={sliderProps.controlsAlinging}
               defaultValue={"center"}
             />
           )}
           {sliderProps.controls && (
-            <Option name={"gap"} value={sliderProps.gap} defaultValue={20} />
+            <OptionBoolean
+              name={"reverse"}
+              value={sliderProps.controlsReverse}
+            />
+          )}
+          {sliderProps.controls && (
+            <Option
+              name={"gap"}
+              value={sliderProps.controlsGap}
+              defaultValue={20}
+            />
           )}
           {sliderProps.controls && (
             <Option
               name={"buttonShape"}
-              value={sliderProps.buttonShape}
+              value={sliderProps.controlsButtonShape}
               defaultValue={"square"}
             />
           )}
           {sliderProps.controls && (
             <Option
               name={"buttonSize"}
-              value={sliderProps.buttonSize}
+              value={sliderProps.controlsButtonSize}
               defaultValue={"medium"}
             />
           )}
           {sliderProps.controls && (
             <Option
               name={"buttonMargin"}
-              value={sliderProps.buttonMargin}
+              value={sliderProps.controlsButtonMargin}
               defaultValue={30}
             />
           )}
           {sliderProps.controls && (
             <Option
               name={"arrowColor"}
-              value={sliderProps.arrowColor}
+              value={sliderProps.controlsArrowColor}
               defaultValue={"#000000"}
             />
           )}
           {sliderProps.controls &&
-            (sliderProps.notInfinite ||
-              sliderProps.showOnHover ||
-              (sliderProps.position && sliderProps.position !== "edge") ||
-              (sliderProps.alinging && sliderProps.alinging !== "center") ||
-              (sliderProps.gap && sliderProps.gap !== 20) ||
-              (sliderProps.buttonShape &&
-                sliderProps.buttonShape !== "square") ||
-              (sliderProps.buttonSize && sliderProps.buttonSize !== "medium") ||
-              (sliderProps.buttonMargin && sliderProps.buttonMargin !== 30) ||
-              (sliderProps.arrowColor &&
-                sliderProps.arrowColor !== "#000000")) && (
+            (sliderProps.controlsNotInfinite ||
+              sliderProps.controlsShowOnHover ||
+              (sliderProps.controlsPosition &&
+                sliderProps.controlsPosition !== "edge") ||
+              (sliderProps.controlsAlinging &&
+                sliderProps.controlsAlinging !== "center") ||
+              sliderProps.controlsReverse ||
+              (sliderProps.controlsGap && sliderProps.controlsGap !== 20) ||
+              (sliderProps.controlsButtonShape &&
+                sliderProps.controlsButtonShape !== "square") ||
+              (sliderProps.controlsButtonSize &&
+                sliderProps.controlsButtonSize !== "medium") ||
+              (sliderProps.controlsButtonMargin &&
+                sliderProps.controlsButtonMargin !== 30) ||
+              (sliderProps.controlsArrowColor &&
+                sliderProps.controlsArrowColor !== "#000000")) && (
               <div>
                 {`        `}
                 <span className={styles.blue}>{`}`}</span>
                 <span>{`}`}</span>
               </div>
             )}
+
+          {/* -------------------------------------- dots -------------------------------------- */}
+
+          {sliderProps.dots && (
+            <div>
+              {`        `}
+              <span className={styles.red}>dots</span>
+            </div>
+          )}
+
+          {/* -------------------------------------- dotsOptions -------------------------------------- */}
+
+          {sliderProps.dots &&
+            (sliderProps.dotsShowOnHover ||
+              (sliderProps.dotsPosition &&
+                sliderProps.dotsPosition !== "center") ||
+              (sliderProps.dotsAlinging &&
+                sliderProps.dotsAlinging !== "end") ||
+              sliderProps.dotsReverse ||
+              (sliderProps.dotsGap && sliderProps.dotsGap !== 10) ||
+              (sliderProps.dotsMargin && sliderProps.dotsMargin !== 30) ||
+              (sliderProps.dotShape && sliderProps.dotShape !== "square") ||
+              (sliderProps.dotSize && sliderProps.dotSize !== "medium") ||
+              (sliderProps.dotColor && sliderProps.dotColor !== "#787878") ||
+              (sliderProps.activeDotColor &&
+                sliderProps.activeDotColor !== "#000000")) && (
+              <div>
+                {`        `}
+                <span className={styles.red}>dotsOptions</span>
+                <span>=</span>
+                <span>{`{`}</span>
+                <span className={styles.blue}>{`{`}</span>
+              </div>
+            )}
+          {sliderProps.dots && (
+            <OptionBoolean
+              name={"showOnHover"}
+              value={sliderProps.dotsShowOnHover}
+            />
+          )}
+          {sliderProps.dots && (
+            <Option
+              name={"position"}
+              value={sliderProps.dotsPosition}
+              defaultValue={"center"}
+            />
+          )}
+          {sliderProps.dots && (
+            <Option
+              name={"alinging"}
+              value={sliderProps.dotsAlinging}
+              defaultValue={"end"}
+            />
+          )}
+          {sliderProps.dots && (
+            <OptionBoolean name={"reverse"} value={sliderProps.dotsReverse} />
+          )}
+          {sliderProps.dots && (
+            <Option
+              name={"gap"}
+              value={sliderProps.dotsGap}
+              defaultValue={10}
+            />
+          )}
+          {sliderProps.dots && (
+            <Option
+              name={"margin"}
+              value={sliderProps.dotsMargin}
+              defaultValue={30}
+            />
+          )}
+          {sliderProps.dots && (
+            <Option
+              name={"dotShape"}
+              value={sliderProps.dotShape}
+              defaultValue={"square"}
+            />
+          )}
+          {sliderProps.dots && (
+            <Option
+              name={"dotSize"}
+              value={sliderProps.dotSize}
+              defaultValue={"medium"}
+            />
+          )}
+
+          {sliderProps.dots && (
+            <Option
+              name={"dotColor"}
+              value={sliderProps.dotColor}
+              defaultValue={"#787878"}
+            />
+          )}
+          {sliderProps.dots && (
+            <Option
+              name={"activeDotColor"}
+              value={sliderProps.activeDotColor}
+              defaultValue={"#000000"}
+            />
+          )}
+          {sliderProps.dots &&
+            (sliderProps.dotsShowOnHover ||
+              (sliderProps.dotsPosition &&
+                sliderProps.dotsPosition !== "center") ||
+              (sliderProps.dotsAlinging &&
+                sliderProps.dotsAlinging !== "end") ||
+              sliderProps.dotsReverse ||
+              (sliderProps.dotsGap && sliderProps.dotsGap !== 10) ||
+              (sliderProps.dotsMargin && sliderProps.dotsMargin !== 30) ||
+              (sliderProps.dotShape && sliderProps.dotShape !== "square") ||
+              (sliderProps.dotSize && sliderProps.dotSize !== "medium") ||
+              (sliderProps.dotColor && sliderProps.dotColor !== "#787878") ||
+              (sliderProps.activeDotColor &&
+                sliderProps.activeDotColor !== "#000000")) && (
+              <div>
+                {`        `}
+                <span className={styles.blue}>{`}`}</span>
+                <span>{`}`}</span>
+              </div>
+            )}
+
           <Property
             name={"startWithSlide"}
             value={sliderProps.startWithSlide}
@@ -326,6 +463,19 @@ export default function Code(props: ComponentProps) {
               <span>{`}`}</span>
             </div>
           )}
+
+          {/* -------------------------------------- customDotFN -------------------------------------- */}
+
+          {sliderProps.customDotFN && (
+            <div>
+              {`        `}
+              <span className={styles.red}>customDotFN</span>
+              <span>=</span>
+              <span>{`{`}</span>
+              <span className={styles.olive}>CustomDot</span>
+              <span>{`}`}</span>
+            </div>
+          )}
           {(sliderProps.controls ||
             sliderProps.startWithSlide ||
             sliderProps.slidingType !== "overlay" ||
@@ -339,7 +489,8 @@ export default function Code(props: ComponentProps) {
               sliderProps.slidingDelay >= 50) ||
             sliderProps.stopOnHover ||
             sliderProps.customPrevButtonFN ||
-            sliderProps.customNextButtonFN) && (
+            sliderProps.customNextButtonFN ||
+            sliderProps.customDotFN) && (
             <div>
               {`      `}
               <span>{`>`}</span>
