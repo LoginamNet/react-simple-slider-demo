@@ -6,6 +6,7 @@ import Preloader from "../preloader/preloader";
 import SimpleSlider from "@loginamnet/simple-slider";
 import CustomPrevButton from "../buttons/custom-prev-button";
 import CustomNextButton from "../buttons/custom-next-button";
+import CustomDot from "../dots/custom-dot";
 
 import Slide1 from "./slide-1";
 import Slide2 from "./slide-2";
@@ -50,18 +51,33 @@ export default function Slider(props: ComponentProps) {
     <div className={styles.container}>
       <div className={styles.slider} ref={sliderRef}>
         {loading && <Preloader text={"Placing the slides..."} />}
-        {/* <SimpleSlider
+        <SimpleSlider
           controls={sliderProps.controls}
           controlsOptions={{
             notInfinite: sliderProps.controlsNotInfinite,
             showOnHover: sliderProps.controlsShowOnHover,
             position: sliderProps.controlsPosition,
             alinging: sliderProps.controlsAlinging,
+            reverse: sliderProps.controlsReverse,
             gap: sliderProps.controlsGap,
             buttonShape: sliderProps.controlsButtonShape,
             buttonSize: sliderProps.controlsButtonSize,
             buttonMargin: sliderProps.controlsButtonMargin,
             arrowColor: sliderProps.controlsArrowColor,
+          }}
+          dots={sliderProps.dots}
+          dotsOptions={{
+            showOnHover: sliderProps.dotsShowOnHover,
+            direction: sliderProps.dotsDirection,
+            position: sliderProps.dotsPosition,
+            alinging: sliderProps.dotsAlinging,
+            reverse: sliderProps.dotsReverse,
+            gap: sliderProps.dotsGap,
+            margin: sliderProps.dotsMargin,
+            dotShape: sliderProps.dotShape,
+            dotSize: sliderProps.dotSize,
+            dotColor: sliderProps.dotColor,
+            activeDotColor: sliderProps.activeDotColor,
           }}
           startWithSlide={sliderProps.startWithSlide}
           slidingType={sliderProps.slidingType}
@@ -76,6 +92,7 @@ export default function Slider(props: ComponentProps) {
           customNextButtonFN={
             sliderProps.customNextButtonFN && CustomNextButton
           }
+          customDotFN={sliderProps.customDotFN && CustomDot}
         >
           <Slide1 />
           <Slide2 />
@@ -84,7 +101,7 @@ export default function Slider(props: ComponentProps) {
           <Slide5 switchCurrentPanel={switchCurrentPanel} />
           <Slide6 switchCurrentPanel={switchCurrentPanel} />
           <Slide7 />
-        </SimpleSlider> */}
+        </SimpleSlider>
       </div>
       <div className={styles.info}>
         <p>{`Width: ${

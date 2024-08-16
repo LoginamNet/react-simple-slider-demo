@@ -11,7 +11,7 @@ import { SliderProps } from "./types/react-simple-slider-demo.types";
 
 export default function Home() {
   const [currentSliderProps, setCurrentSliderProps] = useState<SliderProps>({
-    controls: true,
+    controls: "manual",
     controlsNotInfinite: undefined,
     controlsShowOnHover: undefined,
     controlsPosition: "edge",
@@ -21,6 +21,7 @@ export default function Home() {
     controlsButtonSize: "medium",
     dots: true,
     dotsShowOnHover: undefined,
+    dotsDirection: "horizontal",
     dotsPosition: "center",
     dotsAlinging: "end",
     dotsReverse: undefined,
@@ -55,6 +56,7 @@ export default function Home() {
       setCurrentSliderProps({
         ...currentSliderProps,
         controlsButtonMargin: 0,
+        dotsMargin: 15,
       });
   };
 

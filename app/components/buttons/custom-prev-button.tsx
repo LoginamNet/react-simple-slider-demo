@@ -7,13 +7,13 @@ export default function CustomPrevButton(
 ) {
   return (
     <button
-      className={`${styles.button} ${styles.button_prev}`}
+      className={styles.button}
       onClick={() => {
         prevSlide();
       }}
       disabled={sliding || atFirstSlide}
     >
-      CUSTOM PREV
+      PREV
     </button>
   );
 }

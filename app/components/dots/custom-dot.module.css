@@ -2,37 +2,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 55px;
-  height: 55px;
-  margin: 10px;
+  width: 25px;
+  height: 25px;
   font-family: var(--font-azeret-mono);
-  font-size: 16px;
   font-weight: 600;
-  color: var(--text-white);
-  background-color: var(--text-black);
   border: 3px solid var(--text-black);
 }
 
+.button_inactive {
+  color: var(--text-black);
+  background-color: var(--text-white);
+}
+
+.button_active {
+  color: var(--text-white);
+  background-color: var(--text-black);
+}
+
+.button_active,
 .button:disabled {
+  pointer-events: none;
   cursor: default;
 }
 
 /* ------------------- media -------------------*/
 
 @media (pointer: fine) {
-  .button:hover {
-    color: var(--text-black);
-    background-color: var(--text-white);
-  }
-
-  .button:disabled:hover {
+  .button:not(:disabled):hover {
     color: var(--text-white);
     background-color: var(--text-black);
-  }
-}
-
-@media (max-width: 690px) {
-  .button {
-    margin: 0px;
   }
 }

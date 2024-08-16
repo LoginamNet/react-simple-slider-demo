@@ -316,7 +316,7 @@ export default function Props(props: ComponentProps) {
         ${!sliderProps.dots && styles.options_disabled}
         `}
       >
-        <span className={styles.prop_name}>controlsOptions:</span>
+        <span className={styles.prop_name}>dotsOptions:</span>
         <div className={styles.options}>
           {/* -------------------------------------- dotsShowOnHover -------------------------------------- */}
 
@@ -335,6 +335,28 @@ export default function Props(props: ComponentProps) {
                 name="dotsShowOnHover"
                 value={true}
                 currentPropValue={sliderProps.dotsShowOnHover}
+                updateSliderProp={updateSliderProp}
+              />
+            </div>
+          </div>
+
+          {/* -------------------------------------- dotsDirection -------------------------------------- */}
+
+          <div className={styles.prop}>
+            <span className={styles.prop_name}>direction:</span>
+            <div className={styles.prop_values}>
+              <RadioInput
+                label="horizontal"
+                name="dotsDirection"
+                value={"horizontal"}
+                currentPropValue={sliderProps.dotsDirection}
+                updateSliderProp={updateSliderProp}
+              />
+              <RadioInput
+                label="vertical"
+                name="dotsDirection"
+                value={"vertical"}
+                currentPropValue={sliderProps.dotsDirection}
                 updateSliderProp={updateSliderProp}
               />
             </div>
