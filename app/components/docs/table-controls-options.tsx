@@ -75,7 +75,8 @@ export default function TableConrtolsOptions() {
             <td>buttonShape?</td>
             <td>string</td>
             <td>
-              &quot;square&quot;, &quot;circle&quot;, &quot;transparent&quot;
+              &quot;square&quot;, &quot;circle&quot;, &quot;transparent&quot;,
+              &quot;invisible&quot;
             </td>
             <td>&quot;square&quot;</td>
             <td>the shape of the standard slider buttons</td>
