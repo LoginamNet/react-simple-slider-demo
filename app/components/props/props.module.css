@@ -75,23 +75,23 @@
 }
 
 .input_string {
-  width: 252px;
+  width: 266px;
 }
 
 .input_number {
-  width: 125px;
+  width: 132px;
 }
 
 .input_string {
-  width: 252px;
+  width: 266px;
 }
 
 .input_string_short {
-  width: 125px;
+  width: 132px;
 }
 
 .label {
-  min-width: 125px;
+  min-width: 132px;
   padding: 5px 10px;
   text-align: center;
   background-color: var(--background-label);

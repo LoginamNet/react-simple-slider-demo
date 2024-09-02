@@ -10,6 +10,7 @@ import TableProps from "./table-props";
 import TableConrtolsOptions from "./table-controls-options";
 import TableDotsOptions from "./table-dots-options";
 import Archive1_0_11 from "./archive-1-0-11";
+import Archive1_1_1 from "./archive-1-1-1";
 
 import styles from "./docs.module.css";
 
@@ -49,7 +50,7 @@ export default function Docs() {
       <p>
         A <b> Simple Slider </b>
         on React with multiple scrolling modes and the ability to add custom
-        buttons.
+        dots & buttons
       </p>
 
       {/* -------------------------------------- Navigation -------------------------------------- */}
@@ -221,6 +222,19 @@ export default function MySliderComponent() {
       </p>
       <TableConrtolsOptions />
 
+      <div className={`${styles.alert} ${styles.alert_tip}`}>
+        <span>Tip</span>
+        <p>
+          If you want to enable the
+          <b> controls </b>
+          property and hide the buttons, you can set the value of the
+          <b> buttonShape </b>
+          to
+          <b> &quot;invisible&quot;</b>. This will allow users to control the
+          slider using swipes, but not with buttons.
+        </p>
+      </div>
+
       {/* -------------------------------------- Controls Options Example -------------------------------------- */}
 
       <h3>Controls Options Example</h3>
@@ -330,6 +344,7 @@ export default function MySliderComponent() {
         Changing, deleting, and adding slider properties based on the version.
       </p>
 
+      <Archive1_1_1 />
       <Archive1_0_11 />
 
       {/* -------------------------------------- Custom Components -------------------------------------- */}
@@ -494,7 +509,7 @@ export default function MySliderComponent() {
           <b>dotShape, </b>
           <b>dotSize, </b>
           <b>dotColor </b>and
-          <b>activeDotColor </b> properties will not be applied. The styling
+          <b> activeDotColor </b> properties will not be applied. The styling
           will depend on the styles within your component and your creativity.
           You can replace the standard slider buttons (or just one of them) with
           custom ones!

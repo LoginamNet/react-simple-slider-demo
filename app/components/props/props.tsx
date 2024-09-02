@@ -236,6 +236,13 @@ export default function Props(props: ComponentProps) {
                 currentPropValue={sliderProps.controlsButtonShape}
                 updateSliderProp={updateSliderProp}
               />
+              <RadioInput
+                label="invisible"
+                name="controlsButtonShape"
+                value={"invisible"}
+                currentPropValue={sliderProps.controlsButtonShape}
+                updateSliderProp={updateSliderProp}
+              />
             </div>
           </div>
 

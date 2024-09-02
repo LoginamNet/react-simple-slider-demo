@@ -6,7 +6,7 @@ type SliderProps = {
   controlsAlinging?: "start" | "center" | "end";
   controlsReverse?: true;
   controlsGap?: number;
-  controlsButtonShape?: "square" | "circle" | "transparent";
+  controlsButtonShape?: "square" | "circle" | "transparent" | "invisible";
   controlsButtonSize?: "small" | "medium" | "big" | number;
   controlsButtonMargin?: string | number;
   controlsArrowColor?: "white" | "black" | string;
