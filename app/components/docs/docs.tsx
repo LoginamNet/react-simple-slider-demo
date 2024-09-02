@@ -10,7 +10,7 @@ import TableProps from "./table-props";
 import TableConrtolsOptions from "./table-controls-options";
 import TableDotsOptions from "./table-dots-options";
 import Archive1_0_11 from "./archive-1-0-11";
-import Archive1_2_0 from "./archive-1-2-0";
+import Archive1_1_1 from "./archive-1-1-1";
 
 import styles from "./docs.module.css";
 
@@ -344,7 +344,7 @@ export default function MySliderComponent() {
         Changing, deleting, and adding slider properties based on the version.
       </p>
 
-      <Archive1_2_0 />
+      <Archive1_1_1 />
       <Archive1_0_11 />
 
       {/* -------------------------------------- Custom Components -------------------------------------- */}

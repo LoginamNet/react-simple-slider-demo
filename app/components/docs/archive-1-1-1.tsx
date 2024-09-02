@@ -3,10 +3,10 @@
 import styles from "./docs.module.css";
 import tableStyles from "./table.module.css";
 
-export default function Archive1_2_0() {
+export default function Archive1_1_1() {
   return (
     <details className={styles.details}>
-      <summary>Version 1.2.0</summary>
+      <summary>Version 1.1.1</summary>
       <h4>Changed</h4>
 
       <p>
@@ -17,7 +17,7 @@ export default function Archive1_2_0() {
         <b>Controls Options</b>
       </p>
       <p>
-        <i>from (1.2.0):</i>
+        <i>from (1.1.1):</i>
       </p>
       <span />
       <div className={tableStyles.container}>

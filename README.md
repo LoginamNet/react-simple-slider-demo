@@ -16,7 +16,7 @@
 </p>
 
 <p>
-  A <strong>Simple Slider</strong> on React with multiple scrolling modes and the ability to add custom dots & buttons
+  A <strong>Simple Slider</strong> on React with multiple scrolling modes and the ability to add custom dots & buttons.
 </p>
 
 ## Navigation
@@ -261,7 +261,7 @@ Changing, deleting, and adding slider properties based on the version.
 ---
 
 <details>
-  <summary>Version 1.0.11 & Erlier</summary>
+  <summary>Version 1.1.1</summary>
 
 ### Changed
 
@@ -269,7 +269,7 @@ Slider properties have been changed, in the form of a "from/to" comparison.
 
 **Controls Options**
 
-_from (1.2.0):_
+_from (1.1.1):_
 
 | Prop           | Type   | Values                            | Default  | Description                              |
 | -------------- | ------ | --------------------------------- | -------- | ---------------------------------------- |
